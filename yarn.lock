@@ -2917,6 +2917,19 @@ eslint-config-standard@^12.0.0:
   resolved "https://registry.yarnpkg.com/eslint-config-standard/-/eslint-config-standard-12.0.0.tgz#638b4c65db0bd5a41319f96bba1f15ddad2107d9"
   integrity sha512-COUz8FnXhqFitYj4DTqHzidjIL/t4mumGZto5c7DrBpvWoie+Sn3P4sLEzUGeYhRElWuFEf8K1S1EfvD1vixCQ==
 
+eslint-config-vuetify@*:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/eslint-config-vuetify/-/eslint-config-vuetify-0.2.0.tgz#a35506c56a097eebdeac245a2bad10bbc06529e1"
+  integrity sha512-YjCH45fM3nhMNfJlwZCSkJ+kZlta/geGzZYkmx5Q4JdrF71Bgzc5QNtCCilB/zy8y1KRAUgSHt51HQCjN54Ecg==
+  dependencies:
+    babel-eslint "^10.0.1"
+    eslint-config-standard "^12.0.0"
+    eslint-plugin-import "^2.14.0"
+    eslint-plugin-node "^8.0.1"
+    eslint-plugin-promise "^4.0.1"
+    eslint-plugin-standard "^4.0.0"
+    eslint-plugin-vue "^5.1.0"
+
 eslint-import-resolver-node@^0.3.2:
   version "0.3.2"
   resolved "https://registry.yarnpkg.com/eslint-import-resolver-node/-/eslint-import-resolver-node-0.3.2.tgz#58f15fb839b8d0576ca980413476aab2472db66a"
@@ -2968,7 +2981,7 @@ eslint-plugin-import@^2.14.0:
     read-pkg-up "^2.0.0"
     resolve "^1.9.0"
 
-eslint-plugin-node@^8.0.0:
+eslint-plugin-node@^8.0.0, eslint-plugin-node@^8.0.1:
   version "8.0.1"
   resolved "https://registry.yarnpkg.com/eslint-plugin-node/-/eslint-plugin-node-8.0.1.tgz#55ae3560022863d141fa7a11799532340a685964"
   integrity sha512-ZjOjbjEi6jd82rIpFSgagv4CHWzG9xsQAVp1ZPlhRnnYxcTgENUVBvhYmkQ7GvT1QFijUSo69RaiOJKhMu6i8w==
@@ -2997,7 +3010,7 @@ eslint-plugin-vue@^4.7.1:
   dependencies:
     vue-eslint-parser "^2.0.3"
 
-eslint-plugin-vue@^5.0.0:
+eslint-plugin-vue@^5.0.0, eslint-plugin-vue@^5.1.0:
   version "5.2.1"
   resolved "https://registry.yarnpkg.com/eslint-plugin-vue/-/eslint-plugin-vue-5.2.1.tgz#89795895c08da56fe3a201955bd645ae67e01918"
   integrity sha512-KPrv7Yau1B7PUB+TiEh0bw1lyzQjLp0npfAn7WbkQQFobgwXv4LqmQFBhYXEdXmxSBU/oZ46yBHoTo70RRivUA==
@@ -7787,6 +7800,11 @@ vm-browserify@0.0.4:
   integrity sha1-XX6kW7755Kb/ZflUOOCofDV9WnM=
   dependencies:
     indexof "0.0.1"
+
+vue-cli-plugin-eslint-config-vuetify@^0.0.3:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/vue-cli-plugin-eslint-config-vuetify/-/vue-cli-plugin-eslint-config-vuetify-0.0.3.tgz#c8672fbd5d4cdaffa332cc4741b946e7245614ad"
+  integrity sha512-fLzapk7ss3XMD2j372Z14YFc3L17OyFRZk65+iBB4vz32ToUoguJpR3vQjF6OvdgO13ZWelxUGqMHxj9RkY03w==
 
 vue-cli-plugin-vuetify@^0.4.6:
   version "0.4.6"
