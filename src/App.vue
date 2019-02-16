@@ -1,15 +1,15 @@
 <template>
   <v-app
     id="sandbox"
-    :dark="interfaceOptions.dark"
+    :dark="$store.state.dark"
   >
     <v-navigation-drawer
-      v-model="interfaceOptions.primaryDrawer.model"
-      :permanent="interfaceOptions.primaryDrawer.type === 'permanent'"
-      :temporary="interfaceOptions.primaryDrawer.type === 'temporary'"
-      :clipped="interfaceOptions.primaryDrawer.clipped"
-      :floating="interfaceOptions.primaryDrawer.floating"
-      :mini-variant="interfaceOptions.primaryDrawer.mini"
+      v-model="$store.state.primaryDrawer.model"
+      :permanent="$store.state.primaryDrawer.type === 'permanent'"
+      :temporary="$store.state.primaryDrawer.type === 'temporary'"
+      :clipped="$store.state.primaryDrawer.clipped"
+      :floating="$store.state.primaryDrawer.floating"
+      :mini-variant="$store.state.primaryDrawer.mini"
       absolute
       overflow
       app
@@ -21,8 +21,7 @@
 
         <v-list-tile
           avatar
-          to="home"
-          :interface-options="interfaceOptions"
+          to="/"
         >
           <v-list-tile-avatar>
             <v-icon>settings</v-icon>
@@ -49,11 +48,11 @@
     <v-toolbar
       app
       absolute
-      :clipped-left="interfaceOptions.primaryDrawer.clipped"
+      :clipped-left="$store.state.primaryDrawer.clipped"
     >
       <v-toolbar-side-icon
-        v-if="interfaceOptions.primaryDrawer.type !== 'permanent'"
-        @click.stop="interfaceOptions.primaryDrawer.model = !interfaceOptions.primaryDrawer.model"
+        v-if="$store.state.primaryDrawer.type !== 'permanent'"
+        @click.stop="$store.state.primaryDrawer.model = !$store.state.primaryDrawer.model"
       />
       <v-toolbar-title>Carlos Velasco - Frontend Developer</v-toolbar-title>
     </v-toolbar>
@@ -63,14 +62,18 @@
           align-center
           justify-center
         >
-          <v-flex xs10>
+          <v-flex
+            xs12
+            sm12
+            md10
+          >
             <router-view />
           </v-flex>
         </v-layout>
       </v-container>
     </v-content>
     <v-footer
-      :inset="interfaceOptions.footer.inset"
+      :inset="$store.state.footer.inset"
       app
     >
       <span class="px-3">&copy; {{ new Date().getFullYear() }}</span>
@@ -81,7 +84,9 @@
 <script>
   export default {
     data: () => ({
+
     }
     )
+
   }
 </script>

@@ -11,42 +11,41 @@
         >
           <span>Scheme</span>
           <v-switch
-            v-model="store.state.dark"
+            v-model="$store.state.dark"
             primary
             label="Dark"
-            @click="
-              store.commit('changeDarkness', !store.state.dark)"
           />
         </v-flex>
         <v-flex
           xs12
           md6
         >
-          <span>Drawer</span>
+          <span>Drawer </span>
+
           <v-radio-group
-            v-model="interfaceOptions.primaryDrawer.type"
+            v-model="$store.state.primaryDrawer.type"
             column
           >
             <v-radio
               v-for="drawer in drawers"
               :key="drawer"
               primary
-              :label="interfaceOptions.drawer"
-              :value="interfaceOptions.drawer.toLowerCase()"
+              :label="drawer"
+              :value="drawer.toLowerCase()"
             />
           </v-radio-group>
           <v-switch
-            v-model="interfaceOptions.primaryDrawer.clipped"
+            v-model="$store.state.primaryDrawer.clipped"
             label="Clipped"
             primary
           />
           <v-switch
-            v-model="interfaceOptions.primaryDrawer.floating"
+            v-model="$store.state.primaryDrawer.floating"
             label="Floating"
             primary
           />
           <v-switch
-            v-model="interfaceOptions.primaryDrawer.mini"
+            v-model="$store.state.primaryDrawer.mini"
             label="Mini"
             primary
           />
@@ -57,7 +56,7 @@
         >
           <span>Footer</span>
           <v-switch
-            v-model="interfaceOptions.footer.inset"
+            v-model="$store.state.footer.inset"
             label="Inset"
             primary
           />
@@ -80,7 +79,12 @@
 </template>
 <script>
   export default {
-    interfaceOptions: { footer: { inset: true }, drawer: {}, primaryDrawer: { mini: true, floating: true, clipped: true } }
+    data: function () {
+      return {
+
+        drawers: [ 'Default (no property)', 'Permanent', 'Temporary' ]
+      }
+    }
   }
 
 </script>
