@@ -1,16 +1,30 @@
 <template>
   <div>
-    <v-card
-      class="about"
-      color="transparent"
-      flat
+    <v-container
+      fluid
       mx-0
-      my-5
+      px-0
     >
-      <canvas
-        id="myChart"
-      />
-    </v-card>
+      <v-layout
+        column
+        align-center=""
+      >
+        <v-card
+          color="transparent"
+          flat
+          px-0
+          mx-0
+          my-5
+          min-width="800"
+          width="100%"
+        >
+          <canvas
+            id="myChart"
+            class="minSize"
+          />
+        </v-card>
+      </v-layout>
+    </v-container>
     <v-container
       fluid
       grid-list-md
@@ -34,7 +48,10 @@
           />
         </v-flex>
 
-        <v-flex xs6>
+        <v-flex
+          xs12
+          sm6
+        >
           <v-card>
             <v-card-title
               primary-title
@@ -63,7 +80,10 @@
             </v-card-actions>
           </v-card>
         </v-flex>
-        <v-flex xs6>
+        <v-flex
+          xs12
+          sm6
+        >
           <v-card>
             <v-card-title
               primary-title
