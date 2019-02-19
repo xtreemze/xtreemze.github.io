@@ -10,7 +10,7 @@
       <canvas
         id="myChart"
       />
-</v-card>
+    </v-card>
     <v-container
       fluid
       grid-list-md
