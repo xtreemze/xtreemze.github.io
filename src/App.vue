@@ -16,31 +16,65 @@
     >
       <v-list two-line>
         <v-subheader inset>
-          Settings
+          Navigation
         </v-subheader>
-
         <v-list-tile
           avatar
           to="/"
         >
           <v-list-tile-avatar>
-            <v-icon>settings</v-icon>
+            <v-icon>
+              settings
+            </v-icon>
           </v-list-tile-avatar>
           <v-list-tile-content>
-            <v-list-tile-title>Interface </v-list-tile-title>
-            <v-list-tile-sub-title>Display options</v-list-tile-sub-title>
+            <v-list-tile-title>
+              Skill IQ
+            </v-list-tile-title>
+            <v-list-tile-sub-title>
+              Pluralsight Iris Quotient
+            </v-list-tile-sub-title>
           </v-list-tile-content>
         </v-list-tile>
         <v-list-tile
           avatar
-          to="about"
+          to="/"
         >
           <v-list-tile-avatar>
-            <v-icon>settings</v-icon>
+            <v-icon>
+              business
+            </v-icon>
           </v-list-tile-avatar>
           <v-list-tile-content>
-            <v-list-tile-title>About</v-list-tile-title>
-            <v-list-tile-sub-title>Carlos</v-list-tile-sub-title>
+            <v-list-tile-title>
+              Employment
+            </v-list-tile-title>
+            <v-list-tile-sub-title>
+              History
+            </v-list-tile-sub-title>
+          </v-list-tile-content>
+        </v-list-tile>
+        <v-subheader inset>
+          Settings
+        </v-subheader>
+
+        <v-list-tile
+          avatar
+          to="interface"
+        >
+          <v-list-tile-avatar>
+            <v-icon>
+              settings
+            </v-icon>
+          </v-list-tile-avatar>
+          <v-list-tile-content>
+            <v-list-tile-title>
+              Interface
+            </v-list-tile-title>
+
+            <v-list-tile-sub-title>
+              Display options
+            </v-list-tile-sub-title>
           </v-list-tile-content>
         </v-list-tile>
       </v-list>
@@ -54,7 +88,9 @@
         v-if="$store.state.primaryDrawer.type !== 'permanent'"
         @click.stop="$store.state.primaryDrawer.model = !$store.state.primaryDrawer.model"
       />
-      <v-toolbar-title>Carlos Velasco - Frontend Developer</v-toolbar-title>
+      <v-toolbar-title>
+        Carlos Velasco - Frontend Developer
+      </v-toolbar-title>
     </v-toolbar>
     <v-content>
       <v-container fluid>
@@ -65,7 +101,6 @@
           <v-flex
             xs12
             sm12
-            md10
           >
             <router-view />
           </v-flex>

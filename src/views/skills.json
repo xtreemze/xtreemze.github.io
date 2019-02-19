@@ -1,0 +1,272 @@
+[
+  {
+    "id": "networking-fundamentals-n10-007",
+    "title": "Networking Fundamentals (N10-007)",
+    "url": "/score/skill-assessment/networking-fundamentals-n10-007",
+    "thumbnailUrl": "https://pluralsight2.imgix.net/paths/images/networks-484b57170b.png",
+    "score": 65,
+    "percentile": 7.3671700000000010,
+    "level": "Novice",
+    "dateCompleted": "2019-02-11T11:59:17.573011+00:00"
+  },
+  {
+    "id": "core-data-visualization-literacy",
+    "title": "Data Visualization Literacy",
+    "url": "/score/skill-assessment/core-data-visualization-literacy",
+    "thumbnailUrl": "https://pluralsight2.imgix.net/assessments/images/icons/data-1U856Y56fJtq.png",
+    "score": 156,
+    "percentile": 54.3279999999999960,
+    "level": "Proficient",
+    "dateCompleted": "2019-02-08T14:02:46.299318+00:00"
+  },
+  {
+    "id": "jquery",
+    "title": "jQuery",
+    "url": "/score/skill-assessment/jquery",
+    "thumbnailUrl": "https://pluralsight.imgix.net/paths/path-icons/jquery-c93ba170c1.png",
+    "score": 128,
+    "percentile": 35.4354,
+    "level": "Proficient",
+    "dateCompleted": "2019-02-08T13:22:37.664045+00:00"
+  },
+  {
+    "id": "javascript",
+    "title": "JavaScript",
+    "url": "/score/skill-assessment/javascript",
+    "thumbnailUrl": "https://pluralsight.imgix.net/paths/path-icons/javascript-36f5949a45.png",
+    "score": 173,
+    "percentile": 65.0228,
+    "level": "Proficient",
+    "dateCompleted": "2019-02-08T13:12:26.856224+00:00"
+  },
+  {
+    "id": "video-production",
+    "title": "Adobe Video and Audio Production",
+    "url": "/score/skill-assessment/video-production",
+    "thumbnailUrl": "https://pluralsight.imgix.net/paths/path-icons/adobeccvideoproduction-ce19ceabb0.png",
+    "score": 189,
+    "percentile": 74.3887,
+    "level": "Proficient",
+    "dateCompleted": "2019-02-08T12:37:53.167984+00:00"
+  },
+  {
+    "id": "security-fundamentals",
+    "title": "Security Fundamentals",
+    "url": "/score/skill-assessment/security-fundamentals",
+    "thumbnailUrl": "https://pluralsight2.imgix.net/paths/images/comptia-security-plus-5d8ab8e621.png",
+    "score": 142,
+    "percentile": 44.8998,
+    "level": "Proficient",
+    "dateCompleted": "2019-02-08T12:21:49.268717+00:00"
+  },
+  {
+    "id": "ethical-hacking",
+    "title": "Ethical Hacking",
+    "url": "/score/skill-assessment/ethical-hacking",
+    "thumbnailUrl": "https://pluralsight2.imgix.net/paths/images/comptia-security-plus-5d8ab8e621.png",
+    "score": 128,
+    "percentile": 35.5657999999999960,
+    "level": "Proficient",
+    "dateCompleted": "2019-02-08T12:11:57.938586+00:00"
+  },
+  {
+    "id": "vue-js",
+    "title": "Vue.js",
+    "url": "/score/skill-assessment/vue-js",
+    "thumbnailUrl": "https://pluralsight2.imgix.net/paths/images/vue-7945830e6c.js.png",
+    "score": 134,
+    "percentile": 39.2701,
+    "level": "Proficient",
+    "dateCompleted": "2019-02-08T12:04:05.924864+00:00"
+  },
+  {
+    "id": "devops",
+    "title": "Understanding DevOps",
+    "url": "/score/skill-assessment/devops",
+    "thumbnailUrl": "https://pluralsight2.imgix.net/paths/images/devops-18b91372ed.png",
+    "score": 189,
+    "percentile": 74.4376,
+    "level": "Proficient",
+    "dateCompleted": "2018-12-19T12:56:06.044759+00:00"
+  },
+  {
+    "id": "graphic-design",
+    "title": "Graphic Design",
+    "url": "/score/skill-assessment/graphic-design",
+    "thumbnailUrl": "https://pluralsight.imgix.net/paths/path-icons/graphic-design-8e71846112.png",
+    "score": 178,
+    "percentile": 68.3494,
+    "level": "Proficient",
+    "dateCompleted": "2018-10-05T14:41:08.550066+00:00"
+  },
+  {
+    "id": "rxjs",
+    "title": "RxJS",
+    "url": "/score/skill-assessment/rxjs",
+    "thumbnailUrl": "https://pluralsight2.imgix.net/assessments/images/icons/rxjs-1TXbfgBFS7wf.png",
+    "score": 106,
+    "percentile": 22.7157,
+    "level": "Proficient",
+    "dateCompleted": "2018-10-05T14:09:32.02368+00:00"
+  },
+  {
+    "id": "angular",
+    "title": "Angular",
+    "url": "/score/skill-assessment/angular",
+    "thumbnailUrl": "https://pluralsight2.imgix.net/paths/images/angular-14a0f6532f.png",
+    "score": 51,
+    "percentile": 4.38148000,
+    "level": "Novice",
+    "dateCompleted": "2018-10-05T14:02:37.075861+00:00"
+  },
+  {
+    "id": "express",
+    "title": "Express",
+    "url": "/score/skill-assessment/express",
+    "thumbnailUrl": "https://pluralsight2.imgix.net/assessments/images/icons/express-HM55YVk3-FU-.png",
+    "score": 58,
+    "percentile": 5.69842000,
+    "level": "Novice",
+    "dateCompleted": "2018-10-05T12:21:18.352627+00:00"
+  },
+  {
+    "id": "core-nosql-databases-mongo-edition",
+    "title": "NoSQL Databases Mongo Edition (MongoDB)",
+    "url": "/score/skill-assessment/core-nosql-databases-mongo-edition",
+    "thumbnailUrl": "https://pluralsight2.imgix.net/assessments/images/icons/mongodb-_tapUCul3mGt.png",
+    "score": 135,
+    "percentile": 39.6866,
+    "level": "Proficient",
+    "dateCompleted": "2018-10-05T11:08:22.685198+00:00"
+  },
+  {
+    "id": "web-application-security",
+    "title": "Web Application Security",
+    "url": "/score/skill-assessment/web-application-security",
+    "thumbnailUrl": "https://pluralsight2.imgix.net/paths/images/comptia-security-plus-5d8ab8e621.png",
+    "score": 156,
+    "percentile": 54.0498000000000050,
+    "level": "Proficient",
+    "dateCompleted": "2018-10-05T10:57:09.546192+00:00"
+  },
+  {
+    "id": "node-js",
+    "title": "Node.js",
+    "url": "/score/skill-assessment/node-js",
+    "thumbnailUrl": "https://pluralsight.imgix.net/paths/path-icons/nodejs-601628d09d.png",
+    "score": 166,
+    "percentile": 60.5804,
+    "level": "Proficient",
+    "dateCompleted": "2018-10-05T10:49:10.325581+00:00"
+  },
+  {
+    "id": "bootstrap",
+    "title": "Bootstrap",
+    "url": "/score/skill-assessment/bootstrap",
+    "thumbnailUrl": "https://pluralsight2.imgix.net/assessments/images/icons/bootstrap-C6JJcnN-EyDh.png",
+    "score": 143,
+    "percentile": 45.3498,
+    "level": "Proficient",
+    "dateCompleted": "2018-10-05T10:39:20.184118+00:00"
+  },
+  {
+    "id": "github",
+    "title": "GitHub",
+    "url": "/score/skill-assessment/github",
+    "thumbnailUrl": "https://pluralsight2.imgix.net/assessments/images/icons/github-hbXy1O6RPm1m.png",
+    "score": 212,
+    "percentile": 85.2577,
+    "level": "Expert",
+    "dateCompleted": "2018-10-05T09:31:24.412071+00:00"
+  },
+  {
+    "id": "json",
+    "title": "JSON",
+    "url": "/score/skill-assessment/json",
+    "thumbnailUrl": "https://pluralsight2.imgix.net/assessments/images/icons/json-cqU533dp9QmQ.png",
+    "score": 116,
+    "percentile": 28.1078,
+    "level": "Proficient",
+    "dateCompleted": "2018-10-05T09:09:38.089805+00:00"
+  },
+  {
+    "id": "typescript",
+    "title": "TypeScript",
+    "url": "/score/skill-assessment/typescript",
+    "thumbnailUrl": "https://pluralsight2.imgix.net/assessments/images/icons/typescript-g4UBd2ehbtKm.png",
+    "score": 113,
+    "percentile": 26.6202,
+    "level": "Proficient",
+    "dateCompleted": "2018-10-05T09:00:01.583434+00:00"
+  },
+  {
+    "id": "redux",
+    "title": "Redux",
+    "url": "/score/skill-assessment/redux",
+    "thumbnailUrl": "https://pluralsight2.imgix.net/assessments/images/icons/redux-NE5jFOfNfPe2.png",
+    "score": 58,
+    "percentile": 5.6419200000000010,
+    "level": "Novice",
+    "dateCompleted": "2018-10-05T08:50:26.703088+00:00"
+  },
+  {
+    "id": "react",
+    "title": "React",
+    "url": "/score/skill-assessment/react",
+    "thumbnailUrl": "https://pluralsight2.imgix.net/paths/images/react-0f6558f88f.png",
+    "score": 127,
+    "percentile": 34.6103,
+    "level": "Proficient",
+    "dateCompleted": "2018-10-05T08:41:44.398165+00:00"
+  },
+  {
+    "id": "npm",
+    "title": "NPM",
+    "url": "/score/skill-assessment/npm",
+    "thumbnailUrl": "https://pluralsight2.imgix.net/assessments/images/icons/npm-EQLkhQpQW4Pa.png",
+    "score": 233,
+    "percentile": 92.0837000000000100,
+    "level": "Expert",
+    "dateCompleted": "2018-10-05T08:35:22.230961+00:00"
+  },
+  {
+    "id": "git",
+    "title": "Git",
+    "url": "/score/skill-assessment/git",
+    "thumbnailUrl": "https://pluralsight2.imgix.net/assessments/images/icons/git-ZTFPuKmPsFw6.png",
+    "score": 92,
+    "percentile": 16.3600,
+    "level": "Novice",
+    "dateCompleted": "2018-10-05T08:25:24.946567+00:00"
+  },
+  {
+    "id": "es6",
+    "title": "ES6",
+    "url": "/score/skill-assessment/es6",
+    "thumbnailUrl": "https://pluralsight2.imgix.net/assessments/images/icons/es6-ZTFHaqZcD2zV.png",
+    "score": 126,
+    "percentile": 34.3473,
+    "level": "Proficient",
+    "dateCompleted": "2018-10-05T08:18:04.471214+00:00"
+  },
+  {
+    "id": "css",
+    "title": "CSS",
+    "url": "/score/skill-assessment/css",
+    "thumbnailUrl": "https://pluralsight.imgix.net/paths/path-icons/css-c9b214f0d7.png",
+    "score": 132,
+    "percentile": 38.2622999999999960,
+    "level": "Proficient",
+    "dateCompleted": "2018-10-05T08:04:59.685702+00:00"
+  },
+  {
+    "id": "html5",
+    "title": "HTML5",
+    "url": "/score/skill-assessment/html5",
+    "thumbnailUrl": "https://pluralsight.imgix.net/paths/path-icons/html5-7ac65c8ec0.png",
+    "score": 273,
+    "percentile": 98.5720,
+    "level": "Expert",
+    "dateCompleted": "2018-10-05T07:58:38.401103+00:00"
+  }
+]

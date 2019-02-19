@@ -81,8 +81,7 @@
   export default {
     data: function () {
       return {
-
-        drawers: [ 'Default (no property)', 'Permanent', 'Temporary' ]
+        drawers: ['Default (no property)', 'Permanent', 'Temporary']
       }
     }
   }
