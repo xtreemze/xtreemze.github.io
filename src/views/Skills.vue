@@ -16,7 +16,7 @@
           mx-0
           my-5
           min-width="800"
-          width="100%"
+          width="150%"
         >
           <canvas
             id="myChart"
