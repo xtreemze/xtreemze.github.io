@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Interface from './views/Interface.vue'
 
 Vue.use(Router)
 
@@ -9,12 +8,17 @@ export default new Router({
     {
       path: '/interface',
       name: 'interface',
-      component: Interface
+      component: () => import(/* webpackChunkName: "interface" */ './views/Interface.vue')
     },
     {
       path: '/',
       name: 'skills',
       component: () => import(/* webpackChunkName: "skills" */ './views/Skills.vue')
+    },
+    {
+      path: '/employment',
+      name: 'employment',
+      component: () => import(/* webpackChunkName: "employment" */ './views/Employment.vue')
     }
   ]
 })

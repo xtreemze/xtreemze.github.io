@@ -38,7 +38,7 @@
         </v-list-tile>
         <v-list-tile
           avatar
-          to="/"
+          to="/employment"
         >
           <v-list-tile-avatar>
             <v-icon>

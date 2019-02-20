@@ -2,6 +2,30 @@
   <div>
     <v-container
       fluid
+      grid-list-md
+    >
+      <v-layout
+        row
+        wrap
+      >
+        <v-flex
+          my-5
+          xs12
+        >
+          <v-slider
+            v-model="size"
+            thumb-label="always"
+
+            label="Size"
+            max="400"
+            min="50"
+            :color="`rgba(${parseInt(255 - (size))}, 209, ${parseInt(size)}, 1)`"
+          />
+        </v-flex>
+      </v-layout>
+    </v-container>
+    <v-container
+      fluid
       mx-0
       px-0
     >
@@ -16,8 +40,8 @@
           px-0
           mx-0
           my-5
-          min-width="800"
-          width="150%"
+          :min-width="minSize"
+          :width="size + '%'"
         >
           <canvas
             id="myChart"
@@ -126,6 +150,8 @@
     data: function () {
 
       return {
+        size: '125',
+        minSize: '800',
         ctx: '',
         skillChart: '',
         skillJSON: skills,
@@ -137,7 +163,7 @@
         minScore: 0,
         labels: []
       }
-    
+
     },
     created: function () {
 
@@ -154,22 +180,21 @@
             labels: this.labels,
             datasets: [
               {
-                label: 'Pluralsight Skill IQ',
+                label: '',
                 data: this.iconScore,
                 backgroundColor: [
-                  'rgba(205, 99, 192, 0)'
+                  'rgba(0, 0, 0, 0)'
                 ],
                 borderColor: [
-                  'rgba(255,99,192,0)'
+                  'rgba(0,0,0,0)'
                 ],
-                borderWidth: 2,
-                lineTension: 0.8,
+                borderWidth: 0,
+                lineTension: 0,
                 pointRadius: 0,
-                pointBackgroundColor: this.color,
                 pointStyle: this.icons
               },
               {
-                label: 'Pluralsight Skill IQ',
+                label: 'IQ',
                 data: this.roleIQ,
                 backgroundColor: [
                   'rgba(99, 99, 192, 0.1)'
@@ -178,7 +203,7 @@
                   'rgba(99,99,192,0.2)'
                 ],
                 borderWidth: 4,
-                lineTension: 0.1,
+                lineTension: 0.02,
                 pointRadius: 6,
                 pointHoverRadius: 12,
                 pointBackgroundColor: this.color,
@@ -201,9 +226,9 @@
         })
         this.minScore = 128
         this.minScoreUpdate()
-      
+
       })
-    
+
     },
     methods: {
       initialSkillSort: function () {
@@ -226,11 +251,11 @@
             this.percentile.push(skill.percentile * 3)
             this.labels.push(skill.title)
             this.color.push(`rgba(${parseInt(255 - (skill.percentile * 3))}, 209, ${parseInt(skill.percentile * 3)}, 1)`)
-          
+
           }
-        
+
         })
-      
+
       },
 
       addData: function () {
@@ -240,7 +265,7 @@
         this.skillChart.data.datasets[0].data = this.iconScore
         this.skillChart.data.datasets[1].data = this.roleIQ
         this.skillChart.update()
-      
+
       },
       removeData: function removeData () {
 
@@ -248,9 +273,9 @@
         this.skillChart.data.datasets.forEach((dataset) => {
 
           dataset.data.pop()
-        
+
         })
-      
+
       },
 
       minScoreUpdate: function () {
@@ -258,7 +283,7 @@
         while (this.skillChart.data.labels.length > 0) {
 
           this.removeData()
-        
+
         }
         this.icons = []
         this.color = []
@@ -268,7 +293,7 @@
         this.labels = []
         this.initialSkillSort()
         this.addData()
-      
+
       }
     }
 
