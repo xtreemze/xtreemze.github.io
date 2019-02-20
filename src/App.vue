@@ -4,12 +4,12 @@
     :dark="$store.state.dark"
   >
     <v-navigation-drawer
-      v-model="$store.state.primaryDrawer.model"
-      :permanent="$store.state.primaryDrawer.type === 'permanent'"
-      :temporary="$store.state.primaryDrawer.type === 'temporary'"
-      :clipped="$store.state.primaryDrawer.clipped"
-      :floating="$store.state.primaryDrawer.floating"
-      :mini-variant="$store.state.primaryDrawer.mini"
+      v-model="primaryDrawerModel"
+      :permanent="primaryDrawerType === 'permanent'"
+      :temporary="primaryDrawerType === 'temporary'"
+      :clipped="primaryDrawerClipped"
+      :floating="primaryDrawerFloating"
+      :mini-variant="primaryDrawerMini"
       absolute
       overflow
       app
@@ -82,14 +82,14 @@
     <v-toolbar
       app
       absolute
-      :clipped-left="$store.state.primaryDrawer.clipped"
+      :clipped-left="primaryDrawerClipped"
     >
       <v-toolbar-side-icon
-        v-if="$store.state.primaryDrawer.type !== 'permanent'"
-        @click.stop="$store.state.primaryDrawer.model = !$store.state.primaryDrawer.model"
+        v-if="primaryDrawerType !== 'permanent'"
+        @click.stop="primaryDrawerModel = !primaryDrawerModel"
       />
       <v-toolbar-title>
-        {{ $store.state.title }}
+        {{ title }}
       </v-toolbar-title>
     </v-toolbar>
     <v-content>
@@ -108,7 +108,7 @@
       </v-container>
     </v-content>
     <v-footer
-      :inset="$store.state.footer.inset"
+      :inset="footerInset"
       app
     >
       <span class="px-3">&copy; {{ new Date().getFullYear() }}</span>
@@ -121,7 +121,93 @@
     data: () => ({
 
     }
-    )
+    ),
+    computed:{
+      title: {
+        get () {
+
+          return this.$store.state.title
+
+        },
+        set (value) {
+
+          this.$store.commit('updateTitle', value)
+
+        }
+      },
+      primaryDrawerModel: {
+        get () {
+
+          return this.$store.state.primaryDrawer.model
+
+        },
+        set (value) {
+
+          this.$store.commit('updatePrimaryDrawerModel', value)
+
+        }
+      },
+      primaryDrawerType: {
+        get () {
+
+          return this.$store.state.primaryDrawer.type
+
+        },
+        set (value) {
+
+          this.$store.commit('updatePrimaryDrawerType', value)
+
+        }
+      },
+      primaryDrawerClipped: {
+        get () {
+
+          return this.$store.state.primaryDrawer.clipped
+
+        },
+        set (value) {
+
+          this.$store.commit('updatePrimaryDrawerClipped', value)
+
+        }
+      },
+      primaryDrawerFloating: {
+        get () {
+
+          return this.$store.state.primaryDrawer.floating
+
+        },
+        set (value) {
+
+          this.$store.commit('updatePrimaryDrawerFloating', value)
+
+        }
+      },
+      primaryDrawerMini: {
+        get () {
+
+          return this.$store.state.primaryDrawer.mini
+
+        },
+        set (value) {
+
+          this.$store.commit('updatePrimaryDrawerMini', value)
+
+        }
+      },
+      footerInset: {
+        get () {
+
+          return this.$store.state.footer.inset
+
+        },
+        set (value) {
+
+          this.$store.commit('updateFooterInset', value)
+
+        }
+      }
+    }
 
   }
 </script>

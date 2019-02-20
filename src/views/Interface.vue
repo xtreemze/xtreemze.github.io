@@ -11,7 +11,7 @@
         >
           <span>Scheme</span>
           <v-switch
-            v-model="$store.state.dark"
+            v-model="dark"
             primary
             label="Dark"
           />
@@ -23,7 +23,7 @@
           <span>Drawer </span>
 
           <v-radio-group
-            v-model="$store.state.primaryDrawer.type"
+            v-model="primaryDrawerType"
             column
           >
             <v-radio
@@ -35,17 +35,17 @@
             />
           </v-radio-group>
           <v-switch
-            v-model="$store.state.primaryDrawer.clipped"
+            v-model="primaryDrawerClipped"
             label="Clipped"
             primary
           />
           <v-switch
-            v-model="$store.state.primaryDrawer.floating"
+            v-model="primaryDrawerFloating"
             label="Floating"
             primary
           />
           <v-switch
-            v-model="$store.state.primaryDrawer.mini"
+            v-model="primaryDrawerMini"
             label="Mini"
             primary
           />
@@ -56,7 +56,7 @@
         >
           <span>Footer</span>
           <v-switch
-            v-model="$store.state.footer.inset"
+            v-model="footerInset"
             label="Inset"
             primary
           />
@@ -85,7 +85,95 @@
       return {
         drawers: ['Default (no property)', 'Permanent', 'Temporary']
       }
-    
+
+    },
+    computed: {
+      dark: {
+
+        get () {
+
+          return this.$store.state.dark
+
+        },
+        set (value) {
+
+          this.$store.commit('updateDark', value)
+
+        }
+
+      },
+      title: {
+        get () {
+
+          return this.$store.state.title
+
+        },
+        set (value) {
+
+          this.$store.commit('updateTitle', value)
+
+        }
+      },
+      primaryDrawerType: {
+        get () {
+
+          return this.$store.state.primaryDrawer.type
+
+        },
+        set (value) {
+
+          this.$store.commit('updatePrimaryDrawerType', value)
+
+        }
+      },
+      primaryDrawerClipped: {
+        get () {
+
+          return this.$store.state.primaryDrawer.clipped
+
+        },
+        set (value) {
+
+          this.$store.commit('updatePrimaryDrawerClipped', value)
+
+        }
+      },
+      primaryDrawerFloating: {
+        get () {
+
+          return this.$store.state.primaryDrawer.floating
+
+        },
+        set (value) {
+
+          this.$store.commit('updatePrimaryDrawerFloating', value)
+
+        }
+      },
+      primaryDrawerMini: {
+        get () {
+
+          return this.$store.state.primaryDrawer.mini
+
+        },
+        set (value) {
+
+          this.$store.commit('updatePrimaryDrawerMini', value)
+
+        }
+      },
+      footerInset: {
+        get () {
+
+          return this.$store.state.footer.inset
+
+        },
+        set (value) {
+
+          this.$store.commit('updateFooterInset', value)
+
+        }
+      }
     }
   }
 
