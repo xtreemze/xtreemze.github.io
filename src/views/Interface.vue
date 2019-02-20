@@ -81,9 +81,11 @@
   export default {
     name: 'Interface',
     data: function () {
+
       return {
         drawers: ['Default (no property)', 'Permanent', 'Temporary']
       }
+    
     }
   }
 

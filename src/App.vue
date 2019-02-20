@@ -89,7 +89,7 @@
         @click.stop="$store.state.primaryDrawer.model = !$store.state.primaryDrawer.model"
       />
       <v-toolbar-title>
-        Carlos Velasco - Frontend Developer
+        {{ $store.state.title }}
       </v-toolbar-title>
     </v-toolbar>
     <v-content>

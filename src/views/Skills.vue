@@ -8,6 +8,7 @@
       <v-layout
         column
         align-center=""
+        class="skillsCard"
       >
         <v-card
           color="transparent"
@@ -96,7 +97,9 @@
               <p>
                 Skill IQ is a measurement of proficiency in a technology skill.
               </p>
-              <p>The difficulty of the questions change based on right or wrong answers given by all individuals who have taken a particular assessment. The tests are short and comprehensive because they are based on modern test theories, Bayesian statistics, and machine learning to model skills and find questions which match those skills.</p>
+              <p>
+                The difficulty of the questions change based on right or wrong answers given by all individuals who have taken a particular assessment. The tests are short and comprehensive because they are based on modern test theories, Bayesian statistics, and machine learning to model skills and find questions which match those skills.
+              </p>
             </v-card-text>
             <v-card-actions>
               <v-btn
@@ -121,6 +124,7 @@
   export default {
 
     data: function () {
+
       return {
         ctx: '',
         skillChart: '',
@@ -133,12 +137,15 @@
         minScore: 0,
         labels: []
       }
+    
     },
     created: function () {
+
       skills.sort((a, b) => b.percentile - a.percentile)
       this.initialSkillSort()
 
       this.$nextTick(() => {
+
         this.ctx = document.getElementById('myChart').getContext('2d')
 
         this.skillChart = new Chart(this.ctx, {
@@ -194,15 +201,21 @@
         })
         this.minScore = 128
         this.minScoreUpdate()
+      
       })
+    
     },
     methods: {
       initialSkillSort: function () {
+
         this.skillJSON = skills
 
         this.skillJSON.forEach(skill => {
+
           if (skill.score > this.minScore) {
+
             const icon = new Image()
+
             icon.src = skill.thumbnailUrl
 
             icon.width = 62
@@ -212,29 +225,40 @@
             this.iconScore.push(skill.score + 48)
             this.percentile.push(skill.percentile * 3)
             this.labels.push(skill.title)
-            this.color.push(
-              `rgba(${parseInt(255 - (skill.percentile * 3))}, 209, ${parseInt(skill.percentile * 3)}, 1)`)
+            this.color.push(`rgba(${parseInt(255 - (skill.percentile * 3))}, 209, ${parseInt(skill.percentile * 3)}, 1)`)
+          
           }
+        
         })
+      
       },
 
       addData: function () {
+
         this.skillChart.data.labels = this.labels
 
         this.skillChart.data.datasets[0].data = this.iconScore
         this.skillChart.data.datasets[1].data = this.roleIQ
         this.skillChart.update()
+      
       },
       removeData: function removeData () {
+
         this.skillChart.data.labels.pop()
         this.skillChart.data.datasets.forEach((dataset) => {
+
           dataset.data.pop()
+        
         })
+      
       },
 
       minScoreUpdate: function () {
+
         while (this.skillChart.data.labels.length > 0) {
+
           this.removeData()
+        
         }
         this.icons = []
         this.color = []
@@ -244,8 +268,15 @@
         this.labels = []
         this.initialSkillSort()
         this.addData()
+      
       }
     }
 
   }
 </script>
+
+<style>
+.skillsCard{
+  overflow: hidden;
+}
+</style>

@@ -5,6 +5,7 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    title: 'Skill IQ',
     dark: true,
     drawers: ['Default (no property)', 'Permanent', 'Temporary'],
     primaryDrawer: {
