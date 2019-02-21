@@ -41,7 +41,7 @@
           :min-width="minSize"
           :width="size + '%'"
         >
-          <canvas id="myChart" /></canvas>
+          <canvas id="myChart" />
         </VCard>
       </VLayout>
     </VContainer>
