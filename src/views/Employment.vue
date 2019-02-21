@@ -1,13 +1,16 @@
 <template>
-  <div />
+  <div>
+    <VCard />
+  </div>
 </template>
 
 <script>
   export default {
+
     data () {
 
       return {
-        key: 'value'
+
       }
 
     }

@@ -1,40 +1,39 @@
 <template>
   <div>
-    <v-container
+    <VContainer
       fluid
       grid-list-md
     >
-      <v-layout
+      <VLayout
         row
         wrap
       >
-        <v-flex
+        <VFlex
           my-5
           xs12
         >
-          <v-slider
+          <VSlider
             v-model="size"
             thumb-label="always"
-
             label="Size"
             max="400"
             min="50"
             :color="`rgba(${parseInt(255 - (size))}, 209, ${parseInt(size)}, 1)`"
           />
-        </v-flex>
-      </v-layout>
-    </v-container>
-    <v-container
+        </VFlex>
+      </VLayout>
+    </VContainer>
+    <VContainer
       fluid
       mx-0
       px-0
     >
-      <v-layout
+      <VLayout
         column
         align-center=""
         class="skillsCard"
       >
-        <v-card
+        <VCard
           color="transparent"
           flat
           px-0
@@ -47,40 +46,37 @@
             id="myChart"
             class="minSize"
           />
-        </v-card>
-      </v-layout>
-    </v-container>
-    <v-container
+        </VCard>
+      </VLayout>
+    </VContainer>
+    <VContainer
       fluid
       grid-list-md
     >
-      <v-layout
+      <VLayout
         row
         wrap
       >
-        <v-flex
+        <VFlex
           my-5
           xs12
         >
-          <v-slider
+          <VSlider
             v-model="minScore"
             thumb-label="always"
-
             label="Skill IQ"
             max="300"
             :color="`rgba(${parseInt(255 - (minScore))}, 209, ${parseInt(minScore)}, 1)`"
             @input="minScoreUpdate"
           />
-        </v-flex>
+        </VFlex>
 
-        <v-flex
+        <VFlex
           xs12
           sm6
         >
-          <v-card>
-            <v-card-title
-              primary-title
-            >
+          <VCard>
+            <v-card-title primary-title>
               <h3>
                 What do Skill IQ ratings mean?
               </h3>
@@ -103,16 +99,14 @@
                 Iris FAQ
               </v-btn>
             </v-card-actions>
-          </v-card>
-        </v-flex>
-        <v-flex
+          </VCard>
+        </VFlex>
+        <VFlex
           xs12
           sm6
         >
-          <v-card>
-            <v-card-title
-              primary-title
-            >
+          <VCard>
+            <v-card-title primary-title>
               <h3>
                 Why Skill IQ?
               </h3>
@@ -135,10 +129,10 @@
                 What is Skill IQ?
               </v-btn>
             </v-card-actions>
-          </v-card>
-        </v-flex>
-      </v-layout>
-    </v-container>
+          </VCard>
+        </VFlex>
+      </VLayout>
+    </VContainer>
   </div>
 </template>
 <script>
@@ -213,6 +207,7 @@
             ]
           },
           options: {
+            responsiveAnimationDuration: 0,
             legend: { display: false },
             scale: {
               ticks: {
@@ -300,8 +295,8 @@
   }
 </script>
 
-<style>
-.skillsCard{
+<style scoped>
+.skillsCard {
   overflow: hidden;
 }
 </style>

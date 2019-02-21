@@ -14,7 +14,10 @@
       overflow
       app
     >
-      <v-list two-line>
+      <v-list
+        two-line
+        dense
+      >
         <v-subheader inset>
           Navigation
         </v-subheader>
@@ -23,8 +26,8 @@
           to="/"
         >
           <v-list-tile-avatar>
-            <v-icon>
-              settings
+            <v-icon large>
+              category
             </v-icon>
           </v-list-tile-avatar>
           <v-list-tile-content>
@@ -41,8 +44,8 @@
           to="/employment"
         >
           <v-list-tile-avatar>
-            <v-icon>
-              business
+            <v-icon large>
+              work
             </v-icon>
           </v-list-tile-avatar>
           <v-list-tile-content>
@@ -63,7 +66,7 @@
           to="interface"
         >
           <v-list-tile-avatar>
-            <v-icon>
+            <v-icon large>
               settings
             </v-icon>
           </v-list-tile-avatar>
