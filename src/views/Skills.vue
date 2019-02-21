@@ -13,11 +13,10 @@
           xs12
         >
           <VSlider
-            v-model="size"
-            thumb-label="always"
+            v-model.number="size"
             label="Size"
-            max="400"
-            min="50"
+            max="255"
+            min="25"
             :color="`rgba(${parseInt(255 - (size))}, 209, ${parseInt(size)}, 1)`"
           />
         </VFlex>
@@ -30,7 +29,7 @@
     >
       <VLayout
         column
-        align-center=""
+        align-center
         class="skillsCard"
       >
         <VCard
@@ -42,10 +41,7 @@
           :min-width="minSize"
           :width="size + '%'"
         >
-          <canvas
-            id="myChart"
-            class="minSize"
-          />
+          <canvas id="myChart" />
         </VCard>
       </VLayout>
     </VContainer>
@@ -137,6 +133,8 @@
 </template>
 <script>
   import Chart from 'chart.js'
+  import 'chartjs-plugin-zoom'
+
   import skills from './skills.json'
 
   export default {
@@ -145,7 +143,7 @@
 
       return {
         size: '125',
-        minSize: '800',
+        minSize: '600',
         ctx: '',
         skillChart: '',
         skillJSON: skills,
@@ -207,7 +205,59 @@
             ]
           },
           options: {
-            responsiveAnimationDuration: 0,
+            // Container for pan options
+            pan: {
+              // Boolean to enable panning
+              enabled: true,
+
+              // Panning directions. Remove the appropriate direction to disable
+              // Eg. 'y' would only allow panning in the y direction
+              mode: 'xy',
+              rangeMin: {
+                // Format of min pan range depends on scale type
+                x: null,
+                y: null
+              },
+              rangeMax: {
+                // Format of max pan range depends on scale type
+                x: null,
+                y: null
+              }
+              // Function called once panning is completed
+
+            },
+
+            // Container for zoom options
+            zoom: {
+              // Boolean to enable zooming
+              enabled: true,
+
+              // Enable drag-to-zoom behavior
+              drag: true,
+
+              // Drag-to-zoom rectangle style can be customized
+              // drag: {
+              // 	 borderColor: 'rgba(225,225,225,0.3)'
+              // 	 borderWidth: 5,
+              // 	 backgroundColor: 'rgb(225,225,225)'
+              // },
+
+              // Zooming directions. Remove the appropriate direction to disable
+              // Eg. 'y' would only allow zooming in the y direction
+              mode: 'xy',
+              rangeMin: {
+                // Format of min zoom range depends on scale type
+                x: null,
+                y: null
+              },
+              rangeMax: {
+                // Format of max zoom range depends on scale type
+                x: null,
+                y: null
+              }
+
+            },
+            maintainAspectRatio: 1,
             legend: { display: false },
             scale: {
               ticks: {
