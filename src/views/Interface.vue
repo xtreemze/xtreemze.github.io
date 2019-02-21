@@ -1,13 +1,16 @@
 <template>
-  <VCard>
+  <VCard
+    color="transparent"
+    flat
+  >
     <VCardText>
       <VLayout
         row
         wrap
       >
         <VFlex
-          xs12
-          md6
+          shrink
+          ma-4
         >
           <span>Scheme</span>
           <VSwitch
@@ -17,8 +20,8 @@
           />
         </VFlex>
         <VFlex
-          xs12
-          md6
+          shrink
+          ma-4
         >
           <span>Drawer </span>
 
@@ -49,10 +52,32 @@
             label="Mini"
             primary
           />
+          <VSwitch
+            v-model="primaryDrawerDense"
+            label="Dense"
+            primary
+          />
         </VFlex>
         <VFlex
-          xs12
-          md6
+          shrink
+          ma-4
+        >
+          <span>Toolbar </span>
+
+          <VSwitch
+            v-model="toolbarDense"
+            label="Dense"
+            primary
+          />
+          <VSwitch
+            v-model="toolbarFlat"
+            label="Flat"
+            primary
+          />
+        </VFlex>
+        <VFlex
+          shrink
+          ma-4
         >
           <span>Footer</span>
           <VSwitch
@@ -60,21 +85,14 @@
             label="Inset"
             primary
           />
+          <VSwitch
+            v-model="footerFloating"
+            label="Floating"
+            primary
+          />
         </VFlex>
       </VLayout>
     </VCardText>
-    <VCardActions>
-      <VSpacer />
-      <VBtn flat>
-        Cancel
-      </VBtn>
-      <VBtn
-        flat
-        color="primary"
-      >
-        Submit
-      </VBtn>
-    </VCardActions>
   </VCard>
 </template>
 <script>
@@ -138,6 +156,47 @@
 
         }
       },
+      primaryDrawerDense: {
+        get() {
+
+          return this.$store.state.primaryDrawer.dense
+
+        },
+        set(value) {
+
+          this.$store.commit('updatePrimaryDrawerDense', value)
+
+        }
+
+      },
+
+      toolbarDense: {
+        get () {
+
+          return this.$store.state.toolbar.dense
+
+        },
+        set (value) {
+
+          this.$store.commit('updateToolbarDense', value)
+
+        }
+
+      },
+      toolbarFlat: {
+        get () {
+
+          return this.$store.state.toolbar.flat
+
+        },
+        set (value) {
+
+          this.$store.commit('updateToolbarFlat', value)
+
+        }
+
+      },
+
       primaryDrawerFloating: {
         get () {
 
@@ -173,7 +232,22 @@
           this.$store.commit('updateFooterInset', value)
 
         }
+      },
+
+      footerFloating: {
+        get() {
+
+          return this.$store.state.footer.floating
+
+        },
+        set(value) {
+
+          this.$store.commit('updateFooterFloating', value)
+
+        }
+
       }
+
     }
   }
 

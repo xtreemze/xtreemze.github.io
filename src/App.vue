@@ -1,9 +1,9 @@
 <template>
-  <v-app
+  <VApp
     id="sandbox"
     :dark="$store.state.dark"
   >
-    <v-navigation-drawer
+    <VNavigationDrawer
       v-model="primaryDrawerModel"
       :permanent="primaryDrawerType === 'permanent'"
       :temporary="primaryDrawerType === 'temporary'"
@@ -14,109 +14,113 @@
       overflow
       app
     >
-      <v-list
+      <VList
         two-line
-        dense
+        :dense="toolbarDense"
       >
-        <v-subheader inset>
+        <VSubheader inset>
           Navigation
-        </v-subheader>
-        <v-list-tile
+        </VSubheader>
+        <VListTile
           avatar
           to="/"
         >
-          <v-list-tile-avatar>
-            <v-icon large>
+          <VListTileAvatar>
+            <VIcon large>
               category
-            </v-icon>
-          </v-list-tile-avatar>
-          <v-list-tile-content>
-            <v-list-tile-title>
+            </VIcon>
+          </VListTileAvatar>
+          <VListTileContent>
+            <VListTileTitle>
               Skill IQ
-            </v-list-tile-title>
-            <v-list-tile-sub-title>
+            </VListTileTitle>
+            <VListTileSubTitle>
               Pluralsight Iris Quotient
-            </v-list-tile-sub-title>
-          </v-list-tile-content>
-        </v-list-tile>
-        <v-list-tile
+            </VListTileSubTitle>
+          </VListTileContent>
+        </VListTile>
+        <VListTile
           avatar
           to="/employment"
         >
-          <v-list-tile-avatar>
-            <v-icon large>
+          <VListTileAvatar>
+            <VIcon large>
               work
-            </v-icon>
-          </v-list-tile-avatar>
-          <v-list-tile-content>
-            <v-list-tile-title>
+            </VIcon>
+          </VListTileAvatar>
+          <VListTileContent>
+            <VListTileTitle>
               Employment
-            </v-list-tile-title>
-            <v-list-tile-sub-title>
+            </VListTileTitle>
+            <VListTileSubTitle>
               History
-            </v-list-tile-sub-title>
-          </v-list-tile-content>
-        </v-list-tile>
-        <v-subheader inset>
+            </VListTileSubTitle>
+          </VListTileContent>
+        </VListTile>
+        <VDivider />
+        <VSpacer />
+        <VSubheader inset>
           Settings
-        </v-subheader>
-
-        <v-list-tile
+        </VSubheader>
+        <VListTile
           avatar
           to="interface"
         >
-          <v-list-tile-avatar>
-            <v-icon large>
+          <VListTileAvatar>
+            <VIcon large>
               settings
-            </v-icon>
-          </v-list-tile-avatar>
-          <v-list-tile-content>
-            <v-list-tile-title>
+            </VIcon>
+          </VListTileAvatar>
+          <VListTileContent>
+            <VListTileTitle>
               Interface
-            </v-list-tile-title>
+            </VListTileTitle>
 
-            <v-list-tile-sub-title>
+            <VListTileSubTitle>
               Display options
-            </v-list-tile-sub-title>
-          </v-list-tile-content>
-        </v-list-tile>
-      </v-list>
-    </v-navigation-drawer>
-    <v-toolbar
+            </VListTileSubTitle>
+          </VListTileContent>
+        </VListTile>
+      </VList>
+    </VNavigationDrawer>
+    <VToolbar
       app
       absolute
       :clipped-left="primaryDrawerClipped"
+      :dense="toolbarDense"
+      :flat="toolbarFlat"
     >
-      <v-toolbar-side-icon
+      <VToolbarSideIcon
         v-if="primaryDrawerType !== 'permanent'"
         @click.stop="primaryDrawerModel = !primaryDrawerModel"
       />
-      <v-toolbar-title>
+      <VToolbarTitle>
         {{ title }}
-      </v-toolbar-title>
-    </v-toolbar>
-    <v-content>
-      <v-container fluid>
-        <v-layout
+      </VToolbarTitle>
+    </VToolbar>
+    <VContent>
+      <VContainer fluid>
+        <VLayout
           align-center
           justify-center
         >
-          <v-flex
+          <VFlex
             xs12
             sm12
           >
-            <router-view />
-          </v-flex>
-        </v-layout>
-      </v-container>
-    </v-content>
-    <v-footer
+            <RouterView />
+          </VFlex>
+        </VLayout>
+      </VContainer>
+    </VContent>
+    <VFooter
       :inset="footerInset"
       app
+      :absolute="footerFloating"
     >
       <span class="px-3">&copy; {{ new Date().getFullYear() }}</span>
-    </v-footer>
-  </v-app>
+    </VFooter>
+  </VApp>
 </template>
 
 <script>
@@ -125,7 +129,7 @@
 
     }
     ),
-    computed:{
+    computed: {
       title: {
         get () {
 
@@ -198,6 +202,32 @@
 
         }
       },
+      toolbarFlat: {
+        get () {
+
+          return this.$store.state.toolbar.flat
+
+        },
+        set (value) {
+
+          this.$store.commit('updateToolbarFlat', value)
+
+        }
+
+      },
+      toolbarDense: {
+        get () {
+
+          return this.$store.state.toolbar.dense
+
+        },
+        set (value) {
+
+          this.$store.commit('updateToolbarDense', value)
+
+        }
+
+      },
       footerInset: {
         get () {
 
@@ -209,7 +239,34 @@
           this.$store.commit('updateFooterInset', value)
 
         }
+      },
+      footerFloating: {
+        get () {
+
+          return this.$store.state.footer.floating
+
+        },
+        set (value) {
+
+          this.$store.commit('updateFooterFloating', value)
+
+        }
+
+      },
+      primaryDrawerDense: {
+        get() {
+
+          return this.$store.state.primaryDrawer.dense
+
+        },
+        set(value) {
+
+          this.$store.commit('updatePrimaryDrawerDense', value)
+
+        }
+
       }
+
     }
 
   }

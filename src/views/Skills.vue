@@ -72,29 +72,29 @@
           sm6
         >
           <VCard>
-            <v-card-title primary-title>
+            <VCardTitle primary-title>
               <h3>
                 What do Skill IQ ratings mean?
               </h3>
-            </v-card-title>
-            <v-card-text>
+            </VCardTitle>
+            <VCardText>
               <p>
                 Pluralsight Iris is a skill assessment algorithm and recommendation engine. Each skill assessment includes an Iris Quotient (IQ) score.
               </p>
               <p>
                 The Pluralsight IQ is a continuous score from 0 to 300. This is based on the percentile in that skill area. Pluralsight's exclusive adaptive skill measurements work by benchmarking skill level compared to other professionals who also use the technology.
               </p>
-            </v-card-text>
-            <v-card-actions>
-              <v-btn
+            </VCardText>
+            <VCardActions>
+              <VBtn
                 flat
                 large
                 color="primary"
                 href="https://www.pluralsight.com/product/iris/faqs"
               >
                 Iris FAQ
-              </v-btn>
-            </v-card-actions>
+              </VBtn>
+            </VCardActions>
           </VCard>
         </VFlex>
         <VFlex
@@ -102,29 +102,29 @@
           sm6
         >
           <VCard>
-            <v-card-title primary-title>
+            <VCardTitle primary-title>
               <h3>
                 Why Skill IQ?
               </h3>
-            </v-card-title>
-            <v-card-text>
+            </VCardTitle>
+            <VCardText>
               <p>
                 Skill IQ is a measurement of proficiency in a technology skill.
               </p>
               <p>
                 The difficulty of the questions change based on right or wrong answers given by all individuals who have taken a particular assessment. The tests are short and comprehensive because they are based on modern test theories, Bayesian statistics, and machine learning to model skills and find questions which match those skills.
               </p>
-            </v-card-text>
-            <v-card-actions>
-              <v-btn
+            </VCardText>
+            <VCardActions>
+              <VBtn
                 flat
                 large
                 color="primary"
                 href="https://help.pluralsight.com/help/what-is-pluralsight-iris-and-iq"
               >
                 What is Skill IQ?
-              </v-btn>
-            </v-card-actions>
+              </VBtn>
+            </VCardActions>
           </VCard>
         </VFlex>
       </VLayout>
