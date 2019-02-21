@@ -1,81 +1,81 @@
 <template>
-  <v-card>
-    <v-card-text>
-      <v-layout
+  <VCard>
+    <VCardText>
+      <VLayout
         row
         wrap
       >
-        <v-flex
+        <VFlex
           xs12
           md6
         >
           <span>Scheme</span>
-          <v-switch
+          <VSwitch
             v-model="dark"
             primary
             label="Dark"
           />
-        </v-flex>
-        <v-flex
+        </VFlex>
+        <VFlex
           xs12
           md6
         >
           <span>Drawer </span>
 
-          <v-radio-group
+          <VRadioGroup
             v-model="primaryDrawerType"
             column
           >
-            <v-radio
+            <VRadio
               v-for="drawer in drawers"
               :key="drawer"
               primary
               :label="drawer"
               :value="drawer.toLowerCase()"
             />
-          </v-radio-group>
-          <v-switch
+          </VRadioGroup>
+          <VSwitch
             v-model="primaryDrawerClipped"
             label="Clipped"
             primary
           />
-          <v-switch
+          <VSwitch
             v-model="primaryDrawerFloating"
             label="Floating"
             primary
           />
-          <v-switch
+          <VSwitch
             v-model="primaryDrawerMini"
             label="Mini"
             primary
           />
-        </v-flex>
-        <v-flex
+        </VFlex>
+        <VFlex
           xs12
           md6
         >
           <span>Footer</span>
-          <v-switch
+          <VSwitch
             v-model="footerInset"
             label="Inset"
             primary
           />
-        </v-flex>
-      </v-layout>
-    </v-card-text>
-    <v-card-actions>
-      <v-spacer />
-      <v-btn flat>
+        </VFlex>
+      </VLayout>
+    </VCardText>
+    <VCardActions>
+      <VSpacer />
+      <VBtn flat>
         Cancel
-      </v-btn>
-      <v-btn
+      </VBtn>
+      <VBtn
         flat
         color="primary"
       >
         Submit
-      </v-btn>
-    </v-card-actions>
-  </v-card>
+      </VBtn>
+    </VCardActions>
+  </VCard>
 </template>
 <script>
   export default {
