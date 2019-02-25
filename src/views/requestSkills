@@ -1,0 +1,13 @@
+GET /profile/data/skillmeasurements/7ca8dfef-21b9-4a7b-87bb-d3fcc02be9d2 HTTP/1.1
+Host: app.pluralsight.com
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:65.0) Gecko/20100101 Firefox/65.0
+Accept: application/json, text/plain, */*
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate, br
+Referer: https://app.pluralsight.com/profile/xtreemze
+X-NewRelic-ID: VwUGVl5VGwEHUFhRBwUA
+DNT: 1
+Connection: keep-alive
+Cookie: __cfduid=dc733a3bc23d05d1bd81d79dbf4dbe1d81543856371; AMCV_70D658CC558978FF7F000101%40AdobeOrg=1099438348%7CMCIDTS%7C17869%7CMCMID%7C19486966821398405882275633030540391003%7CMCAAMLH-1544461160%7C6%7CMCAAMB-1544461160%7CRKhpRz8krg2tLO6pguXWp5olkAcUniQYPHaMWWgdJ3xzPWQmdj0y%7CMCOPTOUT-1543863560s%7CNONE%7CMCAID%7CNONE%7CvVersion%7C2.1.0; _sdsat_v03 - Global - User ID=; NPS_a97f541b_last_seen=1543856362176; ps_optout=0; ajs_user_id=%227ca8dfef-21b9-4a7b-87bb-d3fcc02be9d2%22; ajs_group_id=null; ajs_anonymous_id=%222323e6e8-06a8-4dd2-a011-9935a6ccf345%22; prism-cookienotify=1549883830842; __cfruid=5ffe10f9b769ef5deaba82562f0ee57da550574b-1549876147; __RequestVerificationToken_L2lk0=cbpeGAReB2l9nqzAMea5j3HS56EFO0j5P1P2PCVRjA91_xVocFQlR_ozg4uJxG7BexKbe6AhoRuUPVAqojGbvpbvr4E1; __cf_bm=ae4978bb0fd8b50528a8fd86c43cba96692f685b-1551098587-1800-AZzJwIadsbVUE+aKWqR2c4nMzno4a91XSxtya7V3dZgnFT2XZgRE9y2NunutfyfX0DpL7CrAtas/Mimq9qBkcv8=
+Pragma: no-cache
+Cache-Control: no-cache

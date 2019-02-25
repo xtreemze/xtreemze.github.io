@@ -1,0 +1,15 @@
+GET /voyager/api/identity/profiles/ACoAAAERAr8BK-MHyWtXBJEK4mMvJirPwv1dSAA/positions HTTP/1.1
+Host: www.linkedin.com
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:65.0) Gecko/20100101 Firefox/65.0
+Accept: application/vnd.linkedin.normalized+json+2.1
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate, br
+Referer: https://www.linkedin.com/in/carlosevelasco/edit/position/1216433325/
+x-li-lang: en_US
+x-li-track: {"clientVersion":"1.2.7373.0","osName":"web","timezoneOffset":1,"deviceFormFactor":"DESKTOP","mpName":"voyager-web"}
+x-li-page-instance: urn:li:page:d_flagship3_profile_self_edit_position;5ub5UbM8T+erkZGMqQ7Tyg==
+csrf-token: ajax:0769064671846987650
+x-restli-protocol-version: 2.0.0
+DNT: 1
+Connection: keep-alive
+Cookie: bcookie="v=2&9249a6cd-8d80-4132-804e-ac7b566b97ec"; bscookie="v=1&201812031150108e42e673-816d-4abf-82ee-6a389e6561d8AQHr09hGl0bfpCzwpI2KcPZBkDXPt-oN"; JSESSIONID="ajax:0769064671846987650"; sl="v=1&8QKMo"; li_at=AQEDAQERAr8Bm69_AAABZ4j2AGMAAAFpJK0s8k0AmzxYi1nwcW3W5ylJwaQTe1j-bmOjUNhKP1V0gMui9kMlZEZ4p_GCAw6s6a0kMsVHwPWbBFLdXmxsh-VCT6hsJ162_pJCCNcTxAkIOk_mIHFSDEGe; liap=true; _lipt=CwEAAAFpJJkvCil5JFmyy4ZtB76sIiu9r-ewoVbuhuBdc0AffTVisfrfEiFItpMHbpJkgHf7FfTOAkdOVA-sQA88Z6Am_9eSg6Wi-PGJyOjJdqYuPaBRMIPk3mu-QgecZ98q_Y1Aa1Mu2ItZxj0_mfJu5dVQrv-4X-S2TZduWEZVSvsUnaroS_PaQGsupMGshjKo4I9F68r2UXmDRXlNxsTY3e2rQm127ReWzdJi02_qcCJuyG4JfgkVVYjR7XEJnm4oAP1gVv3UV8CJj5Gr0NFvFvXov1P2ZkVs3cUOh1omAiIg2fzgwV1cmEPPnOowPJDcclEvoLQJtgJ3kT935ORcee6GqaPwVZ8VdubtiIliRniJ1UyD9a4WzvMzzaWk9n8sb1bTjux6rOn6LlSfE9QwyA9BawymkaF2u-7xvO9e67CmBcm5oDTB2bI9B5FYcZ2sJxtxMjqlCIhNXqdPHKbRUfVG2LZDoJzFNj3zkUKS61MUECB_DmM8gR_bUeZ3SkwKiHjd52G1E5m94M9uX6HVZEjVQ3H01W8NsLvs5iFMBtmyHsqWr90gDbo5tVZcax7cBSIaPy2g5_iNBN8trNaEcrJBsTmpiQ; lang=v=2&lang=en-us; lidc="b=TB31:g=2152:u=837:i=1551095949:t=1551176882:s=AQGC1HvCJGUIOEwP7FRyxz1pe2C72O5u"

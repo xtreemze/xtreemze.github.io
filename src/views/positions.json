@@ -1,0 +1,705 @@
+{
+	"data": {
+	"included": [
+		{
+			"$deletedFields": [
+				"universalName"
+			],
+			"objectUrn": "urn:li:company:797364",
+			"entityUrn": "urn:li:fs_miniCompany:797364",
+			"name": "Central American Technological University",
+			"showcase": false,
+			"active": true,
+			"logo": {
+				"artifacts": [
+					{
+						"width": 200,
+						"fileIdentifyingUrlPathSegment": "200_200/0?e=1559174400&v=beta&t=burQ8lUeX1fNN0YTn_3ZhcoEZ7rKZ-1OaIw2dmWgkCA",
+						"expiresAt": 1559174400000,
+						"height": 200,
+						"$type": "com.linkedin.common.VectorArtifact"
+					},
+					{
+						"width": 100,
+						"fileIdentifyingUrlPathSegment": "100_100/0?e=1559174400&v=beta&t=fswNCdo5T7dYwhoebc2zxO-JxyjwHsTCp2RarqAlg6c",
+						"expiresAt": 1559174400000,
+						"height": 100,
+						"$type": "com.linkedin.common.VectorArtifact"
+					},
+					{
+						"width": 400,
+						"fileIdentifyingUrlPathSegment": "400_400/0?e=1559174400&v=beta&t=pslC8X5J0deebGlcJJ8RhfwNwjHVnLK7Oe3IHAhXPsQ",
+						"expiresAt": 1559174400000,
+						"height": 400,
+						"$type": "com.linkedin.common.VectorArtifact"
+					}
+				],
+				"rootUrl": "https://media.licdn.com/dms/image/C4E0BAQHERiuLCU5D4w/company-logo_",
+				"$type": "com.linkedin.common.VectorImage"
+			},
+			"trackingId": "EFKQlo41SdutP0AvNi0B3g==",
+			"$type": "com.linkedin.voyager.entities.shared.MiniCompany"
+		},
+		{
+			"$deletedFields": [
+				"universalName"
+			],
+			"objectUrn": "urn:li:company:7091",
+			"entityUrn": "urn:li:fs_miniCompany:7091",
+			"name": "Savannah College of Art and Design",
+			"showcase": false,
+			"active": true,
+			"logo": {
+				"artifacts": [
+					{
+						"width": 200,
+						"fileIdentifyingUrlPathSegment": "200_200/0?e=1559174400&v=beta&t=WPKtCuB7U7T1iDdkctg9pC8Qh5onamEFVWw-YWVLX0A",
+						"expiresAt": 1559174400000,
+						"height": 200,
+						"$type": "com.linkedin.common.VectorArtifact"
+					},
+					{
+						"width": 100,
+						"fileIdentifyingUrlPathSegment": "100_100/0?e=1559174400&v=beta&t=Tjo17GxTvF8DI4GimEPz-z7KGHcWmtDbq2U4aIB2GXY",
+						"expiresAt": 1559174400000,
+						"height": 100,
+						"$type": "com.linkedin.common.VectorArtifact"
+					},
+					{
+						"width": 400,
+						"fileIdentifyingUrlPathSegment": "400_400/0?e=1559174400&v=beta&t=Mn6LmZiLQj5FvBNDIb38BhP52DCSwGUn8f-BDP0uB00",
+						"expiresAt": 1559174400000,
+						"height": 400,
+						"$type": "com.linkedin.common.VectorArtifact"
+					}
+				],
+				"rootUrl": "https://media.licdn.com/dms/image/C4D0BAQHfuzbgvltmBw/company-logo_",
+				"$type": "com.linkedin.common.VectorImage"
+			},
+			"trackingId": "32Nli2+HTbWQh3PASfIusQ==",
+			"$type": "com.linkedin.voyager.entities.shared.MiniCompany"
+		},
+		{
+			"$deletedFields": [
+				"universalName"
+			],
+			"objectUrn": "urn:li:company:3232330",
+			"entityUrn": "urn:li:fs_miniCompany:3232330",
+			"name": "Lequa",
+			"showcase": false,
+			"active": true,
+			"logo": {
+				"artifacts": [
+					{
+						"width": 200,
+						"fileIdentifyingUrlPathSegment": "200_200/0?e=1559174400&v=beta&t=gnafrkn3Si_6EUK1Ihanhx19j3Lz80q4mlOkqqYzDq0",
+						"expiresAt": 1559174400000,
+						"height": 200,
+						"$type": "com.linkedin.common.VectorArtifact"
+					},
+					{
+						"width": 100,
+						"fileIdentifyingUrlPathSegment": "100_100/0?e=1559174400&v=beta&t=hycX4BeNDKBIB7_QjhiG4Z88ZuaWvAXfQ_UEa788yx0",
+						"expiresAt": 1559174400000,
+						"height": 100,
+						"$type": "com.linkedin.common.VectorArtifact"
+					},
+					{
+						"width": 400,
+						"fileIdentifyingUrlPathSegment": "400_400/0?e=1559174400&v=beta&t=k7tFpIUjnKTGxbgYAe4MNgS8xy_bvvJ-sb618IkI1ow",
+						"expiresAt": 1559174400000,
+						"height": 400,
+						"$type": "com.linkedin.common.VectorArtifact"
+					}
+				],
+				"rootUrl": "https://media.licdn.com/dms/image/C4D0BAQH_B2vJ780zvw/company-logo_",
+				"$type": "com.linkedin.common.VectorImage"
+			},
+			"trackingId": "gtEQDuxdTWu6ARJuRk0E2g==",
+			"$type": "com.linkedin.voyager.entities.shared.MiniCompany"
+		},
+		{
+			"$deletedFields": [
+				"universalName"
+			],
+			"objectUrn": "urn:li:company:3016328",
+			"entityUrn": "urn:li:fs_miniCompany:3016328",
+			"name": "Teleservice Skåne AB",
+			"showcase": false,
+			"active": true,
+			"logo": {
+				"artifacts": [
+					{
+						"width": 200,
+						"fileIdentifyingUrlPathSegment": "200_200/0?e=1559174400&v=beta&t=ilQT0QBQa4tvH8gRX0wOpkzprOT5zEjfgapEmD3UGKU",
+						"expiresAt": 1559174400000,
+						"height": 200,
+						"$type": "com.linkedin.common.VectorArtifact"
+					},
+					{
+						"width": 100,
+						"fileIdentifyingUrlPathSegment": "100_100/0?e=1559174400&v=beta&t=5t-tcXAF8abvkPUC3LRo2yIZTlYc8k5HXFivtiVQ34g",
+						"expiresAt": 1559174400000,
+						"height": 100,
+						"$type": "com.linkedin.common.VectorArtifact"
+					},
+					{
+						"width": 400,
+						"fileIdentifyingUrlPathSegment": "400_400/0?e=1559174400&v=beta&t=ywAwXW8-qJDEqoBZcRUNSNPqyYGaQFVjrd0q7VLtv1s",
+						"expiresAt": 1559174400000,
+						"height": 400,
+						"$type": "com.linkedin.common.VectorArtifact"
+					}
+				],
+				"rootUrl": "https://media.licdn.com/dms/image/C4D0BAQFsqjqkOWHySQ/company-logo_",
+				"$type": "com.linkedin.common.VectorImage"
+			},
+			"trackingId": "HQ0OwUYjRgiWY3Fw65C09A==",
+			"$type": "com.linkedin.voyager.entities.shared.MiniCompany"
+		},
+		{
+			"$deletedFields": [
+				"universalName"
+			],
+			"objectUrn": "urn:li:company:200205",
+			"entityUrn": "urn:li:fs_miniCompany:200205",
+			"name": "ÅF",
+			"showcase": false,
+			"active": true,
+			"logo": {
+				"artifacts": [
+					{
+						"width": 200,
+						"fileIdentifyingUrlPathSegment": "200_200/0?e=1559174400&v=beta&t=ms3481SteiawkGFXNA8sycQJU7OKTLg_3Rx-HYtGNqE",
+						"expiresAt": 1559174400000,
+						"height": 200,
+						"$type": "com.linkedin.common.VectorArtifact"
+					},
+					{
+						"width": 100,
+						"fileIdentifyingUrlPathSegment": "100_100/0?e=1559174400&v=beta&t=bD-DtW7I51kKT74o1GS252LDzrYvrasxLU9WCRtGqik",
+						"expiresAt": 1559174400000,
+						"height": 100,
+						"$type": "com.linkedin.common.VectorArtifact"
+					},
+					{
+						"width": 400,
+						"fileIdentifyingUrlPathSegment": "400_400/0?e=1559174400&v=beta&t=wPgJ-7tDJ2H6FlQ07wQD2Qwc6OQ3IbuZP_NBHMlSuI0",
+						"expiresAt": 1559174400000,
+						"height": 400,
+						"$type": "com.linkedin.common.VectorArtifact"
+					}
+				],
+				"rootUrl": "https://media.licdn.com/dms/image/C4E0BAQHd4aX-z5LAFw/company-logo_",
+				"$type": "com.linkedin.common.VectorImage"
+			},
+			"trackingId": "aPgBXS1HStGWJA7Uwm7gKQ==",
+			"$type": "com.linkedin.voyager.entities.shared.MiniCompany"
+		},
+		{
+			"$deletedFields": [
+				"universalName"
+			],
+			"objectUrn": "urn:li:company:3858292",
+			"entityUrn": "urn:li:fs_miniCompany:3858292",
+			"name": "2Active Design",
+			"showcase": false,
+			"active": true,
+			"logo": {
+				"artifacts": [
+					{
+						"width": 200,
+						"fileIdentifyingUrlPathSegment": "200_200/0?e=1559174400&v=beta&t=CHUfspLxzBTHLzw0e0HNO_8F9BpLUIvgWGRPN31G-4Q",
+						"expiresAt": 1559174400000,
+						"height": 200,
+						"$type": "com.linkedin.common.VectorArtifact"
+					},
+					{
+						"width": 100,
+						"fileIdentifyingUrlPathSegment": "100_100/0?e=1559174400&v=beta&t=hSdQuEcAS7ym8-n6T0wbJi83ZxDyF92ri8ghBcY9PBE",
+						"expiresAt": 1559174400000,
+						"height": 100,
+						"$type": "com.linkedin.common.VectorArtifact"
+					},
+					{
+						"width": 400,
+						"fileIdentifyingUrlPathSegment": "400_400/0?e=1559174400&v=beta&t=quDdi9qnlq3fe4UwdLRdJbwwwVQl2FQZ-szdpmgS0ck",
+						"expiresAt": 1559174400000,
+						"height": 400,
+						"$type": "com.linkedin.common.VectorArtifact"
+					}
+				],
+				"rootUrl": "https://media.licdn.com/dms/image/C4E0BAQGgOf0qkcxOuA/company-logo_",
+				"$type": "com.linkedin.common.VectorImage"
+			},
+			"trackingId": "C/dBmX3ETA2Yxg/6ikwssA==",
+			"$type": "com.linkedin.voyager.entities.shared.MiniCompany"
+		},
+		{
+			"$deletedFields": [
+				"universalName"
+			],
+			"objectUrn": "urn:li:company:18223178",
+			"entityUrn": "urn:li:fs_miniCompany:18223178",
+			"name": "Open Source",
+			"showcase": false,
+			"active": true,
+			"logo": {
+				"artifacts": [
+					{
+						"width": 200,
+						"fileIdentifyingUrlPathSegment": "200_200/0?e=1559174400&v=beta&t=uMHaexmj70ZvzjcD5W39Zn0vDW6syzauRqCc2bIh9jM",
+						"expiresAt": 1559174400000,
+						"height": 200,
+						"$type": "com.linkedin.common.VectorArtifact"
+					},
+					{
+						"width": 100,
+						"fileIdentifyingUrlPathSegment": "100_100/0?e=1559174400&v=beta&t=jGYXm681Y8LLtYmIKV4WFXj7Y5PATpw-zSiNfuXcWJ4",
+						"expiresAt": 1559174400000,
+						"height": 100,
+						"$type": "com.linkedin.common.VectorArtifact"
+					},
+					{
+						"width": 400,
+						"fileIdentifyingUrlPathSegment": "400_400/0?e=1559174400&v=beta&t=YTiDW6zbCJ0coKjJ2hr14p8LG0_jL2EDdNWxPC3cKaQ",
+						"expiresAt": 1559174400000,
+						"height": 400,
+						"$type": "com.linkedin.common.VectorArtifact"
+					}
+				],
+				"rootUrl": "https://media.licdn.com/dms/image/C4E0BAQHbVygqDu1Usg/company-logo_",
+				"$type": "com.linkedin.common.VectorImage"
+			},
+			"trackingId": "O7utNPtITJmkmP4rqpA2ng==",
+			"$type": "com.linkedin.voyager.entities.shared.MiniCompany"
+		},
+		{
+			"$deletedFields": [
+				"universalName"
+			],
+			"objectUrn": "urn:li:company:473391",
+			"entityUrn": "urn:li:fs_miniCompany:473391",
+			"name": "County Administrative Board of Skåne",
+			"showcase": false,
+			"active": true,
+			"logo": {
+				"artifacts": [
+					{
+						"width": 200,
+						"fileIdentifyingUrlPathSegment": "200_200/0?e=1559174400&v=beta&t=EzjhoTNJyNQvr6I8wm4Zv3lcnk7HQHQEag9No0OH_4o",
+						"expiresAt": 1559174400000,
+						"height": 200,
+						"$type": "com.linkedin.common.VectorArtifact"
+					},
+					{
+						"width": 100,
+						"fileIdentifyingUrlPathSegment": "100_100/0?e=1559174400&v=beta&t=ApDd25FwX8Sx_-pPlT-51i2txz14p-rJCUOyqO4m0TQ",
+						"expiresAt": 1559174400000,
+						"height": 100,
+						"$type": "com.linkedin.common.VectorArtifact"
+					},
+					{
+						"width": 400,
+						"fileIdentifyingUrlPathSegment": "400_400/0?e=1559174400&v=beta&t=iUamlxPj52WmcGTRCK3Eozfie0xRX9kOAEadzo1fHeo",
+						"expiresAt": 1559174400000,
+						"height": 400,
+						"$type": "com.linkedin.common.VectorArtifact"
+					}
+				],
+				"rootUrl": "https://media.licdn.com/dms/image/C510BAQHnFQPvNx9XnQ/company-logo_",
+				"$type": "com.linkedin.common.VectorImage"
+			},
+			"trackingId": "pY54voV4QNK7SIfkUBTgMA==",
+			"$type": "com.linkedin.voyager.entities.shared.MiniCompany"
+		},
+		{
+			"locationName": "Malmo, Sweden",
+			"projects": [
+				"urn:li:fs_project:(ACoAAAERAr8BK-MHyWtXBJEK4mMvJirPwv1dSAA,783467979)"
+			],
+			"companyName": "Open Source",
+			"description": "- Developed cross-platform single-page progressive web-apps, tools, websites and games for public use.\n- Focused on Javascript, Typescript, NPM, Webpack, HTML5, & CSS.",
+			"title": "Full-stack Developer",
+			"companyUrn": "urn:li:fs_miniCompany:18223178",
+			"recommendations": [],
+			"honors": [
+				"urn:li:fs_honor:(ACoAAAERAr8BK-MHyWtXBJEK4mMvJirPwv1dSAA,783276190)"
+			],
+			"$type": "com.linkedin.voyager.identity.profile.Position",
+			"$deletedFields": [
+				"courses",
+				"entityLocale",
+				"organizations",
+				"promotion"
+			],
+			"entityUrn": "urn:li:fs_position:(ACoAAAERAr8BK-MHyWtXBJEK4mMvJirPwv1dSAA,1360166500)",
+			"timePeriod": {
+				"startDate": {
+					"month": 6,
+					"year": 2014,
+					"$type": "com.linkedin.common.Date"
+				},
+				"$type": "com.linkedin.voyager.common.DateRange"
+			},
+			"company": {
+				"employeeCountRange": {
+					"start": 0,
+					"end": 1,
+					"$type": "com.linkedin.voyager.identity.profile.EmployeeCountRange"
+				},
+				"industries": [
+					"Computer Software"
+				],
+				"*miniCompany": "urn:li:fs_miniCompany:18223178",
+				"$type": "com.linkedin.voyager.identity.profile.PositionCompany"
+			},
+			"region": "urn:li:fs_region:(se,8077)"
+		},
+		{
+			"$deletedFields": [
+				"courses",
+				"projects",
+				"honors",
+				"entityLocale",
+				"organizations",
+				"region",
+				"promotion"
+			],
+			"locationName": "Malmo, Sweden",
+			"entityUrn": "urn:li:fs_position:(ACoAAAERAr8BK-MHyWtXBJEK4mMvJirPwv1dSAA,1216433325)",
+			"companyName": "ÅF",
+			"timePeriod": {
+				"startDate": {
+					"month": 2,
+					"year": 2018,
+					"$type": "com.linkedin.common.Date"
+				},
+				"$type": "com.linkedin.voyager.common.DateRange"
+			},
+			"description": "- Assigned to various companies as a Senior Frontend Development Consultant with a strong User Experience, Graphic Design, Web , IT and Game Design background.\n- Leveraged a solid design foundation to directly and efficiently collaborate with User Experience Designers or alternatively design, prototype, test and deploy UI/UX as needed.\n- Specialized in cross-platform Javascript and Typescript Development and Graphic Design.",
+			"company": {
+				"employeeCountRange": {
+					"start": 10001,
+					"$type": "com.linkedin.voyager.identity.profile.EmployeeCountRange"
+				},
+				"industries": [
+					"Civil Engineering"
+				],
+				"*miniCompany": "urn:li:fs_miniCompany:200205",
+				"$type": "com.linkedin.voyager.identity.profile.PositionCompany"
+			},
+			"title": "Senior Frontend Developer / User Experience Designer ",
+			"companyUrn": "urn:li:fs_miniCompany:200205",
+			"recommendations": [],
+			"$type": "com.linkedin.voyager.identity.profile.Position"
+		},
+		{
+			"$deletedFields": [
+				"courses",
+				"projects",
+				"honors",
+				"entityLocale",
+				"organizations",
+				"region",
+				"promotion"
+			],
+			"locationName": "La Ceiba, Honduras",
+			"entityUrn": "urn:li:fs_position:(ACoAAAERAr8BK-MHyWtXBJEK4mMvJirPwv1dSAA,130286303)",
+			"companyName": "Central American Technological University",
+			"timePeriod": {
+				"endDate": {
+					"month": 12,
+					"year": 2013,
+					"$type": "com.linkedin.common.Date"
+				},
+				"startDate": {
+					"month": 7,
+					"year": 2010,
+					"$type": "com.linkedin.common.Date"
+				},
+				"$type": "com.linkedin.voyager.common.DateRange"
+			},
+			"description": "- Revitalized and maintained the Graphic Design among the top 3 programs with the highest student retention and satisfaction rates at a university level.\n- Served as course master for various graphic design subjects such as visual communication, photography, web development, animation, typography, informatics, and e-commerce.\n- Educated over 300 students in the areas of video production, game development, and graphic design.",
+			"company": {
+				"employeeCountRange": {
+					"start": 1001,
+					"end": 5000,
+					"$type": "com.linkedin.voyager.identity.profile.EmployeeCountRange"
+				},
+				"industries": [
+					"Higher Education"
+				],
+				"*miniCompany": "urn:li:fs_miniCompany:797364",
+				"$type": "com.linkedin.voyager.identity.profile.PositionCompany"
+			},
+			"title": "Graphic Design Department Chair & University Professor",
+			"companyUrn": "urn:li:fs_miniCompany:797364",
+			"recommendations": [
+				"urn:li:fs_recommendation:(ACoAAAfuiy4BATCINSlwovepJaebLa-9S5Zdi3k,ACoAAAERAr8BK-MHyWtXBJEK4mMvJirPwv1dSAA,609513864)"
+			],
+			"$type": "com.linkedin.voyager.identity.profile.Position"
+		},
+		{
+			"locationName": "Malmo, Sweden",
+			"projects": [
+				"urn:li:fs_project:(ACoAAAERAr8BK-MHyWtXBJEK4mMvJirPwv1dSAA,782377660)",
+				"urn:li:fs_project:(ACoAAAERAr8BK-MHyWtXBJEK4mMvJirPwv1dSAA,782563701)"
+			],
+			"companyName": "Lequa",
+			"description": "- Developed a customer management interface using proposed UI/UX mockups.\n- Developed a customized framework taking performance and modularity concepts from React to build a lightweight and performant, component-based front-end using TypeScript.\n- Leveraged asynchronous browser multithreading capabilities in web workers to sort through millions of results without reducing the display framerate and interrupting the UI thread.\n- Used NPM scripts and Webpack to automate version control and continuous integration scripts for automatic deployment and software testing.\n- Simulated millions of customers to be generated in order to test sorting and display functions.",
+			"title": "Senior Frontend Developer",
+			"companyUrn": "urn:li:fs_miniCompany:3232330",
+			"recommendations": [
+				"urn:li:fs_recommendation:(ACoAABlbMbYBZNhqiVBNm4EdMRscx-cyCsxqZjY,ACoAAAERAr8BK-MHyWtXBJEK4mMvJirPwv1dSAA,590967763)"
+			],
+			"$type": "com.linkedin.voyager.identity.profile.Position",
+			"$deletedFields": [
+				"courses",
+				"honors",
+				"entityLocale",
+				"organizations",
+				"promotion"
+			],
+			"entityUrn": "urn:li:fs_position:(ACoAAAERAr8BK-MHyWtXBJEK4mMvJirPwv1dSAA,1360163148)",
+			"timePeriod": {
+				"endDate": {
+					"month": 9,
+					"year": 2018,
+					"$type": "com.linkedin.common.Date"
+				},
+				"startDate": {
+					"month": 2,
+					"year": 2018,
+					"$type": "com.linkedin.common.Date"
+				},
+				"$type": "com.linkedin.voyager.common.DateRange"
+			},
+			"company": {
+				"employeeCountRange": {
+					"start": 51,
+					"end": 200,
+					"$type": "com.linkedin.voyager.identity.profile.EmployeeCountRange"
+				},
+				"industries": [
+					"Information Technology and Services"
+				],
+				"*miniCompany": "urn:li:fs_miniCompany:3232330",
+				"$type": "com.linkedin.voyager.identity.profile.PositionCompany"
+			},
+			"region": "urn:li:fs_region:(se,8077)"
+		},
+		{
+			"$deletedFields": [
+				"courses",
+				"projects",
+				"companyUrn",
+				"honors",
+				"entityLocale",
+				"organizations",
+				"company",
+				"promotion"
+			],
+			"locationName": "Savannah, Georgia Area",
+			"entityUrn": "urn:li:fs_position:(ACoAAAERAr8BK-MHyWtXBJEK4mMvJirPwv1dSAA,50711916)",
+			"companyName": "Sysconn New Media",
+			"timePeriod": {
+				"endDate": {
+					"month": 7,
+					"year": 2009,
+					"$type": "com.linkedin.common.Date"
+				},
+				"startDate": {
+					"month": 9,
+					"year": 2008,
+					"$type": "com.linkedin.common.Date"
+				},
+				"$type": "com.linkedin.voyager.common.DateRange"
+			},
+			"description": "- Developed websites and corporate identity branding, design for interactive web or print media.\n- Deployed and managed hundreds of Wordpress and Drupal CMS websites.\n- Researched search engine optimization to better position clients in local and regional search listings.\n- Researched and ensured compliance with web and graphic standards of the time.",
+			"title": "Senior Web Developer",
+			"region": "urn:li:fs_region:(us,752)",
+			"recommendations": [],
+			"$type": "com.linkedin.voyager.identity.profile.Position"
+		},
+		{
+			"locationName": "Honduras, United States, Sweden",
+			"companyName": "2Active Design",
+			"description": "- Accelerated sales and productivity for the retail, warehouse, and food/service sectors with online touchscreen point-of-sale and inventory systems.\n- Designed multi-lingual, business oriented websites and print media with emphasis on responsive design and user-centered interactivity.\n- Enabled live transmission for radio stations such as Palmeras, Bahia and Stereo Macintosh and improved audio quality by reworking the audio chain and broadcasting though an icecast2 server.\n- Designed and deployed networked digital audio/video playback systems for various restaraunts, bars and convention centers.\n- Deployed sound and DMX light equipment for indoor and outdoor events such as the SunJam Festival, Luna y Sol Festival, UNITEC graduations and beauty pageants.\n- Aided in the investigation of home invasions, thefts and vandalism by installing remote, self-powered video surveillance systems.\n- Produced music videos, documentaries and short films with own equipment and recording studio.",
+			"title": "Multimedia Producer",
+			"companyUrn": "urn:li:fs_miniCompany:3858292",
+			"recommendations": [],
+			"honors": [
+				"urn:li:fs_honor:(ACoAAAERAr8BK-MHyWtXBJEK4mMvJirPwv1dSAA,2101109997)"
+			],
+			"$type": "com.linkedin.voyager.identity.profile.Position",
+			"$deletedFields": [
+				"courses",
+				"projects",
+				"entityLocale",
+				"organizations",
+				"promotion"
+			],
+			"entityUrn": "urn:li:fs_position:(ACoAAAERAr8BK-MHyWtXBJEK4mMvJirPwv1dSAA,26614435)",
+			"timePeriod": {
+				"endDate": {
+					"month": 2,
+					"year": 2018,
+					"$type": "com.linkedin.common.Date"
+				},
+				"startDate": {
+					"month": 6,
+					"year": 2006,
+					"$type": "com.linkedin.common.Date"
+				},
+				"$type": "com.linkedin.voyager.common.DateRange"
+			},
+			"company": {
+				"employeeCountRange": {
+					"start": 0,
+					"end": 1,
+					"$type": "com.linkedin.voyager.identity.profile.EmployeeCountRange"
+				},
+				"industries": [
+					"Design"
+				],
+				"*miniCompany": "urn:li:fs_miniCompany:3858292",
+				"$type": "com.linkedin.voyager.identity.profile.PositionCompany"
+			},
+			"region": "urn:li:fs_region:(hn,0)"
+		},
+		{
+			"$deletedFields": [
+				"courses",
+				"honors",
+				"entityLocale",
+				"organizations",
+				"region",
+				"promotion"
+			],
+			"locationName": "Sjöbo, Skåne County, Sweden",
+			"projects": [
+				"urn:li:fs_project:(ACoAAAERAr8BK-MHyWtXBJEK4mMvJirPwv1dSAA,1359822205)"
+			],
+			"entityUrn": "urn:li:fs_position:(ACoAAAERAr8BK-MHyWtXBJEK4mMvJirPwv1dSAA,1374671592)",
+			"companyName": "Teleservice Skåne AB",
+			"timePeriod": {
+				"startDate": {
+					"month": 10,
+					"year": 2018,
+					"$type": "com.linkedin.common.Date"
+				},
+				"$type": "com.linkedin.voyager.common.DateRange"
+			},
+			"description": "- Consultant with the digitalization and automation development team.\n- Introduced Material Design Guidelines with Vuetify,  and Vue CLI for a total UI/UX redesign within one month's time for an internal customer relationship management interface.\n- Introduced linting with mandatory ESLint rules upon Git commit hook to reduce syntax bugs, speed up development and maintain uniformity in coding style.",
+			"company": {
+				"employeeCountRange": {
+					"start": 51,
+					"end": 200,
+					"$type": "com.linkedin.voyager.identity.profile.EmployeeCountRange"
+				},
+				"industries": [
+					"Information Technology and Services"
+				],
+				"*miniCompany": "urn:li:fs_miniCompany:3016328",
+				"$type": "com.linkedin.voyager.identity.profile.PositionCompany"
+			},
+			"title": "Senior Frontend Developer / User Experience Designer",
+			"companyUrn": "urn:li:fs_miniCompany:3016328",
+			"recommendations": [],
+			"$type": "com.linkedin.voyager.identity.profile.Position"
+		},
+		{
+			"$deletedFields": [
+				"courses",
+				"projects",
+				"honors",
+				"entityLocale",
+				"organizations",
+				"region",
+				"promotion"
+			],
+			"locationName": "Kullaberg Nature Reserve, Sweden",
+			"entityUrn": "urn:li:fs_position:(ACoAAAERAr8BK-MHyWtXBJEK4mMvJirPwv1dSAA,814511282)",
+			"companyName": "Länsstyrelsen Skåne",
+			"timePeriod": {
+				"endDate": {
+					"month": 2,
+					"year": 2018,
+					"$type": "com.linkedin.common.Date"
+				},
+				"startDate": {
+					"month": 1,
+					"year": 2016,
+					"$type": "com.linkedin.common.Date"
+				},
+				"$type": "com.linkedin.voyager.common.DateRange"
+			},
+			"description": "- Developed a participatory management tool for adaptive management in the nature reserve and for scientific research.\n- Engineered and produced inventory and resource management software for internal use.\n- Designed, developed and maintained Progressive Web Apps such as hikingkullaberg.com, a reporting app an interactive Infodesk kiosk, a slideshow display and a touchscreen map.\n- Deployed network infrastructure to ensure staff and visitors have reliable internet connectivity.\n- Created signage and print material according to established graphical style guidelines.\n- Documented conservation efforts and promoted tourism with innovative aerial and 360 videography.",
+			"company": {
+				"employeeCountRange": {
+					"start": 501,
+					"end": 1000,
+					"$type": "com.linkedin.voyager.identity.profile.EmployeeCountRange"
+				},
+				"industries": [
+					"Government Administration"
+				],
+				"*miniCompany": "urn:li:fs_miniCompany:473391",
+				"$type": "com.linkedin.voyager.identity.profile.PositionCompany"
+			},
+			"title": "Full-Stack JavaScript Developer",
+			"companyUrn": "urn:li:fs_miniCompany:473391",
+			"recommendations": [
+				"urn:li:fs_recommendation:(ACoAAAQhgigBoi9yTWQ7TvxG-Ub3l2VtsdDeA8U,ACoAAAERAr8BK-MHyWtXBJEK4mMvJirPwv1dSAA,594738556)"
+			],
+			"$type": "com.linkedin.voyager.identity.profile.Position"
+		},
+		{
+			"$deletedFields": [
+				"courses",
+				"projects",
+				"honors",
+				"entityLocale",
+				"organizations",
+				"promotion"
+			],
+			"locationName": "Savannah, Georgia Area",
+			"entityUrn": "urn:li:fs_position:(ACoAAAERAr8BK-MHyWtXBJEK4mMvJirPwv1dSAA,26614322)",
+			"companyName": "Savannah College of Art and Design",
+			"timePeriod": {
+				"endDate": {
+					"month": 3,
+					"year": 2008,
+					"$type": "com.linkedin.common.Date"
+				},
+				"startDate": {
+					"month": 2,
+					"year": 2006,
+					"$type": "com.linkedin.common.Date"
+				},
+				"$type": "com.linkedin.voyager.common.DateRange"
+			},
+			"description": "- Promoted to a managerial role for high-end audio-visual equipment rental and inventory then hired in the systems department after demonstrating information technology competency.\n- Accelerated operations by automating daily shift reports for equipment inventory.\n- Implemented the use of automated digital signage and developed software for use by non-technical staff.\n- Monitored critical IT infrastructure, security systems, and building activity, keeping a log of incidents in an online database.",
+			"company": {
+				"employeeCountRange": {
+					"start": 1001,
+					"end": 5000,
+					"$type": "com.linkedin.voyager.identity.profile.EmployeeCountRange"
+				},
+				"industries": [
+					"Higher Education"
+				],
+				"*miniCompany": "urn:li:fs_miniCompany:7091",
+				"$type": "com.linkedin.voyager.identity.profile.PositionCompany"
+			},
+			"title": "Information Technology System Administrator",
+			"region": "urn:li:fs_region:(us,752)",
+			"companyUrn": "urn:li:fs_miniCompany:7091",
+			"recommendations": [
+				"urn:li:fs_recommendation:(ACoAAAC63LkBEf0LuB8wVl2wq1LfDgazCr3b0S0,ACoAAAERAr8BK-MHyWtXBJEK4mMvJirPwv1dSAA,526185803)"
+			],
+			"$type": "com.linkedin.voyager.identity.profile.Position"
+		}
+	]
+}
