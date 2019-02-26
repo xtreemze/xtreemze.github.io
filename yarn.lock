@@ -2923,9 +2923,9 @@ eslint-config-standard@^12.0.0:
   integrity sha512-COUz8FnXhqFitYj4DTqHzidjIL/t4mumGZto5c7DrBpvWoie+Sn3P4sLEzUGeYhRElWuFEf8K1S1EfvD1vixCQ==
 
 eslint-config-vuetify-pascal@*:
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/eslint-config-vuetify-pascal/-/eslint-config-vuetify-pascal-0.0.3.tgz#15eb557fe48694759fd6c35caefb35c6d98802a2"
-  integrity sha512-9IAC9OKzjR/UvzmXJQ0Mhfl4UMWpr9EyJHYTMn4EGG5dn1USPUR6TrTwp32Wt8sEU+n+GPq56EBlXt8v1fYdLg==
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/eslint-config-vuetify-pascal/-/eslint-config-vuetify-pascal-0.0.4.tgz#56570c4f37ab40099a3a454414288f09b77ee844"
+  integrity sha512-N4x/HA9Q9K39dnQrEkbM5/2r9G1zzKJAJFdlCF7dObT9WNUgwNGXem90qg/OxGlkv8TpOMaluwNVIX0LiqDGdg==
   dependencies:
     babel-eslint "^10.0.1"
     eslint-config-standard "^12.0.0"
