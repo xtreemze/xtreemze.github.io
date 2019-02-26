@@ -75,7 +75,6 @@
             <VListTileTitle>
               Interface
             </VListTileTitle>
-
             <VListTileSubTitle>
               Display options
             </VListTileSubTitle>
@@ -122,152 +121,100 @@
     </VFooter>
   </VApp>
 </template>
-
 <script>
   export default {
-    data: () => ({
-
+    data: () => {return {
     }
-    ),
+    },
     computed: {
       title: {
         get () {
-
           return this.$store.state.title
-
         },
         set (value) {
-
           this.$store.commit('updateTitle', value)
-
-        }
+        },
       },
       primaryDrawerModel: {
         get () {
-
           return this.$store.state.primaryDrawer.model
-
         },
         set (value) {
-
           this.$store.commit('updatePrimaryDrawerModel', value)
-
-        }
+        },
       },
       primaryDrawerType: {
         get () {
-
           return this.$store.state.primaryDrawer.type
-
         },
         set (value) {
-
           this.$store.commit('updatePrimaryDrawerType', value)
-
-        }
+        },
       },
       primaryDrawerClipped: {
         get () {
-
           return this.$store.state.primaryDrawer.clipped
-
         },
         set (value) {
-
           this.$store.commit('updatePrimaryDrawerClipped', value)
-
-        }
+        },
       },
       primaryDrawerFloating: {
         get () {
-
           return this.$store.state.primaryDrawer.floating
-
         },
         set (value) {
-
           this.$store.commit('updatePrimaryDrawerFloating', value)
-
-        }
+        },
       },
       primaryDrawerMini: {
         get () {
-
           return this.$store.state.primaryDrawer.mini
-
         },
         set (value) {
-
           this.$store.commit('updatePrimaryDrawerMini', value)
-
-        }
+        },
       },
       toolbarFlat: {
         get () {
-
           return this.$store.state.toolbar.flat
-
         },
         set (value) {
-
           this.$store.commit('updateToolbarFlat', value)
-
-        }
-
+        },
       },
       toolbarDense: {
         get () {
-
           return this.$store.state.toolbar.dense
-
         },
         set (value) {
-
           this.$store.commit('updateToolbarDense', value)
-
-        }
-
+        },
       },
       footerInset: {
         get () {
-
           return this.$store.state.footer.inset
-
         },
         set (value) {
-
           this.$store.commit('updateFooterInset', value)
-
-        }
+        },
       },
       footerFloating: {
         get () {
-
           return this.$store.state.footer.floating
-
         },
         set (value) {
-
           this.$store.commit('updateFooterFloating', value)
-
-        }
-
+        },
       },
       primaryDrawerDense: {
         get() {
-
           return this.$store.state.primaryDrawer.dense
-
         },
         set(value) {
-
           this.$store.commit('updatePrimaryDrawerDense', value)
-
-        }
-
-      }
-
-    }
-
+        },
+      },
+    },
   }
 </script>

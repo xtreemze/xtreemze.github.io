@@ -66,7 +66,6 @@
             @input="minScoreUpdate"
           />
         </VFlex>
-
         <VFlex
           xs12
           sm6
@@ -133,13 +132,9 @@
 </template>
 <script>
   import Chart from 'chart.js'
-
   import skills from './skills.json'
-
   export default {
-
     data: function () {
-
       return {
         size: '125',
         minSize: '600',
@@ -152,19 +147,14 @@
         percentile: [],
         color: [],
         minScore: 0,
-        labels: []
+        labels: [],
       }
-
     },
     created: function () {
-
-      skills.sort((a, b) => b.percentile - a.percentile)
+      skills.sort((a, b) => { return b.percentile - a.percentile })
       this.initialSkillSort()
-
       this.$nextTick(() => {
-
         this.ctx = document.getElementById('myChart').getContext('2d')
-
         this.skillChart = new Chart(this.ctx, {
           type: 'radar',
           data: {
@@ -174,68 +164,58 @@
                 label: '',
                 data: this.iconScore,
                 backgroundColor: [
-                  'rgba(0, 0, 0, 0)'
+                  'rgba(0, 0, 0, 0)',
                 ],
                 borderColor: [
-                  'rgba(0,0,0,0)'
+                  'rgba(0,0,0,0)',
                 ],
                 borderWidth: 0,
                 lineTension: 0,
                 pointRadius: 0,
-                pointStyle: this.icons
+                pointStyle: this.icons,
               },
               {
                 label: 'IQ',
                 data: this.roleIQ,
                 backgroundColor: [
-                  'rgba(99, 99, 192, 0.1)'
+                  'rgba(99, 99, 192, 0.1)',
                 ],
                 borderColor: [
-                  'rgba(99,99,192,0.2)'
+                  'rgba(99,99,192,0.2)',
                 ],
                 borderWidth: 4,
                 lineTension: 0.02,
                 pointRadius: 6,
                 pointHoverRadius: 12,
                 pointBackgroundColor: this.color,
-                pointStyle: 'circle'
-              }
-
-            ]
+                pointStyle: 'circle',
+              },
+            ],
           },
           options: {
-
             maintainAspectRatio: 1,
             legend: { display: false },
             scale: {
               ticks: {
                 min: 0,
                 max: 350,
-                display: false
-              }
-            }
-
-          }
+                display: false,
+              },
+            },
+          },
         })
         this.minScore = 128
         this.minScoreUpdate()
-
       })
-
     },
     methods: {
       initialSkillSort: function () {
-
         this.skillJSON = skills
-
         this.skillJSON.forEach(skill => {
-
           if (skill.score > this.minScore) {
-
             const icon = new Image()
 
             icon.src = skill.thumbnailUrl
-
             icon.width = 62
             icon.height = 62
             this.icons.push(icon)
@@ -244,39 +224,24 @@
             this.percentile.push(skill.percentile * 3)
             this.labels.push(skill.title)
             this.color.push(`rgba(${parseInt(255 - (skill.percentile * 3))}, 209, ${parseInt(skill.percentile * 3)}, 1)`)
-
           }
-
         })
-
       },
-
       addData: function () {
-
         this.skillChart.data.labels = this.labels
-
         this.skillChart.data.datasets[0].data = this.iconScore
         this.skillChart.data.datasets[1].data = this.roleIQ
         this.skillChart.update()
-
       },
       removeData: function removeData () {
-
         this.skillChart.data.labels.pop()
         this.skillChart.data.datasets.forEach((dataset) => {
-
           dataset.data.pop()
-
         })
-
       },
-
       minScoreUpdate: function () {
-
         while (this.skillChart.data.labels.length > 0) {
-
           this.removeData()
-
         }
         this.icons = []
         this.color = []
@@ -286,13 +251,10 @@
         this.labels = []
         this.initialSkillSort()
         this.addData()
-
-      }
-    }
-
+      },
+    },
   }
 </script>
-
 <style scoped>
 .skillsCard {
   overflow: hidden;
