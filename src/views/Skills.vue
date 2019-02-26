@@ -214,7 +214,6 @@
         this.skillJSON.forEach(skill => {
           if (skill.score > this.minScore) {
             const icon = new Image()
-
             icon.src = skill.thumbnailUrl
             icon.width = 62
             icon.height = 62
