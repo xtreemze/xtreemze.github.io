@@ -32,6 +32,15 @@
   color: var(--accent);
 }
 
+.hero h1,
+.section-heading,
+.project-card h3,
+.footer-title,
+.case-hero h1 {
+  overflow-wrap: anywhere;
+  hyphens: auto;
+}
+
 @media (max-width: 860px) {
   .header-inner .language-nav {
     order: 1;
@@ -48,6 +57,12 @@
     width: 100%;
     justify-content: flex-end;
     padding-left: 0;
+  }
+}
+
+@media (max-width: 360px) {
+  .hero h1 {
+    font-size: clamp(2.75rem, 14vw, 3.4rem);
   }
 }
 
