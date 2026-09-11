@@ -5,15 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0a0b0d">
   <meta name="color-scheme" content="dark">
-  <meta name="description" content="Carlos Velasco — software engineer and systems designer building interactive tools, simulations, games, firmware and public-facing software.">
+  <meta name="description" content="Carlos Velasco — software engineer and systems designer building media playback systems, deterministic simulations, developer tooling, vehicle telemetry interfaces and programmable input software.">
   <meta property="og:title" content="Carlos Velasco — Systems, software, interaction">
-  <meta property="og:description" content="Selected work across interactive systems, procedural software, games, field applications and keyboard firmware.">
+  <meta property="og:description" content="Selected work across media systems, deterministic simulation, developer tooling, vehicle telemetry, interactive software and keyboard firmware.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://xtreemze.github.io/">
   <meta property="og:image" content="https://avatars.githubusercontent.com/u/8251335?v=4">
   <link rel="canonical" href="https://xtreemze.github.io/">
   <link rel="icon" href="/favicon.ico">
   <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/project-overrides.css">
   <title>Carlos Velasco — Systems, software, interaction</title>
 </head>
 <body>
@@ -40,11 +41,11 @@
         <p class="eyebrow">Software engineer · systems designer · builder</p>
         <h1>I make complex systems legible, tactile and useful.</h1>
         <p class="hero-copy">
-          I work across software, interaction design, simulation, procedural systems and hardware-adjacent interfaces. The recurring problem is the same: understand the system deeply, then make its behavior clear enough to use, explore and trust.
+          I work across software, interaction design, simulation, media systems and hardware-adjacent interfaces. The recurring problem is the same: understand the system deeply, then make its behavior clear enough to use, explore and trust.
         </p>
         <div class="hero-actions">
           <a class="button primary" href="#work">Explore selected work</a>
-          <a class="button" href="https://github.com/xtreemze?tab=repositories" target="_blank" rel="noreferrer">Browse repositories</a>
+          <a class="button" href="https://github.com/xtreemze?tab=repositories" target="_blank" rel="noreferrer">Browse public repositories</a>
         </div>
       </div>
 
@@ -53,7 +54,7 @@
           <img src="https://avatars.githubusercontent.com/u/8251335?v=4" alt="Portrait of Carlos Velasco" width="460" height="460">
           <div class="portrait-caption">
             <span>@xtreemze</span>
-            <span>Open source + experiments</span>
+            <span>Open source + private systems</span>
           </div>
         </div>
         <div class="signal-row" aria-label="Areas of practice">
@@ -66,23 +67,99 @@
 
     <section class="section" id="work">
       <div class="site-shell">
-        <p class="section-kicker">Selected public work</p>
+        <p class="section-kicker">Selected work</p>
         <h2 class="section-heading">Projects that expose how I think.</h2>
         <p class="section-intro">
-          These projects span different domains, but they share an interest in behavior: how a system reacts, how a person steers it, and how much of the underlying model the interface should reveal.
+          Public repositories sit beside selected private work here. The common thread is architectural: explicit authority, observable behavior, strong boundaries and interfaces that help people reason about complicated systems.
         </p>
 
         <div class="project-grid">
+          <article class="project-card featured private-project">
+            <div>
+              <span class="project-number">01 / Media systems</span>
+            </div>
+            <div>
+              <h3>Slipmat</h3>
+              <p>A playback-first multimedia client for owned and self-hosted media. Slipmat treats playback as an explicit system: one authoritative timeline, inspectable source and generation identity, a persistent Playback Rail, native audio processing, rich visualization and deep music analysis across Jellyfin and local media.</p>
+              <div class="project-meta" aria-label="Slipmat technologies">
+                <span>React 19</span>
+                <span>Rust 2024</span>
+                <span>Tauri v2</span>
+                <span>Jellyfin</span>
+                <span>WASM analysis</span>
+              </div>
+              <span class="project-status">Private · active product development</span>
+            </div>
+          </article>
+
+          <article class="project-card standard private-project">
+            <div>
+              <span class="project-number">02 / Deterministic simulation</span>
+            </div>
+            <div>
+              <h3>FireOne</h3>
+              <p>A submarine tactics game about uncertainty, geometry and commitment. The authoritative Rust simulation separates world truth from what the player and AI are allowed to know, with deterministic ECS behavior, sonar-driven incomplete information and replaceable presentation clients.</p>
+              <div class="project-meta" aria-label="FireOne technologies">
+                <span>Rust</span>
+                <span>Bevy ECS</span>
+                <span>Ratatui</span>
+                <span>Determinism</span>
+                <span>Simulation AI</span>
+              </div>
+              <span class="project-status">Private · playable pre-release</span>
+            </div>
+          </article>
+
+          <article class="project-card wide">
+            <div>
+              <span class="project-number">03 / Vehicle telemetry</span>
+            </div>
+            <div>
+              <h3>Signal Broker</h3>
+              <p>Work around a vehicle-network development stack that exposes CAN, LIN and related buses through gRPC instead of binding tools to one language or transport. Its browser client adds gRPC-Web and WebSocket access so live frames and decoded signals can be selected, inspected and charted interactively.</p>
+              <div class="project-meta" aria-label="Signal Broker technologies">
+                <span>Elixir</span>
+                <span>gRPC</span>
+                <span>gRPC-Web</span>
+                <span>CAN / LIN</span>
+                <span>Vue</span>
+              </div>
+              <div class="project-links" aria-label="Signal Broker repositories">
+                <a href="https://github.com/xtreemze/signalbroker-server" target="_blank" rel="noreferrer">Server fork</a>
+                <a href="https://github.com/xtreemze/signalbroker-web-client" target="_blank" rel="noreferrer">Web client fork</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card wide private-project">
+            <div>
+              <span class="project-number">04 / Developer environment</span>
+            </div>
+            <div>
+              <h3>Workstation system</h3>
+              <p>My dotfiles are a reproducible cross-platform workstation rather than a folder of copied configs: machine-aware profiles, declarative packages, GNU Stow boundaries, dry runs, rolling backups, lifecycle hooks, CI validation and an interactive Rust installer across macOS, Linux and Termux.</p>
+              <div class="project-meta" aria-label="Dotfiles technologies">
+                <span>Rust TUI</span>
+                <span>GNU Stow</span>
+                <span>macOS + Linux</span>
+                <span>Termux</span>
+                <span>GitHub Actions</span>
+              </div>
+              <span class="project-status">Private · daily infrastructure</span>
+            </div>
+          </article>
+
           <a class="project-card featured" href="https://github.com/xtreemze/defend" target="_blank" rel="noreferrer">
             <div>
-              <span class="project-number">01 / Procedural systems</span>
+              <span class="project-number">05 / Procedural systems</span>
             </div>
             <div>
               <h3>Defend</h3>
-              <p>A cross-platform 3D tower-defense experiment combining procedural behavior, physics, AI, projectiles and generated sound in the browser.</p>
+              <p>A cross-platform 3D tower-defense project combining procedural behavior, physics, AI, projectiles and generated sound in the browser. It is an ongoing laboratory for simulation, performance and systems that must remain understandable while becoming more dynamic.</p>
               <div class="project-meta" aria-label="Defend technologies">
                 <span>Babylon.js</span>
                 <span>TypeScript</span>
+                <span>Physics</span>
                 <span>AI</span>
                 <span>Procedural audio</span>
               </div>
@@ -90,30 +167,13 @@
             </div>
           </a>
 
-          <a class="project-card standard" href="https://github.com/xtreemze/Lemonade" target="_blank" rel="noreferrer">
+          <a class="project-card standard" href="https://github.com/xtreemze/qmk_userspace" target="_blank" rel="noreferrer">
             <div>
-              <span class="project-number">02 / Simulation</span>
-            </div>
-            <div>
-              <h3>Lemonade</h3>
-              <p>A modern interpretation of the classic Lemonade Stand: a small economic simulation built around simple choices, feedback, uncertainty and replayable systems.</p>
-              <div class="project-meta" aria-label="Lemonade technologies">
-                <span>JavaScript</span>
-                <span>PWA</span>
-                <span>Game design</span>
-                <span>Economics</span>
-              </div>
-              <span class="project-link">View repository</span>
-            </div>
-          </a>
-
-          <a class="project-card wide" href="https://github.com/xtreemze/qmk_userspace" target="_blank" rel="noreferrer">
-            <div>
-              <span class="project-number">03 / Human input</span>
+              <span class="project-number">06 / Human input</span>
             </div>
             <div>
               <h3>QMK userspace</h3>
-              <p>Custom keyboard firmware work around split keyboards, compact layouts and programmable input — treating the keyboard as an interaction system rather than a fixed peripheral.</p>
+              <p>Custom split-keyboard firmware where layers, encoders, alternate-repeat behavior and programmable input are treated as deterministic interaction contracts rather than ad-hoc key mappings.</p>
               <div class="project-meta" aria-label="QMK userspace technologies">
                 <span>C</span>
                 <span>QMK</span>
@@ -124,51 +184,35 @@
             </div>
           </a>
 
-          <a class="project-card wide" href="https://github.com/xtreemze/KullabergApp" target="_blank" rel="noreferrer">
+          <a class="project-card wide" href="https://github.com/xtreemze/app" target="_blank" rel="noreferrer">
             <div>
-              <span class="project-number">04 / Field software</span>
-            </div>
-            <div>
-              <h3>Kullaberg App</h3>
-              <p>An offline-capable trail and discovery application designed to connect place with culture, science and history while moving through the landscape.</p>
-              <div class="project-meta" aria-label="Kullaberg App technologies">
-                <span>PWA</span>
-                <span>Offline-first</span>
-                <span>Location</span>
-                <span>Public experience</span>
-              </div>
-              <span class="project-link">View repository</span>
-            </div>
-          </a>
-
-          <a class="project-card standard" href="https://github.com/xtreemze/CrashDive" target="_blank" rel="noreferrer">
-            <div>
-              <span class="project-number">05 / Interactive worlds</span>
-            </div>
-            <div>
-              <h3>CrashDive</h3>
-              <p>A procedural 3D submarine-strike web game exploring physics, AI and generated sound as parts of one playable system.</p>
-              <div class="project-meta" aria-label="CrashDive technologies">
-                <span>TypeScript</span>
-                <span>3D</span>
-                <span>Physics</span>
-                <span>Procedural sound</span>
-              </div>
-              <span class="project-link">View repository</span>
-            </div>
-          </a>
-
-          <a class="project-card featured" href="https://github.com/xtreemze/app" target="_blank" rel="noreferrer">
-            <div>
-              <span class="project-number">06 / Tools</span>
+              <span class="project-number">07 / Configuration tools</span>
             </div>
             <div>
               <h3>VIA app fork</h3>
-              <p>An actively developed fork of the VIA keyboard configuration application, used as a platform for exploring richer control over programmable keyboard behavior.</p>
+              <p>An actively developed fork of the VIA keyboard configuration application used to explore richer control over programmable keyboard behavior, including more expressive RGB and configuration surfaces for custom firmware.</p>
               <div class="project-meta" aria-label="VIA app fork technologies">
                 <span>TypeScript</span>
                 <span>Keyboard tooling</span>
                 <span>Configuration UX</span>
+                <span>WebHID</span>
+              </div>
+              <span class="project-link">View repository</span>
+            </div>
+          </a>
+
+          <a class="project-card wide" href="https://github.com/xtreemze/Lemonade" target="_blank" rel="noreferrer">
+            <div>
+              <span class="project-number">08 / Economic simulation</span>
+            </div>
+            <div>
+              <h3>Lemonade</h3>
+              <p>A modern reconstruction of the classic Lemonade Stand around a small set of consequential decisions: pricing, inventory and advertising under changing weather and market conditions, with the simulation gradually exposing more economic structure.</p>
+              <div class="project-meta" aria-label="Lemonade technologies">
+                <span>JavaScript</span>
+                <span>PWA</span>
+                <span>Game design</span>
+                <span>Economics</span>
               </div>
               <span class="project-link">View repository</span>
             </div>
@@ -176,7 +220,7 @@
         </div>
 
         <a class="archive-link" href="https://github.com/xtreemze?tab=repositories" target="_blank" rel="noreferrer">
-          <span>More experiments, applications and older work on GitHub</span>
+          <span>More applications, experiments and earlier work on GitHub</span>
           <span aria-hidden="true">↗</span>
         </a>
       </div>
@@ -192,7 +236,7 @@
           </p>
           <div class="about-detail">
             <p>I move comfortably between product thinking, interaction details and implementation. I prefer interfaces that explain themselves through structure, state and behavior rather than decorative complexity.</p>
-            <p>My public work ranges from progressive web apps and field tools to browser games, procedural audio, 3D systems and keyboard firmware. The medium changes; the emphasis on clarity, rigor and control does not.</p>
+            <p>My work ranges from media playback architecture and deterministic game simulation to vehicle telemetry, reproducible developer environments and programmable input systems. The medium changes; the emphasis on clarity, rigor and control does not.</p>
           </div>
         </div>
       </div>
