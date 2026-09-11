@@ -70,151 +70,90 @@
         <p class="section-kicker">Selected work</p>
         <h2 class="section-heading">Projects that expose how I think.</h2>
         <p class="section-intro">
-          Public repositories sit beside selected private work here. The common thread is architectural: explicit authority, observable behavior, strong boundaries and interfaces that help people reason about complicated systems.
+          Public repositories sit beside selected private work here. Open a project for the product niche it addresses, what makes it unusual, the design reasoning behind it, and the engineering approach used to preserve those ideas in implementation.
         </p>
 
         <div class="project-grid">
-          <article class="project-card featured private-project">
-            <div>
-              <span class="project-number">01 / Media systems</span>
-            </div>
+          <a class="project-card featured private-project" href="/projects/slipmat.html">
+            <div><span class="project-number">01 / Media systems</span></div>
             <div>
               <h3>Slipmat</h3>
               <p>A playback-first multimedia client for owned and self-hosted media. Slipmat treats playback as an explicit system: one authoritative timeline, inspectable source and generation identity, a persistent Playback Rail, native audio processing, rich visualization and deep music analysis across Jellyfin and local media.</p>
-              <div class="project-meta" aria-label="Slipmat technologies">
-                <span>React 19</span>
-                <span>Rust 2024</span>
-                <span>Tauri v2</span>
-                <span>Jellyfin</span>
-                <span>WASM analysis</span>
-              </div>
+              <div class="project-meta" aria-label="Slipmat technologies"><span>React 19</span><span>Rust 2024</span><span>Tauri v2</span><span>Jellyfin</span><span>WASM analysis</span></div>
               <span class="project-status">Private · active product development</span>
+              <span class="project-link">Read case study</span>
             </div>
-          </article>
+          </a>
 
-          <article class="project-card standard private-project">
-            <div>
-              <span class="project-number">02 / Deterministic simulation</span>
-            </div>
+          <a class="project-card standard private-project" href="/projects/fireone.html">
+            <div><span class="project-number">02 / Deterministic simulation</span></div>
             <div>
               <h3>FireOne</h3>
               <p>A submarine tactics game about uncertainty, geometry and commitment. The authoritative Rust simulation separates world truth from what the player and AI are allowed to know, with deterministic ECS behavior, sonar-driven incomplete information and replaceable presentation clients.</p>
-              <div class="project-meta" aria-label="FireOne technologies">
-                <span>Rust</span>
-                <span>Bevy ECS</span>
-                <span>Ratatui</span>
-                <span>Determinism</span>
-                <span>Simulation AI</span>
-              </div>
+              <div class="project-meta" aria-label="FireOne technologies"><span>Rust</span><span>Bevy ECS</span><span>Ratatui</span><span>Determinism</span><span>Simulation AI</span></div>
               <span class="project-status">Private · playable pre-release</span>
+              <span class="project-link">Read case study</span>
             </div>
-          </article>
+          </a>
 
-          <article class="project-card wide">
-            <div>
-              <span class="project-number">03 / Vehicle telemetry</span>
-            </div>
+          <a class="project-card wide" href="/projects/signal-broker.html">
+            <div><span class="project-number">03 / Vehicle telemetry</span></div>
             <div>
               <h3>Signal Broker</h3>
               <p>Work around a vehicle-network development stack that exposes CAN, LIN and related buses through gRPC instead of binding tools to one language or transport. Its browser client adds gRPC-Web and WebSocket access so live frames and decoded signals can be selected, inspected and charted interactively.</p>
-              <div class="project-meta" aria-label="Signal Broker technologies">
-                <span>Elixir</span>
-                <span>gRPC</span>
-                <span>gRPC-Web</span>
-                <span>CAN / LIN</span>
-                <span>Vue</span>
-              </div>
-              <div class="project-links" aria-label="Signal Broker repositories">
-                <a href="https://github.com/xtreemze/signalbroker-server" target="_blank" rel="noreferrer">Server fork</a>
-                <a href="https://github.com/xtreemze/signalbroker-web-client" target="_blank" rel="noreferrer">Web client fork</a>
-              </div>
+              <div class="project-meta" aria-label="Signal Broker technologies"><span>Elixir</span><span>gRPC</span><span>gRPC-Web</span><span>CAN / LIN</span><span>Vue</span></div>
+              <span class="project-link">Read case study</span>
             </div>
-          </article>
+          </a>
 
-          <article class="project-card wide private-project">
-            <div>
-              <span class="project-number">04 / Developer environment</span>
-            </div>
+          <a class="project-card wide private-project" href="/projects/workstation.html">
+            <div><span class="project-number">04 / Developer environment</span></div>
             <div>
               <h3>Workstation system</h3>
               <p>My dotfiles are a reproducible cross-platform workstation rather than a folder of copied configs: machine-aware profiles, declarative packages, GNU Stow boundaries, dry runs, rolling backups, lifecycle hooks, CI validation and an interactive Rust installer across macOS, Linux and Termux.</p>
-              <div class="project-meta" aria-label="Dotfiles technologies">
-                <span>Rust TUI</span>
-                <span>GNU Stow</span>
-                <span>macOS + Linux</span>
-                <span>Termux</span>
-                <span>GitHub Actions</span>
-              </div>
+              <div class="project-meta" aria-label="Dotfiles technologies"><span>Rust TUI</span><span>GNU Stow</span><span>macOS + Linux</span><span>Termux</span><span>GitHub Actions</span></div>
               <span class="project-status">Private · daily infrastructure</span>
+              <span class="project-link">Read case study</span>
             </div>
-          </article>
+          </a>
 
-          <a class="project-card featured" href="https://github.com/xtreemze/defend" target="_blank" rel="noreferrer">
-            <div>
-              <span class="project-number">05 / Procedural systems</span>
-            </div>
+          <a class="project-card featured" href="/projects/defend.html">
+            <div><span class="project-number">05 / Procedural systems</span></div>
             <div>
               <h3>Defend</h3>
               <p>A cross-platform 3D tower-defense project combining procedural behavior, physics, AI, projectiles and generated sound in the browser. It is an ongoing laboratory for simulation, performance and systems that must remain understandable while becoming more dynamic.</p>
-              <div class="project-meta" aria-label="Defend technologies">
-                <span>Babylon.js</span>
-                <span>TypeScript</span>
-                <span>Physics</span>
-                <span>AI</span>
-                <span>Procedural audio</span>
-              </div>
-              <span class="project-link">View repository</span>
+              <div class="project-meta" aria-label="Defend technologies"><span>Babylon.js</span><span>TypeScript</span><span>Physics</span><span>AI</span><span>Procedural audio</span></div>
+              <span class="project-link">Read case study</span>
             </div>
           </a>
 
-          <a class="project-card standard" href="https://github.com/xtreemze/qmk_userspace" target="_blank" rel="noreferrer">
-            <div>
-              <span class="project-number">06 / Human input</span>
-            </div>
+          <a class="project-card standard" href="/projects/qmk.html">
+            <div><span class="project-number">06 / Human input</span></div>
             <div>
               <h3>QMK userspace</h3>
               <p>Custom split-keyboard firmware where layers, encoders, alternate-repeat behavior and programmable input are treated as deterministic interaction contracts rather than ad-hoc key mappings.</p>
-              <div class="project-meta" aria-label="QMK userspace technologies">
-                <span>C</span>
-                <span>QMK</span>
-                <span>Firmware</span>
-                <span>Ergonomics</span>
-              </div>
-              <span class="project-link">View repository</span>
+              <div class="project-meta" aria-label="QMK userspace technologies"><span>C</span><span>QMK</span><span>Firmware</span><span>Ergonomics</span></div>
+              <span class="project-link">Read case study</span>
             </div>
           </a>
 
-          <a class="project-card wide" href="https://github.com/xtreemze/app" target="_blank" rel="noreferrer">
-            <div>
-              <span class="project-number">07 / Configuration tools</span>
-            </div>
+          <a class="project-card wide" href="/projects/via.html">
+            <div><span class="project-number">07 / Configuration tools</span></div>
             <div>
               <h3>VIA app fork</h3>
               <p>An actively developed fork of the VIA keyboard configuration application used to explore richer control over programmable keyboard behavior, including more expressive RGB and configuration surfaces for custom firmware.</p>
-              <div class="project-meta" aria-label="VIA app fork technologies">
-                <span>TypeScript</span>
-                <span>Keyboard tooling</span>
-                <span>Configuration UX</span>
-                <span>WebHID</span>
-              </div>
-              <span class="project-link">View repository</span>
+              <div class="project-meta" aria-label="VIA app fork technologies"><span>TypeScript</span><span>Keyboard tooling</span><span>Configuration UX</span><span>WebHID</span></div>
+              <span class="project-link">Read case study</span>
             </div>
           </a>
 
-          <a class="project-card wide" href="https://github.com/xtreemze/Lemonade" target="_blank" rel="noreferrer">
-            <div>
-              <span class="project-number">08 / Economic simulation</span>
-            </div>
+          <a class="project-card wide" href="/projects/lemonade.html">
+            <div><span class="project-number">08 / Economic simulation</span></div>
             <div>
               <h3>Lemonade</h3>
               <p>A modern reconstruction of the classic Lemonade Stand around a small set of consequential decisions: pricing, inventory and advertising under changing weather and market conditions, with the simulation gradually exposing more economic structure.</p>
-              <div class="project-meta" aria-label="Lemonade technologies">
-                <span>JavaScript</span>
-                <span>PWA</span>
-                <span>Game design</span>
-                <span>Economics</span>
-              </div>
-              <span class="project-link">View repository</span>
+              <div class="project-meta" aria-label="Lemonade technologies"><span>JavaScript</span><span>PWA</span><span>Game design</span><span>Economics</span></div>
+              <span class="project-link">Read case study</span>
             </div>
           </a>
         </div>
@@ -231,9 +170,7 @@
         <p class="section-kicker">About</p>
         <h2 class="section-heading">I am interested in systems with consequences.</h2>
         <div class="about-grid">
-          <p class="about-statement">
-            Software becomes interesting when choices matter: a control changes a physical model, an interface reveals hidden state, a simulation responds to strategy, or a tool gives a person more precise agency.
-          </p>
+          <p class="about-statement">Software becomes interesting when choices matter: a control changes a physical model, an interface reveals hidden state, a simulation responds to strategy, or a tool gives a person more precise agency.</p>
           <div class="about-detail">
             <p>I move comfortably between product thinking, interaction details and implementation. I prefer interfaces that explain themselves through structure, state and behavior rather than decorative complexity.</p>
             <p>My work ranges from media playback architecture and deterministic game simulation to vehicle telemetry, reproducible developer environments and programmable input systems. The medium changes; the emphasis on clarity, rigor and control does not.</p>
@@ -247,21 +184,9 @@
         <p class="section-kicker">Working principles</p>
         <h2 class="section-heading">Build from the model outward.</h2>
         <div class="principles-grid">
-          <article class="principle">
-            <strong>01</strong>
-            <h3>Understand the system first.</h3>
-            <p>Interaction quality depends on the underlying model. State, constraints, timing and failure modes should be explicit before the surface is polished.</p>
-          </article>
-          <article class="principle">
-            <strong>02</strong>
-            <h3>Make behavior visible.</h3>
-            <p>Good interfaces communicate what is happening, what can happen next and what the user controls. Hidden mechanics create friction and distrust.</p>
-          </article>
-          <article class="principle">
-            <strong>03</strong>
-            <h3>Use rigor to preserve agency.</h3>
-            <p>Strong types, clear invariants, deterministic behavior and accessible interaction are not ceremony. They make ambitious systems easier to reason about and safer to change.</p>
-          </article>
+          <article class="principle"><strong>01</strong><h3>Understand the system first.</h3><p>Interaction quality depends on the underlying model. State, constraints, timing and failure modes should be explicit before the surface is polished.</p></article>
+          <article class="principle"><strong>02</strong><h3>Make behavior visible.</h3><p>Good interfaces communicate what is happening, what can happen next and what the user controls. Hidden mechanics create friction and distrust.</p></article>
+          <article class="principle"><strong>03</strong><h3>Use rigor to preserve agency.</h3><p>Strong types, clear invariants, deterministic behavior and accessible interaction are not ceremony. They make ambitious systems easier to reason about and safer to change.</p></article>
         </div>
       </div>
     </section>
@@ -270,10 +195,7 @@
   <footer class="footer">
     <div class="site-shell footer-inner">
       <p class="footer-title">Build things that reveal how they work.</p>
-      <div class="footer-meta">
-        <p>© 2026 Carlos Velasco</p>
-        <p><a href="https://github.com/xtreemze" target="_blank" rel="noreferrer">github.com/xtreemze ↗</a></p>
-      </div>
+      <div class="footer-meta"><p>© 2026 Carlos Velasco</p><p><a href="https://github.com/xtreemze" target="_blank" rel="noreferrer">github.com/xtreemze ↗</a></p></div>
     </div>
   </footer>
 </body>
