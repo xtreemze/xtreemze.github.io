@@ -1,6 +1,6 @@
 # Portfolio development
 
-The production site is a static multi-page application. It deliberately has no client framework or router; build tooling exists to enforce accessibility, validate the full navigation surface, optimize static assets, and deploy one verified artifact.
+The production site is a static multi-page application. It deliberately has no client framework or router; build tooling exists to enforce accessibility, validate the full navigation surface, optimize the HTML build, and deploy one verified artifact.
 
 ## Toolchain
 
@@ -25,7 +25,7 @@ pnpm test
 pnpm check
 ```
 
-`pnpm test` performs a production build first and then serves `dist/` through `vite preview`, so browser tests exercise the same generated HTML/CSS artifact that Pages publishes.
+`pnpm test` performs a production build first and then serves `dist/` through `vite preview`, so browser tests exercise the same generated artifact that Pages publishes.
 
 ## Build invariants
 
@@ -33,10 +33,11 @@ pnpm check
 
 - a first-tab `Skip to content` link;
 - a stable `main#main` target;
-- a `color-scheme` declaration;
-- the same static asset pipeline.
+- a `color-scheme` declaration.
 
-The build also emits `.nojekyll`, `robots.txt`, `sitemap.xml`, and copies the favicon. Do not add page-specific scripts to work around a shared layout/accessibility issue; change the shared build invariant or shared CSS instead.
+Canonical hand-authored CSS and the favicon live in `public/`. They are intentionally copied byte-for-byte rather than bundled so cascade order remains an explicit property of the HTML documents. The build also emits `.nojekyll`, `robots.txt`, and `sitemap.xml`.
+
+Do not add page-specific scripts to work around a shared layout/accessibility issue; change the shared build invariant or shared CSS instead.
 
 ## Certification
 

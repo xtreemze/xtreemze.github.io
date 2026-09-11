@@ -1,4 +1,4 @@
-import { copyFile, mkdir, readdir, writeFile } from "node:fs/promises";
+import { mkdir, readdir, writeFile } from "node:fs/promises";
 import { resolve } from "node:path";
 import { defineConfig } from "vite";
 
@@ -52,7 +52,6 @@ function publicationArtifacts() {
     name: "portfolio-publication-artifacts",
     async writeBundle() {
       await mkdir(outDir, { recursive: true });
-      await copyFile(resolve(root, "favicon.ico"), resolve(outDir, "favicon.ico"));
       await writeFile(resolve(outDir, ".nojekyll"), "", "utf8");
       await writeFile(
         resolve(outDir, "robots.txt"),
@@ -78,7 +77,7 @@ function publicationArtifacts() {
 
 export default defineConfig(async () => ({
   appType: "mpa",
-  publicDir: false,
+  publicDir: "public",
   plugins: [accessibilityInvariants(), publicationArtifacts()],
   build: {
     outDir: "dist",
