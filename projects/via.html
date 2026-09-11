@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a0b0d">
+  <meta name="description" content="Keyboard configurator case study — extending VIA/Vial-compatible configuration for richer custom firmware capabilities.">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/case-study.css">
+  <title>Keyboard Configurator — Carlos Velasco</title>
+</head>
+<body>
+  <header class="site-header"><div class="site-shell case-nav"><a class="brand" href="/"><span class="brand-mark" aria-hidden="true">CV</span><span>Carlos Velasco</span></a><a class="case-back" href="/#work">← Selected work</a></div></header>
+  <main class="case-main">
+    <section class="site-shell case-hero"><div><p class="case-label">Public fork · Configuration UX</p><h1>Keyboard configurator</h1><p class="case-deck">A VIA/Vial-compatible web configurator fork for exposing custom keyboard capabilities that do not fit cleanly into the stock application, while preserving normal behavior for standard devices.</p></div><dl class="case-facts"><div><dt>Niche</dt><dd>Capability-aware custom keyboard configuration</dd></div><div><dt>Core stack</dt><dd>TypeScript · React · WebHID</dd></div><div><dt>Direction</dt><dd>Richer RGB and firmware-specific controls</dd></div><div><dt>Constraint</dt><dd>Extensions must not weaken upstream compatibility</dd></div></dl></section>
+    <section class="case-section"><div class="site-shell case-section-grid"><h2>The niche</h2><div class="case-copy"><p class="lead">Custom firmware often becomes more capable than the generic configurator used to control it.</p><p>This fork occupies that gap. It keeps the familiar VIA model for ordinary keyboards while creating a path for device-specific capabilities—such as richer RGB profiles or custom firmware controls—to appear when the connected hardware actually supports them.</p></div></div></section>
+    <section class="case-section"><div class="site-shell case-section-grid"><h2>What is different</h2><div class="case-copy"><p class="lead">The extension model is capability-driven rather than fork-wide.</p><div class="case-points"><div class="case-point"><strong>Typed capability adapters</strong><p>Device-specific features are isolated behind explicit support checks instead of leaking assumptions into the standard VIA path.</p></div><div class="case-point"><strong>Richer RGB semantics</strong><p>The direction goes beyond global effects toward profiles associated with layers, modifier families, combos and supported per-key behavior.</p></div><div class="case-point"><strong>Firmware + UI co-design</strong><p>The configurator is developed alongside custom firmware so exposed controls map to real device concepts rather than generic settings panels.</p></div><div class="case-point"><strong>Hosted as a web tool</strong><p>The configurator remains directly usable through GitHub Pages instead of requiring a custom desktop installer.</p></div></div></div></div></section>
+    <section class="case-section"><div class="site-shell case-section-grid"><h2>Product & design thinking</h2><div class="case-copy"><p class="lead">The objective is not to create a separate app for one keyboard. It is to make specialization coexist with a general-purpose tool.</p><p>That means custom controls should appear because a device advertises or satisfies a capability contract, not because the application happens to know a hard-coded model name. Standard devices should continue to receive the ordinary VIA experience.</p><p>This keeps the product understandable: users see controls that correspond to what their firmware can actually do, while unsupported features simply stay out of the way.</p></div></div></section>
+    <section class="case-section"><div class="site-shell case-section-grid"><h2>Development approach</h2><div class="case-copy"><p class="lead">Extension points are kept narrow so upstream compatibility remains a constraint, not an afterthought.</p><p>The fork tracks VIA while placing richer behavior behind typed adapters and capability detection. GitHub Actions builds and publishes the `/app/` Pages target, giving firmware work a stable configuration surface that can evolve independently from upstream hosting.</p><div class="case-actions"><a class="button primary" href="https://xtreemze.github.io/app/" target="_blank" rel="noreferrer">Open configurator ↗</a><a class="button" href="https://github.com/xtreemze/app" target="_blank" rel="noreferrer">Repository ↗</a></div></div></div></section>
+    <div class="site-shell"><a class="case-next" href="/projects/lemonade.html"><span>Next: Lemonade</span><span>→</span></a></div>
+  </main>
+</body>
+</html>
