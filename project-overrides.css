@@ -80,13 +80,19 @@ html {
 }
 
 .nav a:hover,
-.nav a:focus-visible,
-body:has(#work:target) .nav a[href="#work"],
-body:has(#experience:target) .nav a[href="#experience"],
-body:has(#about:target) .nav a[href="#about"],
-body:has(#principles:target) .nav a[href="#principles"] {
+.nav a:focus-visible {
   background: rgba(243, 241, 234, 0.07);
   color: var(--text);
+}
+
+@supports selector(body:has(#work:target)) {
+  body:has(#work:target) .nav a[href="#work"],
+  body:has(#experience:target) .nav a[href="#experience"],
+  body:has(#about:target) .nav a[href="#about"],
+  body:has(#principles:target) .nav a[href="#principles"] {
+    background: rgba(243, 241, 234, 0.07);
+    color: var(--text);
+  }
 }
 
 .project-card.private-project {
