@@ -11,13 +11,13 @@ The production site is a static multi-page application. It deliberately has no c
 - Playwright 1.63 for Chromium, Firefox and WebKit certification
 - axe-core through `@axe-core/playwright` for automated WCAG A/AA checks
 
-Versions are intentionally exact in `package.json`; update them through a reviewed dependency change rather than using floating ranges.
+Versions are exact in `package.json`, dependency resolution is committed in `pnpm-lock.yaml`, and CI installs with `--frozen-lockfile`. GitHub Actions are pinned to reviewed immutable commit SHAs with major-version comments for update tooling.
 
 ## Commands
 
 ```sh
-npm install --global pnpm@12.3.4
-pnpm install --no-frozen-lockfile
+npm install --global --allow-scripts=pnpm pnpm@12.3.4
+pnpm install --frozen-lockfile
 pnpm exec playwright install
 pnpm dev
 pnpm lint
@@ -43,7 +43,7 @@ Do not add page-specific scripts to work around a shared layout/accessibility is
 
 The Playwright suite checks every route for bypass navigation and axe WCAG A/AA violations, compact navigation reachability/touch sizing, representative 320/390/768/1024/1440 layouts, keyboard-only navigation, reduced motion and forced-colors behavior. Chromium certification runs also capture full-page screenshots into the Playwright report.
 
-Automated results are necessary but not sufficient for an unconditional accessibility-conformance claim. Manual screen-reader, 200% browser-zoom and visual review remains a release-level evidence step.
+Automated results are necessary but not sufficient for an unconditional accessibility-conformance claim. Manual screen-reader, true 200% browser-zoom and final visual/focus-obscuration review remain release-level evidence steps.
 
 ## Deployment
 
