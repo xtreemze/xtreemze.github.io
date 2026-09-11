@@ -1,0 +1,57 @@
+.project-card.private-project {
+  border-color: rgba(200, 255, 90, 0.22);
+}
+
+.project-card.private-project::before {
+  position: absolute;
+  top: 1.35rem;
+  right: 1.35rem;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 5px rgba(200, 255, 90, 0.08);
+  content: "";
+}
+
+.project-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 750;
+  letter-spacing: 0.03em;
+}
+
+.project-status::before {
+  width: 0.45rem;
+  height: 0.45rem;
+  border: 1px solid var(--line-strong);
+  border-radius: 50%;
+  content: "";
+}
+
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.project-links a {
+  display: inline-flex;
+  gap: 0.4rem;
+  align-items: center;
+  font-weight: 750;
+}
+
+.project-links a::after {
+  color: var(--accent);
+  content: "↗";
+}
+
+.project-links a:hover {
+  color: var(--accent);
+}
