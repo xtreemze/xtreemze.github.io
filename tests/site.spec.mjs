@@ -56,17 +56,32 @@ for (const { localeCode, pagePath, route } of routes) {
 }
 
 for (const localeCode of ["es", "sv"]) {
-  test(`${localeCode} homepage contains localized product copy`, async ({ page }) => {
+  test(`${localeCode} homepage contains localized product copy without corrupting names`, async ({
+    page,
+  }) => {
     const locale = localeDefinitions[localeCode];
     await page.goto(routeForPage("index.html", localeCode));
     await expect(page.getByRole("heading", { level: 1 })).toHaveText(locale.homeHeading);
+    await expect(
+      page.getByRole("heading", { level: 3, name: "Investigation Workbench", exact: true }),
+    ).toBeVisible();
 
     const body = await page.locator("body").innerText();
     expect(body).not.toMatch(
       /\b(the|and|with|from|where|rather|should|through|without|while|than)\b/i,
     );
+    expect(body).not.toContain("Proyectosbench");
+    expect(body).not.toContain("Projektbench");
   });
 }
+
+test("Spanish professional narrative preserves product and company names", async ({ page }) => {
+  await page.goto(routeForPage("experience.html", "es"));
+  const body = await page.locator("body").innerText();
+  expect(body).toContain("2Active Design");
+  expect(body).not.toContain("2Active Diseño");
+  expect(body).toContain("IKEA Kitchen Planner");
+});
 
 test("compact navigation keeps every primary destination reachable", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
