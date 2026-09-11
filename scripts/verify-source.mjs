@@ -1,10 +1,14 @@
-import { readFile, readdir } from "node:fs/promises";
+import { readdir, readFile } from "node:fs/promises";
 import { resolve } from "node:path";
 
 const root = process.cwd();
 const projectDir = resolve(root, "projects");
 const projectFiles = (await readdir(projectDir)).filter((file) => file.endsWith(".html"));
-const htmlFiles = ["index.html", "experience.html", ...projectFiles.map((file) => `projects/${file}`)];
+const htmlFiles = [
+  "index.html",
+  "experience.html",
+  ...projectFiles.map((file) => `projects/${file}`),
+];
 
 const failures = [];
 for (const file of htmlFiles) {

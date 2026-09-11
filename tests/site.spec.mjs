@@ -85,7 +85,9 @@ test("keyboard journey reaches a case study and its next project", async ({ page
   await expect(page).toHaveURL(/\/projects\/fireone\.html$/);
 });
 
-test("reduced motion disables smooth scrolling and expressive transition timing", async ({ page }) => {
+test("reduced motion disables smooth scrolling and expressive transition timing", async ({
+  page,
+}) => {
   await page.emulateMedia({ reducedMotion: "reduce" });
   await page.goto("/");
   await expect(page.locator("html")).toHaveCSS("scroll-behavior", "auto");

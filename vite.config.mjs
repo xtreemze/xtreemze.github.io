@@ -39,10 +39,7 @@ function accessibilityInvariants() {
       }
 
       if (!output.includes('name="color-scheme"')) {
-        output = output.replace(
-          "</head>",
-          '  <meta name="color-scheme" content="dark">\n</head>',
-        );
+        output = output.replace("</head>", '  <meta name="color-scheme" content="dark">\n</head>');
       }
 
       return output;
