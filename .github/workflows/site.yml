@@ -11,7 +11,7 @@ concurrency:
   cancel-in-progress: true
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   verify:
@@ -21,7 +21,7 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v5
         with:
-          persist-credentials: false
+          persist-credentials: true
 
       - name: Set up Node
         uses: actions/setup-node@v7
@@ -38,13 +38,17 @@ jobs:
       - name: Verify install is workspace-stable
         run: git diff --exit-code -- pnpm-workspace.yaml
 
-      - name: Upload bootstrap lockfile
-        uses: actions/upload-artifact@v7
-        with:
-          name: pnpm-lock-bootstrap-${{ github.run_id }}
-          path: pnpm-lock.yaml
-          if-no-files-found: error
-          retention-days: 2
+      - name: Commit generated lockfile
+        if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository
+        run: |
+          if git ls-files --error-unmatch pnpm-lock.yaml >/dev/null 2>&1; then
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add pnpm-lock.yaml
+          git commit -m "Lock site workspace dependencies"
+          git push origin HEAD:${{ github.head_ref }}
 
       - name: Install Playwright browsers
         run: pnpm exec playwright install --with-deps chromium firefox webkit
