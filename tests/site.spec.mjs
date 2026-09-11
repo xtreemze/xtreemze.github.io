@@ -40,10 +40,9 @@ for (const { localeCode, pagePath, route } of routes) {
       absoluteUrl(pagePath, localeCode),
     );
     for (const alternateCode of localeCodes) {
-      await expect(page.locator(`link[rel="alternate"][hreflang="${alternateCode}"]`)).toHaveAttribute(
-        "href",
-        absoluteUrl(pagePath, alternateCode),
-      );
+      await expect(
+        page.locator(`link[rel="alternate"][hreflang="${alternateCode}"]`),
+      ).toHaveAttribute("href", absoluteUrl(pagePath, alternateCode));
     }
   });
 
@@ -63,7 +62,9 @@ for (const localeCode of ["es", "sv"]) {
     await expect(page.getByRole("heading", { level: 1 })).toHaveText(locale.homeHeading);
 
     const body = await page.locator("body").innerText();
-    expect(body).not.toMatch(/\b(the|and|with|from|where|rather|should|through|without|while|than)\b/i);
+    expect(body).not.toMatch(
+      /\b(the|and|with|from|where|rather|should|through|without|while|than)\b/i,
+    );
   });
 }
 
@@ -123,7 +124,9 @@ for (const localeCode of localeCodes) {
   });
 }
 
-test("reduced motion disables smooth scrolling and expressive transition timing", async ({ page }) => {
+test("reduced motion disables smooth scrolling and expressive transition timing", async ({
+  page,
+}) => {
   await page.emulateMedia({ reducedMotion: "reduce" });
   await page.goto("/");
   await expect(page.locator("html")).toHaveCSS("scroll-behavior", "auto");

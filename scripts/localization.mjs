@@ -53,10 +53,7 @@ function pageMetadata(html, pagePath, localeCode) {
 
 function setDocumentMetadata(html, pagePath, localeCode) {
   const metadata = pageMetadata(html, pagePath, localeCode);
-  let output = html.replace(
-    /<title>[^<]*<\/title>/,
-    `<title>${metadata.title}</title>`,
-  );
+  let output = html.replace(/<title>[^<]*<\/title>/, `<title>${metadata.title}</title>`);
   output = output.replace(
     /<meta\s+name="description"\s+content="[^"]*"\s*\/?\s*>/,
     `<meta name="description" content="${escapeAttribute(metadata.description)}">`,
@@ -69,7 +66,9 @@ function setDocumentMetadata(html, pagePath, localeCode) {
   for (const [property, value] of properties) {
     const tag = `<meta property="${property}" content="${escapeAttribute(value)}">`;
     const matcher = new RegExp(`<meta\\s+property="${property}"\\s+content="[^"]*"\\s*\\/?\\s*>`);
-    output = matcher.test(output) ? output.replace(matcher, tag) : output.replace("</head>", `  ${tag}\n</head>`);
+    output = matcher.test(output)
+      ? output.replace(matcher, tag)
+      : output.replace("</head>", `  ${tag}\n</head>`);
   }
 
   return output;
@@ -79,13 +78,15 @@ function localizationLinks(pagePath, localeCode) {
   const locale = localeDefinitions[localeCode];
   const alternatives = Object.keys(localeDefinitions)
     .map(
-      (code) =>
-        `  <link rel="alternate" hreflang="${code}" href="${absoluteUrl(pagePath, code)}">`,
+      (code) => `  <link rel="alternate" hreflang="${code}" href="${absoluteUrl(pagePath, code)}">`,
     )
     .join("\n");
   const alternateOgLocales = Object.entries(localeDefinitions)
     .filter(([code]) => code !== localeCode)
-    .map(([, definition]) => `  <meta property="og:locale:alternate" content="${definition.ogLocale}">`)
+    .map(
+      ([, definition]) =>
+        `  <meta property="og:locale:alternate" content="${definition.ogLocale}">`,
+    )
     .join("\n");
 
   return [
@@ -124,11 +125,14 @@ export function decorateLocalizationChrome(html, pagePath, localeCode = "en") {
   output = output.replace("</head>", `${localizationLinks(pagePath, localeCode)}\n</head>`);
 
   const navigation = languageNavigation(pagePath, localeCode);
-  output = output.replace(/(<header class="site-header">[\s\S]*?)(<\/header>)/, (_, header, close) => {
-    const lastContainerClose = header.lastIndexOf("</div>");
-    if (lastContainerClose === -1) return `${header}${navigation}${close}`;
-    return `${header.slice(0, lastContainerClose)}${navigation}${header.slice(lastContainerClose)}${close}`;
-  });
+  output = output.replace(
+    /(<header class="site-header">[\s\S]*?)(<\/header>)/,
+    (_, header, close) => {
+      const lastContainerClose = header.lastIndexOf("</div>");
+      if (lastContainerClose === -1) return `${header}${navigation}${close}`;
+      return `${header.slice(0, lastContainerClose)}${navigation}${header.slice(lastContainerClose)}${close}`;
+    },
+  );
 
   return output;
 }
@@ -172,6 +176,7 @@ export function localizeHtml(html, pagePath, localeCode) {
 export function sourcePathFromTransformContext(root, filename) {
   if (!filename) return null;
   const path = relative(root, filename).replaceAll("\\", "/");
-  if (path === "index.html" || path === "experience.html" || path.startsWith("projects/")) return path;
+  if (path === "index.html" || path === "experience.html" || path.startsWith("projects/"))
+    return path;
   return null;
 }
