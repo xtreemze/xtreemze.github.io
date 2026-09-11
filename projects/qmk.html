@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a0b0d">
+  <meta name="description" content="QMK userspace case study — deterministic split-keyboard firmware and programmable input design.">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/case-study.css">
+  <title>QMK Userspace — Carlos Velasco</title>
+</head>
+<body>
+  <header class="site-header"><div class="site-shell case-nav"><a class="brand" href="/"><span class="brand-mark" aria-hidden="true">CV</span><span>Carlos Velasco</span></a><a class="case-back" href="/#work">← Selected work</a></div></header>
+  <main class="case-main">
+    <section class="site-shell case-hero"><div><p class="case-label">Public · Embedded input systems</p><h1>QMK userspace</h1><p class="case-deck">A production-oriented Vial/QMK firmware environment for a compact split keyboard, treating layers, encoders, display state, persistence and releases as one embedded product rather than a collection of key mappings.</p></div><dl class="case-facts"><div><dt>Niche</dt><dd>High-capability compact ergonomic input</dd></div><div><dt>Core stack</dt><dd>C · QMK · Vial · split firmware</dd></div><div><dt>Hardware</dt><dd>Halcyon Ferris · TFT + encoder halves</dd></div><div><dt>Focus</dt><dd>Deterministic behavior and persistent configuration</dd></div></dl></section>
+    <section class="case-section"><div class="site-shell case-section-grid"><h2>The niche</h2><div class="case-copy"><p class="lead">A 34-key split keyboard only works well when layers and gestures stop feeling like compromises and start behaving like a coherent input language.</p><p>The firmware is designed around everyday editing rather than showing off the maximum number of QMK features. The normal alpha layer stays stable while short holds, home-row chords and encoders expose numbers, navigation, modifiers, function keys and controls without requiring persistent mode switching.</p></div></div></section>
+    <section class="case-section"><div class="site-shell case-section-grid"><h2>What is different</h2><div class="case-copy"><p class="lead">The keyboard is treated as a small stateful embedded system.</p><div class="case-points"><div class="case-point"><strong>Deterministic encoder semantics</strong><p>Repeat/Alternate Repeat direction remains tied to Vial pair orientation instead of reversing based on whichever key happened to be pressed last.</p></div><div class="case-point"><strong>Display as interface</strong><p>The TFT communicates layer identity, animated state and diagnostics instead of functioning as a static logo screen.</p></div><div class="case-point"><strong>Persistent visual profiles</strong><p>Per-layer, modifier and chord lighting behavior is modeled as configuration rather than one global effect.</p></div><div class="case-point"><strong>Release discipline</strong><p>Canonical Vial configuration, firmware defaults, pinned dependencies, regression checks and exact UF2 artifacts are kept auditable.</p></div></div></div></div></section>
+    <section class="case-section"><div class="site-shell case-section-grid"><h2>Product & design thinking</h2><div class="case-copy"><p class="lead">The layout is optimized for brief transitions away from the home typing state.</p><p>Numbers arrive under a thumb hold; navigation and function keys arrive through momentary chords; frequent Escape and Enter actions stay on the alpha layer. The goal is to preserve spatial memory and minimize the cognitive cost of a small key count.</p><p>Visual and encoder behavior follow the same principle: state should be understandable and direction should remain predictable even when the underlying firmware feature is history-sensitive.</p></div></div></section>
+    <section class="case-section"><div class="site-shell case-section-grid"><h2>Development approach</h2><div class="case-copy"><p class="lead">Human-editable configuration and compiled defaults have one source of truth.</p><p>The committed Vial profile feeds generated firmware defaults; fork-specific Vial-QMK changes remain ordered patches instead of disappearing into a vendor tree. Source regression, firmware build success and physical hardware acceptance are treated as separate evidence classes.</p><p>This makes the firmware easier to evolve without confusing “it compiled” with “the keyboard still behaves correctly after suspend, split reconnection or module changes.”</p><div class="case-actions"><a class="button primary" href="https://github.com/xtreemze/qmk_userspace" target="_blank" rel="noreferrer">Repository ↗</a></div></div></div></section>
+    <div class="site-shell"><a class="case-next" href="/projects/via.html"><span>Next: Keyboard configurator</span><span>→</span></a></div>
+  </main>
+</body>
+</html>
