@@ -41,6 +41,10 @@ function escapeAttribute(value) {
   return value.replaceAll("&", "&amp;").replaceAll('"', "&quot;");
 }
 
+function escapeRegExp(value) {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
 function pageMetadata(html, pagePath, localeCode) {
   const locale = localeDefinitions[localeCode];
   if (localeCode !== "en") return locale.meta[pagePath];
@@ -159,14 +163,26 @@ function applyAttributeTranslations(html, locale) {
   return output;
 }
 
+function applyContentTranslations(html, locale) {
+  const replacements = [...locale.replacements].sort(([a], [b]) => b.length - a.length);
+  const targets = new Map(replacements);
+  const alternatives = replacements.map(([source]) => {
+    const escaped = escapeRegExp(source);
+    const startsWithWordCharacter = /^[\p{L}\p{N}_]/u.test(source);
+    const endsWithWordCharacter = /[\p{L}\p{N}_]$/u.test(source);
+    const prefix = startsWithWordCharacter ? "(?<![\\p{L}\\p{N}_])" : "";
+    const suffix = endsWithWordCharacter ? "(?![\\p{L}\\p{N}_])" : "";
+    return `${prefix}${escaped}${suffix}`;
+  });
+  const matcher = new RegExp(alternatives.join("|"), "gu");
+  return html.replace(matcher, (match) => targets.get(match) ?? match);
+}
+
 export function localizeHtml(html, pagePath, localeCode) {
   const locale = localeDefinitions[localeCode];
   if (!locale || localeCode === "en") return decorateLocalizationChrome(html, pagePath, "en");
 
-  let output = html;
-  const replacements = [...locale.replacements].sort(([a], [b]) => b.length - a.length);
-  for (const [source, target] of replacements) output = output.replaceAll(source, target);
-
+  let output = applyContentTranslations(html, locale);
   output = applyAttributeTranslations(output, locale);
   output = output.replace(/<html\b([^>]*?)\blang="en"/, `<html$1lang="${localeCode}"`);
   output = rewriteInternalLinks(output, localeCode);
