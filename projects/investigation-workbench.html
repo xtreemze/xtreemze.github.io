@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a0b0d">
+  <meta name="description" content="Investigation Workbench case study — local-first knowledge review, graph compilation and provenance-aware investigation tooling.">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/case-study.css">
+  <title>Investigation Workbench — Carlos Velasco</title>
+</head>
+<body>
+  <header class="site-header"><div class="site-shell case-nav"><a class="brand" href="/"><span class="brand-mark" aria-hidden="true">CV</span><span>Carlos Velasco</span></a><a class="case-back" href="/#work">← Selected work</a></div></header>
+  <main class="case-main">
+    <section class="site-shell case-hero">
+      <div><p class="case-label">Private · local-first knowledge systems · Graph tooling</p><h1>Investigation Workbench</h1><p class="case-deck">A local-first workspace for turning fragmented source material into reviewed, queryable knowledge without letting automated ingestion silently become authoritative truth.</p></div>
+      <dl class="case-facts"><div><dt>Niche</dt><dd>Evidence-heavy knowledge review and graph exploration</dd></div><div><dt>Core stack</dt><dd>Memgraph · Python · Obsidian · Docker · MCP</dd></div><div><dt>Model</dt><dd>Raw source → candidate → reviewed canonical knowledge → compiled graph</dd></div><div><dt>Focus</dt><dd>Provenance, reviewability, temporal structure, reproducible projection</dd></div></dl>
+    </section>
+
+    <section class="case-section"><div class="site-shell case-section-grid"><h2>The niche</h2><div class="case-copy"><p class="lead">Graph and AI tooling becomes dangerous when extraction, interpretation and truth are treated as the same operation.</p><p>This workbench is aimed at material where chronology, relationships and source provenance matter enough that an automated system should propose structure without being allowed to silently finalize it.</p><p>Raw documents enter a controlled ingestion layer. Candidate knowledge is reviewed before promotion. Only reviewed canonical notes are compiled into graph, timeline and viewer artifacts.</p></div></div></section>
+
+    <section class="case-section"><div class="site-shell case-section-grid"><h2>What is different</h2><div class="case-copy"><p class="lead">The product treats review state as architecture, not workflow etiquette.</p><div class="case-points"><div class="case-point"><strong>Human-reviewed authority</strong><p>Ingestion can propose entities, events and relationships, but downstream graph truth is derived only from reviewed canonical material.</p></div><div class="case-point"><strong>Local-first operation</strong><p>The core workspace runs locally with explicit storage, container and resource boundaries rather than assuming a cloud service should own sensitive source material.</p></div><div class="case-point"><strong>Deterministic compilation</strong><p>Graph nodes, edges, timelines, manifests and viewer artifacts are compiled from the reviewed layer so outputs can be rebuilt and checked.</p></div><div class="case-point"><strong>One knowledge model, many views</strong><p>Obsidian, Memgraph Lab, generated timeline/graph viewers and MCP-connected agents consume projections of the same reviewed knowledge rather than inventing parallel truths.</p></div></div></div></div></section>
+
+    <section class="case-section"><div class="site-shell case-section-grid"><h2>Product & design thinking</h2><div class="case-copy"><p class="lead">The central product problem is epistemic: make it obvious what is source evidence, what is machine suggestion, what has been reviewed, and what is derived.</p><p>That distinction shapes navigation, file structure, validation and graph semantics. The system is designed to make uncertainty and provenance visible instead of producing an authoritative-looking graph from opaque extraction.</p><p>The same reasoning guides AI integration. Agents and MCP tools are useful as query and transformation interfaces, but their outputs remain bounded by explicit schemas, review gates and deterministic compilation steps.</p></div></div></section>
+
+    <section class="case-section"><div class="site-shell case-section-grid"><h2>Development approach</h2><div class="case-copy"><p class="lead">The repository is organized as an inspectable pipeline rather than a monolithic AI application.</p><p>Docker isolates Memgraph and its tooling; Python dependencies are managed reproducibly; the knowledge vault carries schemas and controlled vocabularies; validation covers links, temporal semantics and orphaned material; fixture cases exercise chronology and concurrency before real data is introduced.</p><p>The system also exposes MCP entry points so different AI clients can query the same local graph without each becoming a separate data authority.</p><span class="project-status">Private repository · public case study intentionally omits case-specific source material</span></div></div></section>
+
+    <div class="site-shell"><a class="case-next" href="/projects/slipmat.html"><span>Back to current product work: Slipmat</span><span>→</span></a></div>
+  </main>
+</body>
+</html>
