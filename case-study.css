@@ -1,5 +1,13 @@
+@view-transition {
+  navigation: auto;
+}
+
 :root {
   --case-copy: 760px;
+}
+
+.brand-mark {
+  view-transition-name: site-mark;
 }
 
 .case-main {
@@ -16,6 +24,11 @@
 
 .case-back,
 .case-github {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  padding-inline: 0.35rem;
+  border-radius: 999px;
   color: var(--muted);
   font-size: 0.9rem;
   font-weight: 700;
@@ -23,6 +36,7 @@
 
 .case-back:hover,
 .case-github:hover {
+  background: rgba(243, 241, 234, 0.06);
   color: var(--text);
 }
 
@@ -49,6 +63,7 @@
   font-size: clamp(3.6rem, 9vw, 8.6rem);
   line-height: 0.92;
   letter-spacing: -0.065em;
+  text-wrap: balance;
 }
 
 .case-deck {
@@ -57,6 +72,7 @@
   color: #c7cad0;
   font-size: clamp(1.15rem, 2vw, 1.5rem);
   line-height: 1.5;
+  text-wrap: pretty;
 }
 
 .case-facts {
@@ -89,6 +105,7 @@
 .case-section {
   padding: clamp(4.5rem, 9vw, 8rem) 0;
   border-top: 1px solid var(--line);
+  scroll-margin-top: 6rem;
 }
 
 .case-section-grid {
@@ -99,10 +116,11 @@
 
 .case-section h2 {
   margin: 0;
-  font-size: clamp(1rem, 1.4vw, 1.18rem);
   color: var(--muted);
+  font-size: clamp(1rem, 1.4vw, 1.18rem);
   letter-spacing: 0.08em;
   text-transform: uppercase;
+  text-wrap: balance;
 }
 
 .case-copy {
@@ -118,11 +136,13 @@
   font-size: clamp(1.45rem, 3vw, 2.35rem);
   line-height: 1.25;
   letter-spacing: -0.035em;
+  text-wrap: balance;
 }
 
 .case-copy p {
   color: #b7bbc2;
   font-size: 1.03rem;
+  text-wrap: pretty;
 }
 
 .case-points {
@@ -158,8 +178,13 @@
   margin-top: 2rem;
 }
 
+.case-actions .button {
+  min-height: 44px;
+}
+
 .case-next {
   display: flex;
+  min-height: 64px;
   align-items: center;
   justify-content: space-between;
   gap: 2rem;
@@ -174,6 +199,34 @@
   color: var(--accent);
 }
 
+@keyframes case-scroll-progress {
+  from {
+    transform: scaleX(0);
+  }
+
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@supports (animation-timeline: scroll()) {
+  .case-main::before {
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 2px;
+    background: var(--accent);
+    content: "";
+    pointer-events: none;
+    transform: scaleX(0);
+    transform-origin: left center;
+    animation: case-scroll-progress linear both;
+    animation-timeline: scroll(root block);
+  }
+}
+
 @media (max-width: 800px) {
   .case-hero,
   .case-section-grid {
@@ -186,5 +239,41 @@
 
   .case-points {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .case-nav {
+    min-height: 62px;
+  }
+
+  .case-back,
+  .case-github {
+    padding-inline: 0.5rem;
+  }
+}
+
+@media (prefers-contrast: more) {
+  .case-point,
+  .case-facts,
+  .case-facts div,
+  .case-next {
+    border-color: currentColor;
+  }
+}
+
+@media (forced-colors: active) {
+  .case-main::before {
+    background: Highlight;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .case-main::before {
+    display: none;
+  }
+
+  ::view-transition-group(*) {
+    animation-duration: 0.001ms !important;
   }
 }

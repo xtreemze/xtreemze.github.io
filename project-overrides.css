@@ -1,3 +1,100 @@
+@view-transition {
+  navigation: auto;
+}
+
+:root {
+  --icon-work: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M3 3h8v8H3V3Zm10 0h8v8h-8V3ZM3 13h8v8H3v-8Zm10 0h8v8h-8v-8Z'/%3E%3C/svg%3E");
+  --icon-experience: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M9 4h6a2 2 0 0 1 2 2v1h3a2 2 0 0 1 2 2v8a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3V9a2 2 0 0 1 2-2h3V6a2 2 0 0 1 2-2Zm0 3h6V6H9v1Zm-5 4v6a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-6l-6 3v1h-4v-1l-6-3Z'/%3E%3C/svg%3E");
+  --icon-about: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10Zm0 2c-5 0-9 2.5-9 5.5A2.5 2.5 0 0 0 5.5 22h13a2.5 2.5 0 0 0 2.5-2.5C21 16.5 17 14 12 14Z'/%3E%3C/svg%3E");
+  --icon-principles: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm3.8 6.2-2.1 5.5-5.5 2.1 2.1-5.5 5.5-2.1Zm-3.1 3.1-1.4.5-.5 1.4 1.4-.5.5-1.4Z'/%3E%3C/svg%3E");
+  --icon-external: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M13 3h8v8h-2V6.4L10.4 15 9 13.6 17.6 5H13V3ZM5 5h5v2H5v12h12v-5h2v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Z'/%3E%3C/svg%3E");
+}
+
+html {
+  scrollbar-gutter: stable;
+}
+
+.brand-mark {
+  view-transition-name: site-mark;
+}
+
+.hero h1,
+.section-heading,
+.project-card h3,
+.footer-title {
+  text-wrap: balance;
+}
+
+.hero-copy,
+.section-intro,
+.project-card p,
+.about-detail,
+.principle p {
+  text-wrap: pretty;
+}
+
+#work,
+#experience,
+#about,
+#principles {
+  scroll-margin-top: 8.5rem;
+}
+
+.nav a {
+  display: inline-flex;
+  min-height: 40px;
+  align-items: center;
+  gap: 0.4rem;
+  padding-inline: 0.25rem;
+  border-radius: 999px;
+}
+
+.nav a::before {
+  width: 0.9rem;
+  height: 0.9rem;
+  flex: 0 0 auto;
+  background: currentColor;
+  content: "";
+  -webkit-mask: var(--nav-icon) center / contain no-repeat;
+  mask: var(--nav-icon) center / contain no-repeat;
+}
+
+.nav a[href="#work"] {
+  --nav-icon: var(--icon-work);
+}
+
+.nav a[href="#experience"] {
+  --nav-icon: var(--icon-experience);
+}
+
+.nav a[href="#about"] {
+  --nav-icon: var(--icon-about);
+}
+
+.nav a[href="#principles"] {
+  --nav-icon: var(--icon-principles);
+}
+
+.nav .nav-github {
+  --nav-icon: var(--icon-external);
+}
+
+.nav a:hover,
+.nav a:focus-visible {
+  background: rgba(243, 241, 234, 0.07);
+  color: var(--text);
+}
+
+@supports selector(body:has(#work:target)) {
+  body:has(#work:target) .nav a[href="#work"],
+  body:has(#experience:target) .nav a[href="#experience"],
+  body:has(#about:target) .nav a[href="#about"],
+  body:has(#principles:target) .nav a[href="#principles"] {
+    background: rgba(243, 241, 234, 0.07);
+    color: var(--text);
+  }
+}
+
 .project-card.private-project {
   border-color: rgba(200, 255, 90, 0.22);
 }
@@ -54,4 +151,64 @@
 
 .project-links a:hover {
   color: var(--accent);
+}
+
+@media (max-width: 860px) {
+  .header-inner {
+    flex-wrap: wrap;
+    gap: 0.15rem 1rem;
+    padding-block: 0.35rem;
+  }
+
+  .nav {
+    order: 2;
+    width: 100%;
+    justify-content: flex-start;
+    gap: 0.15rem;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scrollbar-width: none;
+  }
+
+  .nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .nav a:not(.nav-github),
+  .nav .nav-github {
+    display: inline-flex;
+    min-height: 44px;
+    flex: 0 0 auto;
+    padding: 0.55rem 0.7rem;
+    white-space: nowrap;
+  }
+}
+
+@media (prefers-contrast: more) {
+  .project-card,
+  .button,
+  .signal-row,
+  .portrait-frame {
+    border-color: currentColor;
+  }
+
+  .nav a:hover,
+  .nav a:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
+  }
+}
+
+@media (forced-colors: active) {
+  .project-card.private-project::before,
+  .project-status::before,
+  .nav a::before {
+    forced-color-adjust: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(*) {
+    animation-duration: 0.001ms !important;
+  }
 }
