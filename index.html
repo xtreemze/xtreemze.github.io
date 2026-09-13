@@ -40,9 +40,9 @@
     <section class="site-shell hero" id="top">
       <div>
         <p class="eyebrow">Software engineer · product systems · interaction</p>
-        <h1>I make complex systems legible, tactile and useful.</h1>
-        <p class="hero-copy">
-          I work across product engineering, interaction design and systems implementation — from React and TypeScript interfaces to Rust, media processing, deterministic simulation, firmware-adjacent tools and local-first knowledge systems. The recurring problem is the same: understand the system deeply, then make its behavior clear enough to use, explore and trust.
+        <h1 data-i18n="home.heroTitle">I make complex systems legible, tactile and worth exploring.</h1>
+        <p class="hero-copy" data-i18n="home.heroCopy">
+          I move between product design and engineering because the most interesting work rarely belongs to only one discipline. I like beginning with a question, sketch, prototype or strange behavior worth understanding, then giving the promising parts enough structure — explicit models, tests, accessibility, performance budgets and repeatable experiments — that they can survive contact with a real product.
         </p>
         <div class="hero-actions">
           <a class="button primary" href="#work">Explore selected work</a>
@@ -70,14 +70,21 @@
     <section class="section" id="work">
       <div class="site-shell">
         <p class="section-kicker">Selected work</p>
-        <h2 class="section-heading">Projects that expose how I think.</h2>
-        <p class="section-intro">
-          Public repositories sit beside selected private work here. Open a project for the product niche it addresses, what makes it unusual, the design reasoning behind it, and the engineering approach used to preserve those ideas in implementation.
+        <h2 class="section-heading" data-i18n="home.workTitle">Projects that show both the idea and the method.</h2>
+        <p class="section-intro" data-i18n="home.workIntro">
+          These case studies are less about a framework list than about how a product came into focus: what was worth wondering about, what was tried, what evidence changed the direction, and which discoveries became durable design or engineering rules.
         </p>
+
+        <div class="portfolio-map" aria-label="Portfolio categories">
+          <article><span data-i18n="home.portfolioMap">Portfolio map</span><strong data-i18n="home.flagships">Flagship systems</strong><p>Slipmat · FireOne · Lemonade</p></article>
+          <article><span aria-hidden="true">02</span><strong data-i18n="home.technical">Distinct technical products</strong><p>Signal Broker · Defend · QMK / Vial</p></article>
+          <article><span aria-hidden="true">03</span><strong data-i18n="home.operational">Operational product systems</strong><p>Booking · Inventory · Timeline</p></article>
+          <article><span aria-hidden="true">04</span><strong data-i18n="home.publicKnowledge">Public service & knowledge</strong><p>Kullaberg · Investigation Workbench · Workstation</p></article>
+        </div>
 
         <div class="project-grid">
           <a class="project-card featured private-project" href="/projects/slipmat.html">
-            <div><span class="project-number">01 / Media systems</span></div>
+            <div><span class="project-number">01 / Media systems</span><span class="project-mark" aria-hidden="true">S</span></div>
             <div>
               <h3>Slipmat</h3>
               <p>A playback-first multimedia client for owned and self-hosted media. Slipmat treats playback as an explicit system: one authoritative timeline, inspectable source and generation identity, a persistent Playback Rail, native audio processing, rich visualization and deep music analysis across Jellyfin and local media.</p>
@@ -88,7 +95,7 @@
           </a>
 
           <a class="project-card standard private-project" href="/projects/fireone.html">
-            <div><span class="project-number">02 / Deterministic simulation</span></div>
+            <div><span class="project-number">02 / Deterministic simulation</span><span class="project-mark" aria-hidden="true">F1</span></div>
             <div>
               <h3>FireOne</h3>
               <p>A submarine tactics game about uncertainty, geometry and commitment. The authoritative Rust simulation separates world truth from what the player and AI are allowed to know, with deterministic ECS behavior, sonar-driven incomplete information and replaceable presentation clients.</p>
@@ -99,7 +106,7 @@
           </a>
 
           <a class="project-card wide" href="/projects/signal-broker.html">
-            <div><span class="project-number">03 / Vehicle telemetry</span></div>
+            <div><span class="project-number">03 / Vehicle telemetry</span><span class="project-mark" aria-hidden="true">SB</span></div>
             <div>
               <h3>Signal Broker</h3>
               <p>Work around a vehicle-network development stack that exposes CAN, LIN and related buses through gRPC instead of binding tools to one language or transport. Its browser client adds gRPC-Web and WebSocket access so live frames and decoded signals can be selected, inspected and charted interactively.</p>
@@ -109,7 +116,7 @@
           </a>
 
           <a class="project-card wide private-project" href="/projects/workstation.html">
-            <div><span class="project-number">04 / Developer environment</span></div>
+            <div><span class="project-number">04 / Developer environment</span><span class="project-mark" aria-hidden="true">WS</span></div>
             <div>
               <h3>Workstation system</h3>
               <p>My dotfiles are a reproducible cross-platform workstation rather than a folder of copied configs: machine-aware profiles, declarative packages, GNU Stow boundaries, dry runs, rolling backups, lifecycle hooks, CI validation and an interactive Rust installer across macOS, Linux and Termux.</p>
@@ -120,7 +127,7 @@
           </a>
 
           <a class="project-card featured" href="/projects/defend.html">
-            <div><span class="project-number">05 / Procedural systems</span></div>
+            <div><span class="project-number">05 / Procedural systems</span><span class="project-mark" aria-hidden="true">D</span></div>
             <div>
               <h3>Defend</h3>
               <p>A cross-platform 3D tower-defense project combining procedural behavior, physics, AI, projectiles and generated sound in the browser. It is an ongoing laboratory for simulation, performance and systems that must remain understandable while becoming more dynamic.</p>
@@ -130,7 +137,7 @@
           </a>
 
           <a class="project-card standard" href="/projects/qmk.html">
-            <div><span class="project-number">06 / Human input</span></div>
+            <div><span class="project-number">06 / Human input</span><span class="project-mark" aria-hidden="true">Q</span></div>
             <div>
               <h3>QMK userspace</h3>
               <p>Custom split-keyboard firmware where layers, encoders, alternate-repeat behavior and programmable input are treated as deterministic interaction contracts rather than ad-hoc key mappings.</p>
@@ -140,21 +147,56 @@
           </a>
 
           <a class="project-card wide" href="/projects/via.html">
-            <div><span class="project-number">07 / Configuration tools</span></div>
+            <div><span class="project-number" data-i18n="home.vialCategory">07 / Firmware configuration</span><span class="project-mark" aria-hidden="true">V</span></div>
             <div>
-              <h3>VIA app fork</h3>
-              <p>An actively developed fork of the VIA keyboard configuration application used to explore richer control over programmable keyboard behavior, including more expressive RGB and configuration surfaces for custom firmware.</p>
-              <div class="project-meta" aria-label="VIA app fork technologies"><span>TypeScript</span><span>Keyboard tooling</span><span>Configuration UX</span><span>WebHID</span></div>
+              <h3 data-i18n="home.vialTitle">Vial / Halcyon Control Center</h3>
+              <p data-i18n="home.vialSummary">A coordinated firmware, HID-protocol and web-configuration system that exposes Halcyon Ferris TFT settings, telemetry, RGB profiles and input semantics without weakening standard Vial compatibility.</p>
+              <div class="project-meta"><span>Vial</span><span>QMK</span><span>Raw HID</span><span>Web tooling</span></div>
+              <span class="project-status" data-i18n="home.publicActive">Public · active development</span>
               <span class="project-link">Read case study</span>
             </div>
           </a>
 
           <a class="project-card wide" href="/projects/lemonade.html">
-            <div><span class="project-number">08 / Economic simulation</span></div>
+            <div><span class="project-number">08 / Economic simulation</span><span class="project-mark" aria-hidden="true">L</span></div>
             <div>
               <h3>Lemonade</h3>
               <p>A modern reconstruction of the classic Lemonade Stand around a small set of consequential decisions: pricing, inventory and advertising under changing weather and market conditions, with the simulation gradually exposing more economic structure.</p>
-              <div class="project-meta" aria-label="Lemonade technologies"><span>JavaScript</span><span>PWA</span><span>Game design</span><span>Economics</span></div>
+              <div class="project-meta" aria-label="Lemonade technologies"><span>TypeScript 6</span><span>Vite 8</span><span>Three.js</span><span>Web Audio</span></div>
+              <span class="project-status" data-i18n="home.lemonadeStatus">Public · active revival</span>
+              <span class="project-link">Read case study</span>
+            </div>
+          </a>
+
+          <a class="project-card featured" href="/projects/booking.html">
+            <div><span class="project-number" data-i18n="home.bookingCategory">09 / Configurable platforms</span><span class="project-mark" aria-hidden="true">B</span></div>
+            <div>
+              <h3>Booking</h3>
+              <p data-i18n="home.bookingSummary">A configurable booking platform that models appointments, capacity reservations and stays as different scheduling contracts, with auditability and supply-chain evidence designed into the workspace.</p>
+              <div class="project-meta"><span>TypeScript</span><span>Domain modeling</span><span>CodeQL</span><span>CycloneDX</span></div>
+              <span class="project-status" data-i18n="home.publicActive">Public · active development</span>
+              <span class="project-link">Read case study</span>
+            </div>
+          </a>
+
+          <a class="project-card standard" href="/projects/inventory.html">
+            <div><span class="project-number" data-i18n="home.inventoryCategory">10 / Local-first operations</span><span class="project-mark" aria-hidden="true">I</span></div>
+            <div>
+              <h3>Inventory</h3>
+              <p data-i18n="home.inventorySummary">A hardened local-first inventory PWA for check-out, overdue accountability, offline work, backup/export and clear entity history without requiring a server to remain useful.</p>
+              <div class="project-meta"><span>PWA</span><span>Local-first</span><span>Offline</span><span>Backup</span></div>
+              <span class="project-status" data-i18n="home.publicActive">Public · active development</span>
+              <span class="project-link">Read case study</span>
+            </div>
+          </a>
+
+          <a class="project-card wide" href="/projects/timeline.html">
+            <div><span class="project-number" data-i18n="home.timelineCategory">11 / Information modeling</span><span class="project-mark" aria-hidden="true">T</span></div>
+            <div>
+              <h3>Timeline</h3>
+              <p data-i18n="home.timelineSummary">A responsive workspace for events, ranges, categories and stories, designed to turn chronology into structured narratives rather than a flat list of dates.</p>
+              <div class="project-meta"><span>Events</span><span>Ranges</span><span>Categories</span><span>Stories</span></div>
+              <span class="project-status" data-i18n="home.publicActive">Public · active development</span>
               <span class="project-link">Read case study</span>
             </div>
           </a>
@@ -163,7 +205,7 @@
         <p class="section-kicker" style="margin-top:4rem">Additional systems</p>
         <div class="project-grid" style="margin-top:1.5rem">
           <a class="project-card wide" href="/projects/kullaberg.html">
-            <div><span class="project-number">Public service · historical professional work</span></div>
+            <div><span class="project-number">Public service · historical professional work</span><span class="project-mark" aria-hidden="true">K</span></div>
             <div>
               <h3>Kullaberg digital ecosystem</h3>
               <p>Offline-capable, bilingual visitor software for a Swedish nature reserve, spanning mobile trail guidance, information-desk presentation and citizen-science participation.</p>
@@ -172,7 +214,7 @@
             </div>
           </a>
           <a class="project-card wide private-project" href="/projects/investigation-workbench.html">
-            <div><span class="project-number">Knowledge systems · current exploration</span></div>
+            <div><span class="project-number">Knowledge systems · current exploration</span><span class="project-mark" aria-hidden="true">IW</span></div>
             <div>
               <h3>Investigation Workbench</h3>
               <p>A local-first graph and knowledge-review workspace that separates source evidence, machine-proposed candidates, reviewed canonical knowledge and deterministic graph/timeline projections.</p>
@@ -193,12 +235,12 @@
     <section class="section" id="experience">
       <div class="site-shell">
         <p class="section-kicker">Professional thread</p>
-        <h2 class="section-heading">Design depth became engineering depth.</h2>
+        <h2 class="section-heading" data-i18n="home.experienceTitle">Design depth became engineering depth without replacing the design instinct.</h2>
         <div class="about-grid">
-          <p class="about-statement">My background connects graphic design, multimedia production and teaching with public-service JavaScript applications, large product-planning interfaces and increasingly deep systems engineering.</p>
+          <p class="about-statement" data-i18n="home.experienceStatement">My background runs through graphic design, multimedia production and teaching into public-service software, large planning interfaces and systems engineering. I still approach code as a design material: something that can clarify an idea, expose its limits and make an interaction feel inevitable rather than merely functional.</p>
           <div class="about-detail">
             <p>Historical public material documents frontend application work for Länsstyrelsen Skåne and earlier leadership in design, multimedia and university teaching. Public LinkedIn material also documents close collaboration around the rebuilding of IKEA Kitchen Planner and IKEA Planner tooling using React, TypeScript and accessibility-focused frontend engineering.</p>
-            <p>That progression matters more to me than a framework timeline: I learned to think about communication and interaction first, then increasingly about state, authority, performance, determinism and the technical boundaries required to make sophisticated interfaces trustworthy.</p>
+            <p data-i18n="home.experienceDetail">The progression matters more to me than a framework timeline. Each step added another way to test an idea: visual composition, interaction, user observation, state modeling, performance, deterministic simulation and automated verification. The goal is not to replace intuition with process, but to give intuition better instruments.</p>
           </div>
         </div>
         <a class="archive-link" href="/experience.html"><span>Read the professional experience narrative</span><span aria-hidden="true">→</span></a>
@@ -208,12 +250,12 @@
     <section class="section" id="about">
       <div class="site-shell">
         <p class="section-kicker">About</p>
-        <h2 class="section-heading">I am interested in systems with consequences.</h2>
+        <h2 class="section-heading" data-i18n="home.aboutTitle">I am interested in systems that can surprise me without becoming arbitrary.</h2>
         <div class="about-grid">
-          <p class="about-statement">Software becomes interesting when choices matter: a control changes a physical model, an interface reveals hidden state, a simulation responds to strategy, or a tool gives a person more precise agency.</p>
+          <p class="about-statement" data-i18n="home.aboutStatement">The work becomes interesting when a small decision changes a physical model, a hidden state becomes visible, a simulation teaches something unexpected, or a tool gives somebody a little more agency than they had before.</p>
           <div class="about-detail">
-            <p>I move comfortably between product thinking, interaction details and implementation. I prefer interfaces that explain themselves through structure, state and behavior rather than decorative complexity.</p>
-            <p>My work ranges from media playback architecture and deterministic game simulation to vehicle telemetry, public-service software, reproducible developer environments, graph knowledge systems and programmable input. The medium changes; the emphasis on clarity, rigor and control does not.</p>
+            <p data-i18n="home.aboutDetail1">I move comfortably between product thinking, visual and interaction design, and implementation. I like minimal surfaces with deep capability, playful prototypes that reveal a better direction, and systems whose behavior can eventually be explained precisely.</p>
+            <p data-i18n="home.aboutDetail2">The medium changes — media playback, games, vehicle telemetry, public-service software, developer environments, knowledge graphs or programmable input — but the pattern is consistent: curiosity opens the space, disciplined modeling keeps the result coherent, and automation protects enough time to keep experimenting.</p>
           </div>
         </div>
       </div>
@@ -222,11 +264,11 @@
     <section class="section" id="principles">
       <div class="site-shell">
         <p class="section-kicker">Working principles</p>
-        <h2 class="section-heading">Build from the model outward.</h2>
+        <h2 class="section-heading" data-i18n="home.principlesTitle">A disciplined process should create more room for wonder, not less.</h2>
         <div class="principles-grid">
-          <article class="principle"><strong>01</strong><h3>Understand the system first.</h3><p>Interaction quality depends on the underlying model. State, constraints, timing and failure modes should be explicit before the surface is polished.</p></article>
-          <article class="principle"><strong>02</strong><h3>Make behavior visible.</h3><p>Good interfaces communicate what is happening, what can happen next and what the user controls. Hidden mechanics create friction and distrust.</p></article>
-          <article class="principle"><strong>03</strong><h3>Use rigor to preserve agency.</h3><p>Strong types, clear invariants, deterministic behavior and accessible interaction are not ceremony. They make ambitious systems easier to reason about and safer to change.</p></article>
+          <article class="principle"><strong>01</strong><h3 data-i18n="home.principle1Title">Start with the interesting question.</h3><p data-i18n="home.principle1Body">Sketch it, prototype it, simulate it, put it on real hardware or deliberately push it too far. Early work should make discovery cheap enough that a surprising result can change the plan.</p></article>
+          <article class="principle"><strong>02</strong><h3 data-i18n="home.principle2Title">Turn experiments into evidence.</h3><p data-i18n="home.principle2Body">Instrument the behavior. Use deterministic seeds, visual laboratories, accessibility checks, performance traces and explicit domain models so decisions can be compared instead of defended by memory.</p></article>
+          <article class="principle"><strong>03</strong><h3 data-i18n="home.principle3Title">Automate what has earned permanence.</h3><p data-i18n="home.principle3Body">When an idea proves itself, encode the invariant in types, tests, CI and documentation. The machinery is there to prevent regressions and repetitive review — which leaves more human attention for the next creative problem.</p></article>
         </div>
       </div>
     </section>

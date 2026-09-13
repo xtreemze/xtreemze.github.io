@@ -1,23 +1,23 @@
-import { mkdir, readdir, writeFile } from "node:fs/promises";
-import { resolve } from "node:path";
+import { mkdir, readFile, writeFile } from "node:fs/promises";
+import { dirname, resolve } from "node:path";
 import { defineConfig } from "vite";
+import {
+  absoluteUrl,
+  decorateLocalizationChrome,
+  localizeHtml,
+  sourcePagePaths,
+  sourcePathFromTransformContext,
+  translatedLocaleCodes,
+} from "./scripts/localization.mjs";
 
 const root = process.cwd();
 const outDir = resolve(root, "dist");
 
 async function htmlInputs() {
-  const projectFiles = (await readdir(resolve(root, "projects")))
-    .filter((file) => file.endsWith(".html"))
-    .sort();
-
-  return Object.fromEntries([
-    ["index", resolve(root, "index.html")],
-    ["experience", resolve(root, "experience.html")],
-    ...projectFiles.map((file) => [
-      `projects/${file.slice(0, -5)}`,
-      resolve(root, "projects", file),
-    ]),
-  ]);
+  const pages = await sourcePagePaths(root);
+  return Object.fromEntries(
+    pages.map((page) => [page === "index.html" ? "index" : page.slice(0, -5), resolve(root, page)]),
+  );
 }
 
 function accessibilityInvariants() {
@@ -47,6 +47,16 @@ function accessibilityInvariants() {
   };
 }
 
+function localizationChrome() {
+  return {
+    name: "portfolio-localization-chrome",
+    transformIndexHtml(html, context) {
+      const pagePath = sourcePathFromTransformContext(root, context.filename);
+      return pagePath ? decorateLocalizationChrome(html, pagePath, "en") : html;
+    },
+  };
+}
+
 function publicationArtifacts() {
   return {
     name: "portfolio-publication-artifacts",
@@ -59,14 +69,20 @@ function publicationArtifacts() {
         "utf8",
       );
 
-      const projectFiles = (await readdir(resolve(root, "projects")))
-        .filter((file) => file.endsWith(".html"))
-        .sort();
-      const urls = [
-        "https://xtreemze.github.io/",
-        "https://xtreemze.github.io/experience.html",
-        ...projectFiles.map((file) => `https://xtreemze.github.io/projects/${file}`),
-      ];
+      const pages = await sourcePagePaths(root);
+      for (const pagePath of pages) {
+        const englishHtml = await readFile(resolve(outDir, pagePath), "utf8");
+        for (const localeCode of translatedLocaleCodes) {
+          const target = resolve(outDir, localeCode, pagePath);
+          await mkdir(dirname(target), { recursive: true });
+          await writeFile(target, localizeHtml(englishHtml, pagePath, localeCode), "utf8");
+        }
+      }
+
+      const urls = pages.flatMap((pagePath) => [
+        absoluteUrl(pagePath, "en"),
+        ...translatedLocaleCodes.map((localeCode) => absoluteUrl(pagePath, localeCode)),
+      ]);
       const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls
         .map((url) => `  <url><loc>${url}</loc></url>`)
         .join("\n")}\n</urlset>\n`;
@@ -78,7 +94,7 @@ function publicationArtifacts() {
 export default defineConfig(async () => ({
   appType: "mpa",
   publicDir: "public",
-  plugins: [accessibilityInvariants(), publicationArtifacts()],
+  plugins: [accessibilityInvariants(), localizationChrome(), publicationArtifacts()],
   build: {
     outDir: "dist",
     emptyOutDir: true,

@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a0b0d">
+  <meta name="description" content="Inventory case study — a hardened local-first inventory PWA for accountable offline operations and portable data.">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/case-study.css">
+  <title>Inventory — Carlos Velasco</title>
+</head>
+<body>
+  <header class="site-header"><div class="site-shell case-nav"><a class="brand" href="/"><span class="brand-mark" aria-hidden="true">CV</span><span>Carlos Velasco</span></a><a class="case-back" href="/#work">← Selected work</a></div></header>
+  <main class="case-main">
+    <section class="site-shell case-hero">
+      <div><p class="case-label" data-i18n="inventory.caseLabel">Public · Local-first operations</p><h1>Inventory</h1><p class="case-deck" data-i18n="inventory.deck">A rebuild of an older prototype as a hardened local-first inventory PWA, designed to remain useful offline and make check-outs, overdue items, responsible entities, backup and recovery visible.</p></div>
+      <dl class="case-facts"><div><dt>Niche</dt><dd data-i18n="inventory.niche">Small and medium inventory operations without permanent server dependency</dd></div><div><dt>Core stack</dt><dd data-i18n="inventory.stack">Native web · PWA · local storage</dd></div><div><dt>Capability</dt><dd data-i18n="inventory.capability">Check-out · overdue · export · offline</dd></div><div><dt>Focus</dt><dd data-i18n="inventory.focus">Validated rules · recovery · responsive UI</dd></div></dl>
+    </section>
+
+    <section class="site-shell case-visual" aria-labelledby="inventory-system-view">
+      <p class="case-visual-label" id="inventory-system-view" data-i18n="visual.systemView">System view</p>
+      <div class="case-visual-flow"><span class="case-visual-node" data-i18n="visual.localStore">Local store</span><span class="case-visual-arrow" aria-hidden="true">→</span><span class="case-visual-node" data-i18n="visual.domainValidation">Domain validation</span><span class="case-visual-arrow" aria-hidden="true">→</span><span class="case-visual-node" data-i18n="visual.offlinePwa">Offline PWA</span><span class="case-visual-arrow" aria-hidden="true">→</span><span class="case-visual-node" data-i18n="visual.exportRestore">Export · restore</span></div>
+    </section>
+
+    <section class="case-section"><div class="site-shell case-section-grid"><h2>The niche</h2><div class="case-copy"><p class="lead" data-i18n="inventory.nicheLead">Many lightweight inventory systems begin as spreadsheets and become fragile precisely when accountability for who has what starts to matter.</p><p data-i18n="inventory.nicheBody">Inventory occupies that space with an installable app that keeps operational history and domain rules locally, so a network outage does not turn the inventory into an empty screen.</p></div></div></section>
+    <section class="case-section"><div class="site-shell case-section-grid"><h2>What is different</h2><div class="case-copy"><p class="lead" data-i18n="inventory.diffLead">Data resilience is part of the everyday interaction model.</p><div class="case-points"><div class="case-point"><strong data-i18n="inventory.point1">Actually local-first</strong><p data-i18n="inventory.point1Body">Core operations and persistence work without a server, backed by deliberate PWA and offline-cache behavior.</p></div><div class="case-point"><strong data-i18n="inventory.point2">Explicit accountability</strong><p data-i18n="inventory.point2Body">Items, responsible entities, check-outs and overdue state are modeled to answer who has a resource and since when.</p></div><div class="case-point"><strong data-i18n="inventory.point3">Backup and portability</strong><p data-i18n="inventory.point3Body">Export and restore are product capabilities that protect local work rather than hidden development utilities.</p></div><div class="case-point"><strong data-i18n="inventory.point4">Responsive without a heavy runtime</strong><p data-i18n="inventory.point4Body">Mobile cards, touch layouts, themes and reduced motion are implemented while keeping the web runtime small.</p></div></div></div></div></section>
+    <section class="case-section"><div class="site-shell case-section-grid"><h2>Product & design thinking</h2><div class="case-copy"><p class="lead" data-i18n="inventory.productLead">The application prioritizes knowing where an object is and what requires attention.</p><p data-i18n="inventory.productBody1">Overdue states and responsibility are presented as operational signals, while frequent actions stay close and data administration remains structurally separate.</p><p data-i18n="inventory.productBody2">System/light/dark appearance, mobile safe areas and accessible micro-interactions improve legibility without turning a utility into a decorative interface.</p></div></div></section>
+    <section class="case-section"><div class="site-shell case-section-grid"><h2>Development approach</h2><div class="case-copy"><p class="lead" data-i18n="inventory.devLead">The modernization treats everyday use as the design laboratory: scan the task, remove friction, break the network, recover the data, and keep what still makes sense.</p><p data-i18n="inventory.devBody">Instead of preserving an old framework workflow, the rebuild starts from inventory invariants and native browser capabilities. Small prototypes can change interaction quickly, while offline tests, export/restore checks and domain validation prove that a cleaner interface has not weakened accountability.</p><p data-i18n="inventory.methodBody">That short loop replaces separate redesign, rewrite and hardening phases. Creative simplification and operational resilience are evaluated together, so the project can become lighter without becoming less trustworthy.</p><div class="case-actions"><a class="button primary" href="https://github.com/xtreemze/inventory" target="_blank" rel="noreferrer">Repository ↗</a><a class="button" href="https://xtreemze.github.io/inventory/" target="_blank" rel="noreferrer"><span data-i18n="common.liveBuild">Live build ↗</span></a></div></div></div></section>
+    <div class="site-shell"><a class="case-next" href="/projects/timeline.html"><span data-i18n="inventory.next">Next: Timeline</span><span>→</span></a></div>
+  </main>
+</body>
+</html>
