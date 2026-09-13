@@ -6,6 +6,7 @@ import portfolioRefresh from "../locales/portfolio-refresh.mjs";
 import portfolioRefreshExtra from "../locales/portfolio-refresh-extra.mjs";
 import sv from "../locales/sv.mjs";
 import toneRefinement from "../locales/tone-refinement.mjs";
+import toneRefinementCases from "../locales/tone-refinement-cases.mjs";
 import toneRefinementExtra from "../locales/tone-refinement-extra.mjs";
 
 const english = {
@@ -25,6 +26,7 @@ function extendLocale(locale) {
     portfolioMethodExtra,
     toneRefinement,
     toneRefinementExtra,
+    toneRefinementCases,
   ]) {
     const additions = source[locale.code] ?? {};
     locale.meta = { ...(locale.meta ?? {}), ...(additions.meta ?? {}) };
