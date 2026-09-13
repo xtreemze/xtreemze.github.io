@@ -24,6 +24,13 @@ for (const file of htmlFiles) {
   }
 }
 
+for (const file of ["README.md", "README_DEV.md", "SITE_AUDIT.md", ...htmlFiles]) {
+  const source = await readFile(resolve(root, file), "utf8");
+  if (/skills\s*cv/i.test(source)) {
+    failures.push(`${file}: contains retired pre-portfolio branding`);
+  }
+}
+
 for (const locale of [es, sv]) {
   const metadataFiles = Object.keys(locale.meta).sort();
   const expectedFiles = [...htmlFiles].sort();
