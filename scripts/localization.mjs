@@ -1,6 +1,7 @@
 import { readdir } from "node:fs/promises";
 import { relative, resolve } from "node:path";
 import es from "../locales/es.mjs";
+import portfolioRefresh from "../locales/portfolio-refresh.mjs";
 import sv from "../locales/sv.mjs";
 
 const english = {
@@ -13,6 +14,16 @@ const english = {
   ogLocale: "en_US",
 };
 
+function extendLocale(locale) {
+  const additions = portfolioRefresh[locale.code] ?? {};
+  locale.meta = { ...(locale.meta ?? {}), ...(additions.meta ?? {}) };
+  locale.attributes = { ...(locale.attributes ?? {}), ...(additions.attributes ?? {}) };
+  locale.keyed = { ...(locale.keyed ?? {}), ...(additions.keyed ?? {}) };
+  return locale;
+}
+
+extendLocale(es);
+extendLocale(sv);
 es.ogLocale = "es_ES";
 sv.ogLocale = "sv_SE";
 
@@ -178,11 +189,24 @@ function applyContentTranslations(html, locale) {
   return html.replace(matcher, (match) => targets.get(match) ?? match);
 }
 
+function applyKeyedTranslations(html, locale) {
+  const keyed = locale.keyed ?? {};
+  return html.replace(
+    /<(p|h1|h2|h3|span|strong|dt|dd)([^>]*?)\sdata-i18n="([^"]+)"([^>]*)>([\s\S]*?)<\/\1>/gu,
+    (match, tag, before, key, after) => {
+      const translated = keyed[key];
+      if (translated === undefined) return match;
+      return `<${tag}${before} data-i18n="${key}"${after}>${translated}</${tag}>`;
+    },
+  );
+}
+
 export function localizeHtml(html, pagePath, localeCode) {
   const locale = localeDefinitions[localeCode];
   if (!locale || localeCode === "en") return decorateLocalizationChrome(html, pagePath, "en");
 
   let output = applyContentTranslations(html, locale);
+  output = applyKeyedTranslations(output, locale);
   output = applyAttributeTranslations(output, locale);
   output = output.replace(/<html\b([^>]*?)\blang="en"/, `<html$1lang="${localeCode}"`);
   output = rewriteInternalLinks(output, localeCode);
