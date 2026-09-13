@@ -1,12 +1,12 @@
 import { readFile } from "node:fs/promises";
 import { resolve } from "node:path";
-import es from "../locales/es.mjs";
-import sv from "../locales/sv.mjs";
-import { sourcePagePaths } from "./localization.mjs";
+import { localeDefinitions, sourcePagePaths } from "./localization.mjs";
 
 const root = process.cwd();
 const htmlFiles = await sourcePagePaths(root);
 const failures = [];
+const es = localeDefinitions.es;
+const sv = localeDefinitions.sv;
 
 for (const file of htmlFiles) {
   const html = await readFile(resolve(root, file), "utf8");
@@ -14,6 +14,13 @@ for (const file of htmlFiles) {
   if (!/<title>[^<]+<\/title>/.test(html)) failures.push(`${file}: missing document title`);
   if (!/<h1\b/.test(html)) failures.push(`${file}: missing h1`);
   if (!/<main\b/.test(html)) failures.push(`${file}: missing main landmark`);
+
+  const keyedSources = [...html.matchAll(/data-i18n="([^"]+)"/g)].map((match) => match[1]);
+  for (const key of keyedSources) {
+    for (const locale of [es, sv]) {
+      if (!locale.keyed?.[key]?.trim()) failures.push(`${locale.code}/${file}: missing keyed translation ${key}`);
+    }
+  }
 }
 
 for (const locale of [es, sv]) {
@@ -37,6 +44,15 @@ for (const source of esSources) {
 }
 for (const source of svSources) {
   if (!esSources.has(source)) failures.push(`es: missing translation source: ${source}`);
+}
+
+const esKeys = new Set(Object.keys(es.keyed ?? {}));
+const svKeys = new Set(Object.keys(sv.keyed ?? {}));
+for (const key of esKeys) {
+  if (!svKeys.has(key)) failures.push(`sv: missing keyed translation: ${key}`);
+}
+for (const key of svKeys) {
+  if (!esKeys.has(key)) failures.push(`es: missing keyed translation: ${key}`);
 }
 
 if (failures.length > 0) {
