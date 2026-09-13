@@ -35,9 +35,15 @@ pnpm check
 - a stable `main#main` target;
 - a `color-scheme` declaration.
 
-Canonical hand-authored CSS and the favicon live in `public/`. They are intentionally copied byte-for-byte rather than bundled so cascade order remains an explicit property of the HTML documents. The build also emits `.nojekyll`, `robots.txt`, and `sitemap.xml`.
+Canonical hand-authored CSS and identity assets live in `public/`. They are intentionally copied byte-for-byte rather than bundled so cascade order and published branding remain explicit properties of the static artifact. The build also emits `.nojekyll`, `robots.txt`, and `sitemap.xml`.
 
 Do not add page-specific scripts to work around a shared layout/accessibility issue; change the shared build invariant or shared CSS instead.
+
+## Portfolio identity
+
+`public/favicon.ico` and `public/brand-mark.svg` are the canonical portfolio identifiers. The mark is a portfolio-level identity, not a project logo. Individual product marks remain scoped to their own case studies.
+
+When changing identity assets, keep the favicon, README presentation and published site visually consistent and verify that no retired site/product naming is reintroduced into current source or documentation.
 
 ## Certification
 
@@ -48,5 +54,3 @@ Automated results are necessary but not sufficient for an unconditional accessib
 ## Deployment
 
 `.github/workflows/site.yml` is the canonical Pages path. Pull requests run the complete verification lane. Pushes to `master` deploy `dist/` only after that same verification job succeeds. GitHub Pages should therefore be configured to use **GitHub Actions** as its deployment source.
-
-The old Vue/SkillsCV `css/` and `js/` bundles were intentionally removed because the current site no longer references them.

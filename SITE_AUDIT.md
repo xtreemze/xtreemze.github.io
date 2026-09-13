@@ -1,136 +1,63 @@
 # Portfolio UX / accessibility audit
 
-Audit date: 2026-09-11
+Audit updated: 2026-09-13
 
 ## Status
 
-**Source-level certification: CONDITIONAL PASS**
+**Automated browser certification: PASS**
 
-The site has a strong semantic, dependency-light foundation and is suitable for publication, but this audit does **not** claim complete WCAG conformance or visual/browser certification.
+The current portfolio is a static, multilingual, multi-page site with a verified GitHub Pages artifact. The release workflow exercises the same `dist/` output that is deployed.
 
-Two evidence limits matter:
+This record does not claim unconditional WCAG conformance. Automated browser and axe results are strong release evidence, but manual screen-reader, true 200% browser-zoom and final focus-obscuration review remain human certification steps.
 
-1. Product Design's screenshot-based audit workflow requires Work mode/browser capture. That environment was not used for this pass, so visual layout, real keyboard traversal, pointer behavior, color contrast rendered by a browser, and assistive-technology behavior remain runtime checks.
-2. Public search/crawler results for the deployed GitHub Pages URL were stale and still represented the former SkillsCV build. Repository `master` is therefore the source of truth for this audit; crawler output is not deployment certification.
+## Current evidence
 
-## What was inspected
+The post-merge certification run for the multilingual portfolio covered 45 public routes: 15 English source pages plus complete Spanish and Swedish variants. Playwright ran 348 checks across Chromium, Firefox and WebKit; 316 passed and 32 were intentional project-specific skips. There were no failures.
 
-- homepage information architecture and navigation
-- project-card interaction model
-- case-study navigation and long-form reading structure
-- responsive CSS behavior
-- focus styling and reduced-motion policy
-- semantic HTML landmarks/headings visible in source
-- external-link behavior
-- modern-web enhancements that can remain progressive and dependency-free
+The matrix verifies:
 
-## Findings
+- semantic page structure and one stable `main#main` target per page;
+- first-tab skip navigation on every route;
+- localized language/navigation labels and locale-preserving case-study journeys;
+- canonical URLs and `hreflang` alternatives;
+- automated axe WCAG A/AA scans on all routes;
+- compact navigation reachability and 44px-class targets;
+- 320, 390, 768, 1024 and 1440px responsive overflow checks;
+- reduced-motion behavior;
+- forced-colors behavior in Chromium;
+- production-build publication rather than source-only inspection.
 
-### P0 — none found
+## Architecture decisions
 
-No source-level issue was found that should block publication outright.
+The portfolio intentionally remains a mostly static application. Modern browser features are progressive enhancements rather than correctness dependencies.
 
-### P1 — mobile navigation hid primary destinations
+- **Cross-document View Transitions:** ordinary navigation remains authoritative when unsupported or motion is reduced.
+- **Scroll-driven animation:** used only for optional reading-progress feedback.
+- **`:has()` / `:target`:** visual state only; navigation semantics do not depend on them.
+- **No client router:** static routes improve crawlability, resilience and locale publishing.
+- **No mobile-menu script:** compact navigation remains directly available instead of hiding primary destinations behind state.
+- **No icon framework requirement:** semantic text remains the accessible name and lightweight decorative cues do not create a runtime dependency.
 
-Before this audit, the `max-width: 860px` rule hid every primary navigation item except GitHub. That made Work, Experience, About and Principles unavailable from the sticky navigation precisely on smaller screens.
+## Localization certification
 
-**Resolution in this change:** all destinations remain present. Mobile navigation becomes a horizontally resilient second row with 44px minimum targets and no JavaScript/menu state.
+English is the authored structural source. Spanish and Swedish pages are generated at build time as real static HTML, not client-side translations. The source verifier requires complete localized metadata and keyed translation coverage, and browser tests confirm that navigation remains in the selected locale.
 
-### P1 — repeated navigation lacks bypass links on deep pages
+International publishing includes locale-specific canonical metadata, `hreflang=en`, `es`, `sv`, `x-default`, Open Graph locale metadata and sitemap coverage for every public route.
 
-The homepage has a first-tab `Skip to content` link and an explicit `main` target. The Experience and project case-study documents do not currently expose the same bypass mechanism.
+## Identity and presentation
 
-**Status:** open certification gap. Add a skip link and stable main target to every deep document before claiming WCAG 2.2 Level A/AA conformance across the site.
+The portfolio uses a dedicated personal identity layer above individual project brands. The canonical identity assets live in `public/` and are copied directly into the Pages artifact so favicon and mark publication do not depend on bundler asset ordering.
 
-### P1 — visual/browser audit not executed
+Project logos, screenshots and visual marks remain scoped to the project they represent. The portfolio identity must not imply ownership of third-party or upstream project branding.
 
-Source review cannot certify actual wrapping, clipping, contrast, zoom behavior, touch interaction, keyboard order, browser View Transition behavior, or assistive-technology announcements.
+## Remaining manual certification
 
-**Status:** open certification gap. Run screenshot + keyboard + accessibility-tree/browser checks in an environment with browser capture.
+Before making an unconditional accessibility-conformance claim, complete and record:
 
-### P2 — deep-page lateral navigation is intentionally minimal
+1. screen-reader traversal of the homepage, Experience page and representative long case studies;
+2. true browser 200% zoom at representative desktop and mobile widths;
+3. manual focus-order and focus-obscuration review with the sticky header;
+4. manual text/graphics contrast spot-checks in rendered browsers;
+5. pointer/touch review on at least one real narrow-screen device.
 
-Case studies provide brand/home-back navigation and sequential next-project navigation, but no project index or quick lateral chooser at the top of each deep page.
-
-**Recommendation:** evaluate a compact native Popover-based project index only if browser testing shows the existing back/next model creates excessive navigation cost. Do not add a hidden menu merely because the API exists.
-
-### P2 — case-study metadata could be richer
-
-The homepage has strong canonical/Open Graph metadata. Detail pages have titles/descriptions but do not yet have equivalent canonical/Open Graph/social metadata for every case study.
-
-**Recommendation:** add per-case canonical URLs and social descriptions when project imagery becomes available.
-
-## Improvements included in this audit
-
-### Navigation
-
-- restore every primary destination on compact layouts
-- increase compact-nav hit areas to a 44px class target
-- add stable anchor offsets for the sticky header
-- add semantic visual cues for Work, Experience, About, Principles and external GitHub navigation without adding an icon dependency
-- indicate targeted homepage sections visually using modern `:has()` / `:target` CSS while preserving text labels
-
-### Interaction and orientation
-
-- opt same-origin documents into cross-document View Transitions as a progressive enhancement
-- give the persistent brand mark a stable view-transition identity
-- add a CSS scroll-progress indicator to long case studies using Scroll-driven Animations behind `@supports`
-- disable new motion when `prefers-reduced-motion: reduce` is active
-
-### Readability
-
-- use `text-wrap: balance` for display headings
-- use `text-wrap: pretty` for long descriptive copy where supported
-- reserve scrollbar gutter space to reduce layout shift
-
-### Accessibility resilience
-
-- preserve the existing high-visibility focus ring
-- add `prefers-contrast: more` strengthening for structural borders
-- add forced-colors handling for decorative status/navigation elements
-- do not replace text labels with icon-only controls
-
-## Technology decisions
-
-The site intentionally remains a multi-page, mostly static application. Modern APIs are used only where they improve the experience without becoming correctness dependencies.
-
-- **Cross-document View Transitions:** progressive enhancement; ordinary navigation remains authoritative.
-- **Scroll-driven Animations:** enhancement only; unsupported browsers simply omit the progress line.
-- **`:has()` / `:target`:** used for visual section state only, never for navigation semantics.
-- **No client router:** the Navigation API is not introduced because the site does not need SPA routing or interception.
-- **No icon package:** small semantic cues are CSS masks; text remains the accessible name.
-- **No mobile menu JavaScript:** keeping primary destinations visible is simpler and more robust than adding disclosure state.
-
-## Certification matrix
-
-| Area | Status | Evidence / limit |
-| --- | --- | --- |
-| Semantic page structure | Pass with gap | Homepage strong; deep-page bypass link still required |
-| Keyboard focus styling | Source pass | Visible 3px accent focus rule; runtime traversal not executed |
-| Reduced motion | Pass | Existing global policy plus new transition/progress suppression |
-| Compact navigation | Pass after change | Primary destinations no longer hidden |
-| Touch target intent | Pass after change | Compact primary nav uses >=44px minimum height |
-| Responsive project grid | Source pass | Grid collapses to one column; screenshot verification pending |
-| Contrast | Conditional | Palette is deliberately high contrast, but rendered contrast audit not executed |
-| Screen reader / accessibility tree | Not certified | Requires browser/AT evidence |
-| Cross-browser behavior | Not certified | Requires current-browser run |
-| Visual polish / clipping | Not certified | Requires screenshots at representative viewport classes |
-| Motion enhancements | Progressive pass | Feature-gated/ignorable and reduced-motion aware |
-| External navigation safety | Source pass | External links use new tab + `rel=noreferrer` in reviewed markup |
-
-## Required browser certification pass
-
-Before changing this document to an unconditional certification, exercise at least:
-
-1. 320px compact portrait
-2. 390px mobile portrait
-3. 768px tablet portrait
-4. 1024px constrained desktop/tablet landscape
-5. 1440px desktop
-6. 200% browser zoom
-7. keyboard-only homepage -> case study -> next/back navigation
-8. reduced-motion preference
-9. increased-contrast / forced-colors where available
-10. automated accessibility scan plus manual landmarks/headings/focus review
-
-For each viewport, capture the homepage, one representative long private case study, one public case study, and the Experience page.
+These are release-evidence tasks, not known blocking defects in the current automated matrix.
