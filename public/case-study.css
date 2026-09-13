@@ -48,6 +48,13 @@
   padding: clamp(5rem, 10vw, 9rem) 0 clamp(4rem, 8vw, 7rem);
 }
 
+.case-brand-mark {
+  display: block;
+  width: clamp(4.5rem, 7vw, 6rem);
+  height: auto;
+  margin: 0 0 1.5rem;
+}
+
 .case-label {
   margin: 0 0 1.35rem;
   color: var(--accent);
