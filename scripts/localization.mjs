@@ -6,6 +6,7 @@ import portfolioRefresh from "../locales/portfolio-refresh.mjs";
 import portfolioRefreshExtra from "../locales/portfolio-refresh-extra.mjs";
 import sv from "../locales/sv.mjs";
 import toneRefinement from "../locales/tone-refinement.mjs";
+import toneRefinementExtra from "../locales/tone-refinement-extra.mjs";
 
 const english = {
   code: "en",
@@ -18,11 +19,18 @@ const english = {
 };
 
 function extendLocale(locale) {
-  for (const source of [portfolioRefresh, portfolioRefreshExtra, portfolioMethodExtra, toneRefinement]) {
+  for (const source of [
+    portfolioRefresh,
+    portfolioRefreshExtra,
+    portfolioMethodExtra,
+    toneRefinement,
+    toneRefinementExtra,
+  ]) {
     const additions = source[locale.code] ?? {};
     locale.meta = { ...(locale.meta ?? {}), ...(additions.meta ?? {}) };
     locale.attributes = { ...(locale.attributes ?? {}), ...(additions.attributes ?? {}) };
     locale.keyed = { ...(locale.keyed ?? {}), ...(additions.keyed ?? {}) };
+    locale.replacements = [...(locale.replacements ?? []), ...(additions.replacements ?? [])];
   }
   locale.homeHeading = locale.keyed?.["home.heroTitle"] ?? locale.homeHeading;
   return locale;
