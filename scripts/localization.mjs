@@ -5,6 +5,7 @@ import portfolioMethodExtra from "../locales/portfolio-method-extra.mjs";
 import portfolioRefresh from "../locales/portfolio-refresh.mjs";
 import portfolioRefreshExtra from "../locales/portfolio-refresh-extra.mjs";
 import sv from "../locales/sv.mjs";
+import toneRefinement from "../locales/tone-refinement.mjs";
 
 const english = {
   code: "en",
@@ -12,12 +13,12 @@ const english = {
   languageNavLabel: "Language",
   skipLabel: "Skip to content",
   primaryNavLabel: "Primary navigation",
-  homeHeading: "I make complex systems legible, tactile and worth exploring.",
+  homeHeading: "I design and engineer systems that make complex behavior understandable.",
   ogLocale: "en_US",
 };
 
 function extendLocale(locale) {
-  for (const source of [portfolioRefresh, portfolioRefreshExtra, portfolioMethodExtra]) {
+  for (const source of [portfolioRefresh, portfolioRefreshExtra, portfolioMethodExtra, toneRefinement]) {
     const additions = source[locale.code] ?? {};
     locale.meta = { ...(locale.meta ?? {}), ...(additions.meta ?? {}) };
     locale.attributes = { ...(locale.attributes ?? {}), ...(additions.attributes ?? {}) };

@@ -1,0 +1,41 @@
+.atlas-preview {
+  display: grid;
+  grid-template-columns: minmax(16rem, 0.7fr) minmax(0, 1.3fr);
+  gap: 1.5rem;
+  align-items: stretch;
+  margin-top: 1.5rem;
+  margin-bottom: 4rem;
+}
+
+.atlas-preview-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 1rem;
+  padding: clamp(1.25rem, 3vw, 2.5rem);
+  border: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.atlas-preview-copy p {
+  margin: 0;
+  max-width: 42rem;
+}
+
+.atlas-preview iframe {
+  width: 100%;
+  min-height: 36rem;
+  border: 1px solid var(--border);
+  background: #111318;
+}
+
+@media (max-width: 800px) {
+  .atlas-preview {
+    grid-template-columns: 1fr;
+  }
+
+  .atlas-preview iframe {
+    min-height: 30rem;
+  }
+}
