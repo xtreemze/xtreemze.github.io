@@ -5,6 +5,9 @@ import portfolioMethodExtra from "../locales/portfolio-method-extra.mjs";
 import portfolioRefresh from "../locales/portfolio-refresh.mjs";
 import portfolioRefreshExtra from "../locales/portfolio-refresh-extra.mjs";
 import sv from "../locales/sv.mjs";
+import toneRefinement from "../locales/tone-refinement.mjs";
+import toneRefinementCases from "../locales/tone-refinement-cases.mjs";
+import toneRefinementExtra from "../locales/tone-refinement-extra.mjs";
 
 const english = {
   code: "en",
@@ -12,16 +15,24 @@ const english = {
   languageNavLabel: "Language",
   skipLabel: "Skip to content",
   primaryNavLabel: "Primary navigation",
-  homeHeading: "I make complex systems legible, tactile and worth exploring.",
+  homeHeading: "I design and engineer systems that make complex behavior understandable.",
   ogLocale: "en_US",
 };
 
 function extendLocale(locale) {
-  for (const source of [portfolioRefresh, portfolioRefreshExtra, portfolioMethodExtra]) {
+  for (const source of [
+    portfolioRefresh,
+    portfolioRefreshExtra,
+    portfolioMethodExtra,
+    toneRefinement,
+    toneRefinementExtra,
+    toneRefinementCases,
+  ]) {
     const additions = source[locale.code] ?? {};
     locale.meta = { ...(locale.meta ?? {}), ...(additions.meta ?? {}) };
     locale.attributes = { ...(locale.attributes ?? {}), ...(additions.attributes ?? {}) };
     locale.keyed = { ...(locale.keyed ?? {}), ...(additions.keyed ?? {}) };
+    locale.replacements = [...(locale.replacements ?? []), ...(additions.replacements ?? [])];
   }
   locale.homeHeading = locale.keyed?.["home.heroTitle"] ?? locale.homeHeading;
   return locale;
@@ -29,6 +40,12 @@ function extendLocale(locale) {
 
 extendLocale(es);
 extendLocale(sv);
+
+const retiredSourcePages = ["projects/via.html", "projects/workstation.html"];
+for (const locale of [es, sv]) {
+  for (const page of retiredSourcePages) delete locale.meta[page];
+}
+
 es.ogLocale = "es_ES";
 sv.ogLocale = "sv_SE";
 

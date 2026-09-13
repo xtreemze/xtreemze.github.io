@@ -135,33 +135,6 @@ html {
   line-height: 1.45;
 }
 
-.project-card > div:first-child {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 1rem;
-}
-
-.project-mark {
-  display: grid;
-  width: 2.7rem;
-  aspect-ratio: 1;
-  flex: 0 0 auto;
-  place-items: center;
-  border: 1px solid var(--line-strong);
-  border-radius: 12px;
-  color: var(--accent);
-  font-size: 0.78rem;
-  font-weight: 850;
-  letter-spacing: -0.02em;
-}
-
-.project-card.featured .project-mark {
-  width: 3.2rem;
-  border-radius: 14px;
-  font-size: 0.86rem;
-}
-
 .project-card.private-project {
   border-color: rgba(200, 255, 90, 0.22);
 }
@@ -261,10 +234,6 @@ html {
   .portfolio-map {
     grid-template-columns: 1fr;
   }
-
-  .project-mark {
-    width: 2.45rem;
-  }
 }
 
 @media (prefers-contrast: more) {
@@ -272,8 +241,7 @@ html {
   .button,
   .signal-row,
   .portrait-frame,
-  .portfolio-map,
-  .project-mark {
+  .portfolio-map {
     border-color: currentColor;
   }
 
