@@ -83,6 +83,30 @@ test("Spanish professional narrative preserves product and company names", async
   expect(body).toContain("IKEA Kitchen Planner");
 });
 
+for (const localeCode of ["es", "sv"]) {
+  test(`${localeCode} renders keyed portfolio refresh copy`, async ({ page }) => {
+    const locale = localeDefinitions[localeCode];
+
+    await page.goto(routeForPage("index.html", localeCode));
+    await expect(page.locator('[data-i18n="home.flagships"]')).toHaveText(
+      locale.keyed["home.flagships"],
+    );
+    await expect(page.locator('[data-i18n="home.bookingSummary"]')).toHaveText(
+      locale.keyed["home.bookingSummary"],
+    );
+
+    await page.goto(routeForPage("projects/booking.html", localeCode));
+    await expect(page.locator('[data-i18n="booking.nicheLead"]')).toHaveText(
+      locale.keyed["booking.nicheLead"],
+    );
+
+    await page.goto(routeForPage("projects/lemonade.html", localeCode));
+    await expect(page.locator('[data-i18n="lemonade.devArchitecture"]')).toHaveText(
+      locale.keyed["lemonade.devArchitecture"],
+    );
+  });
+}
+
 test("compact navigation keeps every primary destination reachable", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto("/");
