@@ -2,6 +2,7 @@ import { readdir } from "node:fs/promises";
 import { relative, resolve } from "node:path";
 import es from "../locales/es.mjs";
 import portfolioRefresh from "../locales/portfolio-refresh.mjs";
+import portfolioRefreshExtra from "../locales/portfolio-refresh-extra.mjs";
 import sv from "../locales/sv.mjs";
 
 const english = {
@@ -15,10 +16,12 @@ const english = {
 };
 
 function extendLocale(locale) {
-  const additions = portfolioRefresh[locale.code] ?? {};
-  locale.meta = { ...(locale.meta ?? {}), ...(additions.meta ?? {}) };
-  locale.attributes = { ...(locale.attributes ?? {}), ...(additions.attributes ?? {}) };
-  locale.keyed = { ...(locale.keyed ?? {}), ...(additions.keyed ?? {}) };
+  for (const source of [portfolioRefresh, portfolioRefreshExtra]) {
+    const additions = source[locale.code] ?? {};
+    locale.meta = { ...(locale.meta ?? {}), ...(additions.meta ?? {}) };
+    locale.attributes = { ...(locale.attributes ?? {}), ...(additions.attributes ?? {}) };
+    locale.keyed = { ...(locale.keyed ?? {}), ...(additions.keyed ?? {}) };
+  }
   return locale;
 }
 
