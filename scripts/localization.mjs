@@ -1,6 +1,7 @@
 import { readdir } from "node:fs/promises";
 import { relative, resolve } from "node:path";
 import es from "../locales/es.mjs";
+import portfolioMethodExtra from "../locales/portfolio-method-extra.mjs";
 import portfolioRefresh from "../locales/portfolio-refresh.mjs";
 import portfolioRefreshExtra from "../locales/portfolio-refresh-extra.mjs";
 import sv from "../locales/sv.mjs";
@@ -11,12 +12,12 @@ const english = {
   languageNavLabel: "Language",
   skipLabel: "Skip to content",
   primaryNavLabel: "Primary navigation",
-  homeHeading: "I make complex systems legible, tactile and useful.",
+  homeHeading: "I make complex systems legible, tactile and worth exploring.",
   ogLocale: "en_US",
 };
 
 function extendLocale(locale) {
-  for (const source of [portfolioRefresh, portfolioRefreshExtra]) {
+  for (const source of [portfolioRefresh, portfolioRefreshExtra, portfolioMethodExtra]) {
     const additions = source[locale.code] ?? {};
     locale.meta = { ...(locale.meta ?? {}), ...(additions.meta ?? {}) };
     locale.attributes = { ...(locale.attributes ?? {}), ...(additions.attributes ?? {}) };
