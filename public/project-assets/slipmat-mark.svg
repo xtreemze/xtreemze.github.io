@@ -1,0 +1,56 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 512 512"
+  width="512"
+  height="512"
+  fill="none"
+  role="img"
+  aria-label="Slipmat"
+  data-pwa-brand-version="slipmat-pwa-branding-v2"
+  data-pwa-theme-color="#202020"
+  data-pwa-background-color="#101112"
+  data-pwa-plate-color="#1A1A1A"
+  data-pwa-copper-color="#E87D2D"
+  data-pwa-patina-color="#14BBC2"
+  data-pwa-monochrome-color="#E87D2D"
+  data-pwa-mark-radius="143"
+>
+  <title>Slipmat</title>
+  <g id="slipmat-mark">
+    <g id="slipmat-disc">
+      <path
+        d="M 228.556 126.885 A 132 132 0 1 1 126.885 228.556"
+        stroke="#E87D2D"
+        stroke-width="22"
+        stroke-linecap="butt"
+      />
+      <g id="slipmat-grooves" stroke="#E87D2D" stroke-width="3" opacity="0.28">
+        <circle cx="256" cy="256" r="108" />
+        <circle cx="256" cy="256" r="94" />
+        <circle cx="256" cy="256" r="80" />
+      </g>
+    </g>
+    <g id="slipmat-patina-accent">
+      <path
+        d="M 131.961 210.853 A 132 132 0 0 1 210.853 131.961"
+        stroke="#14BBC2"
+        stroke-width="22"
+        stroke-linecap="butt"
+      />
+    </g>
+    <g id="slipmat-copper-accent">
+      <circle cx="256" cy="256" r="44" fill="#E87D2D" />
+    </g>
+    <g id="slipmat-center">
+      <circle cx="256" cy="256" r="16" fill="#1A1A1A" />
+    </g>
+  </g>
+  <defs>
+    <path
+      id="slipmat-monochrome"
+      fill="#000000"
+      fill-rule="evenodd"
+      d="M114,256 a142,142 0 1,0 284,0 a142,142 0 1,0 -284,0 Z M144,256 a112,112 0 1,0 224,0 a112,112 0 1,0 -224,0 Z M 146.447 232.714 L 117.103 226.477 L 122.564 207.433 L 150.754 217.694 Z M 217.694 150.754 L 207.433 122.564 L 226.477 117.103 L 232.714 146.447 Z M212,256 a44,44 0 1,0 88,0 a44,44 0 1,0 -88,0 Z M240,256 a16,16 0 1,0 32,0 a16,16 0 1,0 -32,0 Z"
+    />
+  </defs>
+</svg>
