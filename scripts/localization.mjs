@@ -23,6 +23,7 @@ function extendLocale(locale) {
     locale.attributes = { ...(locale.attributes ?? {}), ...(additions.attributes ?? {}) };
     locale.keyed = { ...(locale.keyed ?? {}), ...(additions.keyed ?? {}) };
   }
+  locale.homeHeading = locale.keyed?.["home.heroTitle"] ?? locale.homeHeading;
   return locale;
 }
 
