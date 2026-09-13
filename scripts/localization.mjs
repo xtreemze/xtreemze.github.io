@@ -40,6 +40,12 @@ function extendLocale(locale) {
 
 extendLocale(es);
 extendLocale(sv);
+
+const retiredSourcePages = ["projects/via.html", "projects/workstation.html"];
+for (const locale of [es, sv]) {
+  for (const page of retiredSourcePages) delete locale.meta[page];
+}
+
 es.ogLocale = "es_ES";
 sv.ogLocale = "sv_SE";
 
