@@ -26,6 +26,11 @@ export default {
         "El teclado físico es el estudio de diseño: una capa, un acorde, la dirección de un encoder o el ritmo de la pantalla tiene que sentirse bien en las manos antes de merecer convertirse en una regla.",
       "qmk.methodBody":
         "Los ajustes editables desde el host, las comprobaciones de geometría y los artefactos de release repetibles acortan el antiguo ciclo editar → compilar → flashear → recordar qué cambió. Los experimentos táctiles rápidos siguen siendo posibles, mientras los comportamientos que sobreviven al uso diario quedan capturados como configuración, pruebas y evidencia de release en lugar de depender de la memoria.",
+
+      "fireone.methodBody":
+        "El determinismo también cambia el proceso creativo. Un modelo de sonar, un comportamiento de IA, una regla de armas o un escenario deliberadamente difícil puede explorarse con semillas fijas, historiales de comandos reproducibles y distintos clientes de presentación. Eso hace barato experimentar sin perder la honestidad de la pregunta: ¿la idea mejoró el problema de decisión o solo hizo la pantalla más dramática?",
+      "workstation.methodBody":
+        "La reversibilidad es lo que mantiene creativo el entorno. Una nueva herramienta de shell, un experimento de editor o un flujo específico de una máquina puede probarse mediante un perfil, dry run o paquete aislado y retirarse limpiamente si añade fricción. Cuando demuestra su valor en el trabajo diario, la automatización lo convierte en infraestructura aburrida. El sistema absorbe los experimentos exitosos para que la atención pueda pasar al siguiente.",
     },
   },
   sv: {
@@ -55,6 +60,11 @@ export default {
         "Det fysiska tangentbordet är designstudion: ett lager, ett ackord, en encoderriktning eller en displayrytm måste kännas rätt i händerna innan det förtjänar att bli en regel.",
       "qmk.methodBody":
         "Host-redigerbara inställningar, geometrikontroller och repeterbara releaseartefakter kortar den gamla loopen redigera → kompilera → flasha → minnas vad som ändrades. Snabba taktila experiment är fortfarande möjliga, medan beteenden som överlever daglig användning fångas som konfiguration, tester och releaseevidens i stället för att bero på minnet.",
+
+      "fireone.methodBody":
+        "Determinism förändrar också den kreativa processen. En sonarmodell, ett AI-beteende, en vapenregel eller ett medvetet svårt scenario kan utforskas med fasta seeds, återspelbara kommandohistoriker och olika presentationsklienter. Det gör experiment billiga utan att göra frågan mindre ärlig: förbättrade idén beslutsproblemet, eller gjorde den bara skärmen mer dramatisk?",
+      "workstation.methodBody":
+        "Reversibilitet är det som håller miljön kreativ. Ett nytt shellverktyg, ett editorexperiment eller ett maskinspecifikt arbetsflöde kan provas via en profil, dry run eller isolerat paket och tas bort rent om det skapar friktion. När det visar sitt värde i det dagliga arbetet gör automation det till tråkig infrastruktur. Systemet absorberar lyckade experiment så att uppmärksamheten kan gå vidare till nästa.",
     },
   },
 };
