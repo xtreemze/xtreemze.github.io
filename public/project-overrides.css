@@ -95,6 +95,73 @@ html {
   }
 }
 
+.portfolio-map {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1px;
+  margin: 2rem 0 3rem;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: var(--line);
+}
+
+.portfolio-map article {
+  min-width: 0;
+  padding: 1.1rem;
+  background: var(--surface, #0f1114);
+}
+
+.portfolio-map span {
+  display: block;
+  margin-bottom: 0.8rem;
+  color: var(--accent);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.portfolio-map strong {
+  display: block;
+  color: var(--text);
+  font-size: 0.94rem;
+}
+
+.portfolio-map p {
+  margin: 0.5rem 0 0;
+  color: var(--muted);
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+
+.project-card > div:first-child {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.project-mark {
+  display: grid;
+  width: 2.7rem;
+  aspect-ratio: 1;
+  flex: 0 0 auto;
+  place-items: center;
+  border: 1px solid var(--line-strong);
+  border-radius: 12px;
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 850;
+  letter-spacing: -0.02em;
+}
+
+.project-card.featured .project-mark {
+  width: 3.2rem;
+  border-radius: 14px;
+  font-size: 0.86rem;
+}
+
 .project-card.private-project {
   border-color: rgba(200, 255, 90, 0.22);
 }
@@ -153,6 +220,12 @@ html {
   color: var(--accent);
 }
 
+@media (max-width: 1040px) {
+  .portfolio-map {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 @media (max-width: 860px) {
   .header-inner {
     flex-wrap: wrap;
@@ -184,11 +257,23 @@ html {
   }
 }
 
+@media (max-width: 620px) {
+  .portfolio-map {
+    grid-template-columns: 1fr;
+  }
+
+  .project-mark {
+    width: 2.45rem;
+  }
+}
+
 @media (prefers-contrast: more) {
   .project-card,
   .button,
   .signal-row,
-  .portrait-frame {
+  .portrait-frame,
+  .portfolio-map,
+  .project-mark {
     border-color: currentColor;
   }
 
