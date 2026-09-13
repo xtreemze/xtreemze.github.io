@@ -18,7 +18,8 @@ for (const file of htmlFiles) {
   const keyedSources = [...html.matchAll(/data-i18n="([^"]+)"/g)].map((match) => match[1]);
   for (const key of keyedSources) {
     for (const locale of [es, sv]) {
-      if (!locale.keyed?.[key]?.trim()) failures.push(`${locale.code}/${file}: missing keyed translation ${key}`);
+      if (!locale.keyed?.[key]?.trim())
+        failures.push(`${locale.code}/${file}: missing keyed translation ${key}`);
     }
   }
 }
