@@ -44,9 +44,11 @@
   transform-origin: left center;
 }
 
-.studio-home .section {
-  content-visibility: auto;
-  contain-intrinsic-size: auto 50rem;
+#work,
+#capabilities,
+#approach,
+#experience {
+  scroll-margin-top: 8.5rem;
 }
 
 .studio-home .hero {
