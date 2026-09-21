@@ -49,6 +49,7 @@
 }
 
 .case-brand-mark {
+  view-transition-name: project-mark;
   display: block;
   width: clamp(4.5rem, 7vw, 6rem);
   height: auto;
@@ -65,6 +66,7 @@
 }
 
 .case-hero h1 {
+  view-transition-name: project-title;
   max-width: 900px;
   margin: 0;
   font-size: clamp(3.6rem, 9vw, 8.6rem);
@@ -293,6 +295,36 @@
 
 .case-next span:last-child {
   color: var(--accent);
+}
+
+
+@keyframes case-page-out {
+  to {
+    opacity: 0;
+    transform: scale(0.992);
+  }
+}
+
+@keyframes case-page-in {
+  from {
+    opacity: 0;
+    transform: translateY(0.7rem);
+  }
+}
+
+::view-transition-old(root) {
+  animation: 180ms cubic-bezier(0.4, 0, 1, 1) both case-page-out;
+}
+
+::view-transition-new(root) {
+  animation: 360ms cubic-bezier(0.16, 1, 0.3, 1) both case-page-in;
+}
+
+::view-transition-group(project-title),
+::view-transition-group(project-mark),
+::view-transition-group(site-mark) {
+  animation-duration: 420ms;
+  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 @keyframes case-scroll-progress {
