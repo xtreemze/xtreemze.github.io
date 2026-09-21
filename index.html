@@ -15,6 +15,7 @@
   <link rel="icon" href="/favicon.ico">
   <link rel="stylesheet" href="/styles.css">
   <link rel="stylesheet" href="/project-overrides.css">
+  <link rel="stylesheet" href="/architecture-portfolio.css">
   <title>Carlos Velasco — Product, systems, interaction</title>
 </head>
 <body>
@@ -86,8 +87,9 @@
           <a class="project-card featured private-project" href="/projects/slipmat.html">
             <div><span class="project-number">01 / Media systems</span></div>
             <div>
+              <img class="project-mark" src="/project-assets/slipmat-mark.svg" alt="" width="72" height="72">
               <h3>Slipmat</h3>
-              <p>A playback-first multimedia client for owned and self-hosted media. Slipmat treats playback as an explicit system: one authoritative timeline, inspectable source and generation identity, a persistent Playback Rail, native audio processing, visualization and music analysis across Jellyfin and local media.</p>
+              <p data-i18n="home.slipmatArchitectureSummary">A playback-first media system organized as domain contracts, deterministic planners and state machines, adapters and services, presentation models, then platform projections. Playback authority stays explicit across Jellyfin, local media, native processing and the interface.</p>
               <div class="project-meta" aria-label="Slipmat technologies"><span>React 19</span><span>Rust 2024</span><span>Tauri v2</span><span>Jellyfin</span><span>WASM analysis</span></div>
               <span class="project-status">Private · active product development</span>
               <span class="project-link">Read case study</span>
@@ -118,8 +120,9 @@
           <a class="project-card featured" href="/projects/defend.html">
             <div><span class="project-number">04 / Procedural systems</span></div>
             <div>
+              <img class="project-mark" src="/project-assets/defend-architecture.svg" alt="" width="72" height="72">
               <h3>Defend</h3>
-              <p>A browser-based 3D tower-defense project combining procedural behavior, physics, AI, projectiles and generated sound. The current work uses the earlier playable build as evidence while the underlying systems are studied and modernized.</p>
+              <p data-i18n="home.defendArchitectureSummary">A behavioral-parity modernization of a physics-driven strategy game. The historical Webpack/Babylon/Cannon build remains an executable reference while the maintained lane isolates deterministic domain logic, worker and audio ownership, and renderer-independent contracts.</p>
               <div class="project-meta" aria-label="Defend technologies"><span>Babylon.js</span><span>TypeScript</span><span>Physics</span><span>AI</span><span>Procedural audio</span></div>
               <span class="project-link">Read case study</span>
             </div>
@@ -128,8 +131,9 @@
           <a class="project-card standard" href="/projects/qmk.html">
             <div><span class="project-number">05 / Human input</span></div>
             <div>
+              <img class="project-mark" src="/project-assets/qmk-architecture.svg" alt="" width="72" height="72">
               <h3 data-i18n="home.qmkTitle">QMK / Vial / Halcyon</h3>
-              <p data-i18n="home.qmkSummary">An integrated split-keyboard system spanning QMK/Vial firmware, Halcyon TFT and encoder behavior, a typed Raw HID configuration contract, Vial host tooling and a visual Keyboard Atlas that models the physical Ferris geometry.</p>
+              <p data-i18n="home.qmkArchitectureSummary">An embedded input stack where firmware owns runtime semantics and persistence while typed Raw HID exposes capability-aware host configuration. Exact-target builds, resource reports, strict QMK lint and embedded anti-pattern checks make hardware constraints executable.</p>
               <div class="project-meta" aria-label="QMK, Vial and Halcyon technologies"><span>C</span><span>QMK / Vial</span><span>Raw HID</span><span>WebHID</span><span>Ferris Sweep</span></div>
               <span class="project-status" data-i18n="home.publicActive">Public · active development</span>
               <span class="project-link">Read case study</span>
@@ -139,8 +143,9 @@
           <a class="project-card wide" href="/projects/lemonade.html">
             <div><span class="project-number">06 / Economic simulation</span></div>
             <div>
+              <img class="project-mark" src="/project-assets/lemonade-architecture.svg" alt="" width="72" height="72">
               <h3>Lemonade</h3>
-              <p>A reconstruction of the classic Lemonade Stand around pricing, inventory and advertising under changing weather and market conditions. Deterministic simulation allows visual, audio and economic experiments to be compared from the same starting state.</p>
+              <p data-i18n="home.lemonadeArchitectureSummary">A deterministic economic simulation whose core is prohibited from depending on ambient time, randomness, browser state or rendering libraries. Three.js, Web Audio, storage and UI remain adapters, while fixed-seed certification makes balance and accounting reviewable.</p>
               <div class="project-meta" aria-label="Lemonade technologies"><span>TypeScript 6</span><span>Vite 8</span><span>Three.js</span><span>Web Audio</span></div>
               <span class="project-status" data-i18n="home.lemonadeStatus">Public · active development</span>
               <span class="project-link">Read case study</span>
@@ -150,8 +155,9 @@
           <a class="project-card featured" href="/projects/booking.html">
             <div><span class="project-number" data-i18n="home.bookingCategory">07 / Configurable platforms</span></div>
             <div>
+              <img class="project-mark" src="/project-assets/booking-architecture.svg" alt="" width="72" height="72">
               <h3>Booking</h3>
-              <p data-i18n="home.bookingSummary">A configurable booking platform that models appointments, capacity reservations and stays as related scheduling contracts, with auditability and supply-chain evidence designed into the workspace.</p>
+              <p data-i18n="home.bookingArchitectureSummary">A configurable reservation platform built around a pure scheduling engine, replaceable persistence and explicit production transaction boundaries. Governance registries, SBOMs and provenance evidence are treated as part of the system architecture rather than release paperwork.</p>
               <div class="project-meta"><span>TypeScript</span><span>Domain modeling</span><span>CodeQL</span><span>CycloneDX</span></div>
               <span class="project-status" data-i18n="home.publicActive">Public · active development</span>
               <span class="project-link">Read case study</span>
@@ -172,8 +178,9 @@
           <a class="project-card wide" href="/projects/timeline.html">
             <div><span class="project-number" data-i18n="home.timelineCategory">09 / Information modeling</span></div>
             <div>
+              <img class="project-mark" src="/project-assets/timeline-architecture.svg" alt="" width="72" height="72">
               <h3>Timeline</h3>
-              <p data-i18n="home.timelineSummary">A responsive workspace for events, ranges, categories and stories. It studies how factual chronology can support structured narratives while keeping source events explicit.</p>
+              <p data-i18n="home.timelineArchitectureSummary">A local-first chronology and relationship workspace with a renderer-independent temporal projection layer and retained keyed scene. Overscan, interaction retention and commit-time reconciliation preserve identity and performance while timeline, graph and map views evolve toward a coordinated model.</p>
               <div class="project-meta"><span>Events</span><span>Ranges</span><span>Categories</span><span>Stories</span></div>
               <span class="project-status" data-i18n="home.publicActive">Public · active development</span>
               <span class="project-link">Read case study</span>
