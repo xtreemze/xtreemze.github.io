@@ -8,19 +8,24 @@
     "node": ">=24.21.0 <25"
   },
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview --host 127.0.0.1 --port 4173",
-    "lint": "biome check vite.config.mjs playwright.config.mjs tests scripts package.json biome.json",
-    "lint:fix": "biome check --write vite.config.mjs playwright.config.mjs tests scripts package.json biome.json",
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview --host 127.0.0.1 --port 4173",
+    "typecheck": "astro check",
+    "lint": "biome check astro.config.mjs playwright.config.mjs tests scripts src package.json biome.json",
+    "lint:fix": "biome check --write astro.config.mjs playwright.config.mjs tests scripts src package.json biome.json",
     "test": "pnpm build && playwright test",
     "test:chromium": "pnpm build && playwright test --project=chromium",
-    "check": "pnpm lint && pnpm test"
+    "check": "pnpm lint && pnpm typecheck && pnpm test"
   },
   "devDependencies": {
+    "@astrojs/check": "0.9.10",
+    "@astrojs/sitemap": "3.7.4",
     "@axe-core/playwright": "4.13.0",
     "@biomejs/biome": "2.5.13",
     "@playwright/test": "1.63.0",
-    "vite": "8.2.2"
+    "@types/node": "24.13.6",
+    "astro": "7.3.3",
+    "typescript": "npm:@typescript/typescript6@6.0.2"
   }
 }
