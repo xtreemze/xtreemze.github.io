@@ -37,12 +37,12 @@ pnpm check
 Responsive and interaction invariants that are not expressible as Biome rules live in `scripts/lint-architecture.mjs`. The policy rejects:
 
 - desktop-first `max-width` / `width <` breakpoints;
-- pixel-based viewport breakpoints (use `rem`/`em`);
+- pixel-based viewport breakpoints (use `rem`/`em`), device-specific breakpoints, and orientation-label breakpoints;
 - `100vw` layout locks;
 - static `100vh` sizing where dynamic viewport units are required;
 - root `html`/`body` minimum widths;
 - `overflow-x: hidden` or `clip` used to mask layout defects;
-- pixel font sizes, removed focus outlines, and `transition: all`.
+- zoom/text-scaling locks, hidden scrollbars, pixel font sizes, removed focus outlines, and `transition: all`.
 
 The current desktop-first breakpoint debt is recorded in `config/responsive-lint-baseline.json`. It is a ratchet, not an exemption mechanism: CI fails if a count increases, and it also fails if a count decreases until the baseline is lowered in the same change. New rule/file pairs have a zero-tolerance baseline.
 
