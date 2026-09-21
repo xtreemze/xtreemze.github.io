@@ -1,6 +1,6 @@
 import { access, readFile } from "node:fs/promises";
 import { basename, resolve } from "node:path";
-import { localizeHtml, sourcePagePaths } from "../../scripts/localization.mjs";
+import { localeDefinitions, localizeHtml, sourcePagePaths } from "../../scripts/localization.mjs";
 
 export const supportedLocales = ["en", "es", "sv"] as const;
 export const translatedLocales = ["es", "sv"] as const;
@@ -16,13 +16,14 @@ export interface SourceDocument {
 
 const root = process.cwd();
 
-function enforceAccessibilityInvariants(html: string) {
+function enforceAccessibilityInvariants(html: string, locale: SupportedLocale) {
   let output = html;
 
   if (!output.includes('class="skip-link"')) {
+    const skipLabel = localeDefinitions[locale].skipLabel;
     output = output.replace(
       "<body>",
-      '<body>\n  <a class="skip-link" href="#main">Skip to content</a>',
+      `<body>\n  <a class="skip-link" href="#main">${skipLabel}</a>`,
     );
   }
 
@@ -76,7 +77,7 @@ export async function renderSourceDocument(
 ): Promise<SourceDocument> {
   const source = await readFile(resolve(root, pagePath), "utf8");
   const localized = localizeHtml(source, pagePath, locale);
-  const accessible = enforceAccessibilityInvariants(localized);
+  const accessible = enforceAccessibilityInvariants(localized, locale);
   const withSharedLayout = await includeSharedLayoutLayer(accessible);
 
   return extractDocument(withSharedLayout, locale);
