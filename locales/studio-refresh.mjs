@@ -37,6 +37,12 @@ export default {
       "home.workIntro":
         "El portafolio es deliberadamente selectivo. Cada estudio principal presenta un tipo distinto de problema de sistemas y el recorrido desde la intención de producto y el diseño de interacción hasta la arquitectura, la verificación y el despliegue.",
       "home.readCaseStudy": "Leer caso de estudio",
+      "home.categoryMedia": "Sistemas multimedia",
+      "home.categoryProcedural": "Sistemas procedurales",
+      "home.categoryEconomic": "Simulación económica",
+      "home.categoryEmbedded": "Entrada integrada",
+      "home.categorySimulation": "Arquitectura de simulación",
+      "home.categoryKnowledge": "Sistemas de conocimiento",
       "home.labKicker": "Laboratorio activo",
       "home.labTitle": "Sistemas más pequeños que llevan una idea específica hasta el límite.",
       "home.labIntro":
@@ -84,6 +90,7 @@ export default {
       "home.readExperience": "Leer la trayectoria profesional",
       "home.footerTitle": "Hacer visible el comportamiento complejo.",
       "fireone.next": "Siguiente: Defend",
+      "experience.historicalRepository": "Repositorio histórico ↗",
     },
   },
   sv: {
@@ -124,6 +131,12 @@ export default {
       "home.workIntro":
         "Portföljen är medvetet selektiv. Varje huvudstudie visar en annan typ av systemproblem och vägen från produktintention och interaktionsdesign till arkitektur, verifiering och leverans.",
       "home.readCaseStudy": "Läs fallstudien",
+      "home.categoryMedia": "Mediesystem",
+      "home.categoryProcedural": "Procedurala system",
+      "home.categoryEconomic": "Ekonomisk simulering",
+      "home.categoryEmbedded": "Inbyggd inmatning",
+      "home.categorySimulation": "Simuleringsarkitektur",
+      "home.categoryKnowledge": "Kunskapssystem",
       "home.labKicker": "Aktivt laboratorium",
       "home.labTitle": "Mindre system som pressar en specifik idé hårt.",
       "home.labIntro":
@@ -171,6 +184,7 @@ export default {
       "home.readExperience": "Läs den professionella berättelsen",
       "home.footerTitle": "Gör komplext beteende synligt.",
       "fireone.next": "Nästa: Defend",
+      "experience.historicalRepository": "Historiskt kodarkiv ↗",
     },
   },
 };
