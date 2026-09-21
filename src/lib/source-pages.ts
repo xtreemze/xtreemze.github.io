@@ -29,8 +29,8 @@ function enforceAccessibilityInvariants(html: string) {
     );
   }
 
-  if (!/<main[^>]*\\bid="main"/.test(output)) {
-    output = output.replace(/<main\\b/, '<main id="main"');
+  if (!/<main[^>]*\bid="main"/.test(output)) {
+    output = output.replace(/<main\b/, '<main id="main"');
   }
 
   if (!output.includes('name="color-scheme"')) {
@@ -61,11 +61,11 @@ async function includeSharedLayoutLayer(html: string) {
 }
 
 function extractDocument(html: string, locale: SupportedLocale): SourceDocument {
-  const head = html.match(/<head>([\\s\\S]*?)<\\/head>/i)?.[1]?.trim() ?? "";
-  const bodyMatch = html.match(/<body([^>]*)>([\\s\\S]*?)<\\/body>/i);
+  const head = html.match(/<head>([\s\S]*?)<\/head>/i)?.[1]?.trim() ?? "";
+  const bodyMatch = html.match(/<body([^>]*)>([\s\S]*?)<\/body>/i);
   const bodyAttributes = bodyMatch?.[1] ?? "";
   const body = bodyMatch?.[2]?.trim() ?? "";
-  const bodyClass = bodyAttributes.match(/\\bclass="([^"]+)"/i)?.[1];
+  const bodyClass = bodyAttributes.match(/\bclass="([^"]+)"/i)?.[1];
 
   if (!head || !body) {
     throw new Error("Source document is missing a complete <head> or <body>.");
