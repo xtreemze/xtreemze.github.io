@@ -4,3 +4,4 @@ playwright-report/
 test-results/
 .cache/
 .DS_Store
+.astro/
