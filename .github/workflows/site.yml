@@ -3,7 +3,7 @@ name: Site quality and Pages
 on:
   pull_request:
   push:
-    branches: [master]
+    branches: [master, architecture/astro-7-migration]
   workflow_dispatch:
 
 concurrency:
