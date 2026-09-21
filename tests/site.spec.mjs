@@ -107,12 +107,15 @@ for (const localeCode of ["es", "sv"]) {
   });
 }
 
-
 test("homepage curates current work and omits stale project surfaces", async ({ page }) => {
   await page.goto("/");
-  await expect(page.getByRole("heading", { level: 3, name: "Timeline", exact: true })).toBeVisible();
+  await expect(
+    page.getByRole("heading", { level: 3, name: "Timeline", exact: true }),
+  ).toBeVisible();
   await expect(page.getByRole("heading", { level: 3, name: "Slipmat", exact: true })).toBeVisible();
-  await expect(page.getByRole("heading", { level: 3, name: "Signal Broker", exact: true })).toHaveCount(0);
+  await expect(
+    page.getByRole("heading", { level: 3, name: "Signal Broker", exact: true }),
+  ).toHaveCount(0);
   await expect(page.getByRole("heading", { level: 3, name: /Kullaberg/i })).toHaveCount(0);
   await expect(page.locator('a[href="/projects/signal-broker.html"]')).toHaveCount(0);
   await expect(page.locator('a[href="/projects/kullaberg.html"]')).toHaveCount(0);
