@@ -1,5 +1,6 @@
 import { readdir } from "node:fs/promises";
 import { relative, resolve } from "node:path";
+import architectureRefresh from "../locales/architecture-refresh.mjs";
 import es from "../locales/es.mjs";
 import portfolioMethodExtra from "../locales/portfolio-method-extra.mjs";
 import portfolioRefresh from "../locales/portfolio-refresh.mjs";
@@ -21,6 +22,7 @@ const english = {
 
 function extendLocale(locale) {
   for (const source of [
+    architectureRefresh,
     portfolioRefresh,
     portfolioRefreshExtra,
     portfolioMethodExtra,

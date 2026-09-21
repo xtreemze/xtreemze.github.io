@@ -1,0 +1,17 @@
+.project-mark {
+  display: block;
+  width: clamp(3.5rem, 8vw, 4.5rem);
+  height: auto;
+  margin-block: 0 1.25rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 0 1px var(--line);
+}
+
+.project-card:has(.project-mark) {
+  position: relative;
+}
+
+.project-card:has(.project-mark) .project-number {
+  display: inline-flex;
+  margin-bottom: 1rem;
+}

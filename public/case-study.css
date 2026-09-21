@@ -389,3 +389,35 @@
     animation-duration: 0.001ms !important;
   }
 }
+
+
+/* Architecture evidence blocks keep implementation constraints visible beside narrative case-study text. */
+.architecture-evidence {
+  display: grid;
+  gap: 1rem;
+  margin-block: 2rem 0;
+}
+
+.architecture-evidence article {
+  min-width: 0;
+  padding: 1.25rem;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.018);
+}
+
+.architecture-evidence strong {
+  display: block;
+  margin-bottom: 0.45rem;
+  color: var(--text);
+}
+
+.architecture-evidence p {
+  margin: 0;
+}
+
+@media (width >= 48rem) {
+  .architecture-evidence {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

@@ -16,6 +16,11 @@
   data-pwa-mark-radius="143"
 >
   <title>Slipmat</title>
+  <!--
+    The canonical mark intentionally has no background rectangle. Browser,
+    PWA, Android, Apple, and desktop package generators decide whether their
+    target projection keeps transparency or adds the authored Slipmat plate.
+  -->
   <g id="slipmat-mark">
     <g id="slipmat-disc">
       <path
@@ -24,7 +29,12 @@
         stroke-width="22"
         stroke-linecap="butt"
       />
-      <g id="slipmat-grooves" stroke="#E87D2D" stroke-width="3" opacity="0.28">
+      <g
+        id="slipmat-grooves"
+        stroke="#E87D2D"
+        stroke-width="3"
+        opacity="0.28"
+      >
         <circle cx="256" cy="256" r="108" />
         <circle cx="256" cy="256" r="94" />
         <circle cx="256" cy="256" r="80" />
@@ -45,6 +55,11 @@
       <circle cx="256" cy="256" r="16" fill="#1A1A1A" />
     </g>
   </g>
+  <!--
+    Keep the monochrome silhouette in <defs> so it is available to generators
+    without painting over the full-color mark when this source is opened or
+    rendered directly for design review.
+  -->
   <defs>
     <path
       id="slipmat-monochrome"
