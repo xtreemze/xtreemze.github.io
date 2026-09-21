@@ -1,0 +1,18 @@
+{
+  "responsive/no-desktop-first-breakpoint": {
+    "public/styles.css": 2,
+    "public/layout-grid.css": 3,
+    "public/refinement.css": 1,
+    "public/case-study.css": 2,
+    "public/localization.css": 3,
+    "public/project-overrides.css": 3
+  },
+  "responsive/no-px-breakpoint": {
+    "public/styles.css": 2,
+    "public/layout-grid.css": 3,
+    "public/refinement.css": 1,
+    "public/case-study.css": 2,
+    "public/localization.css": 3,
+    "public/project-overrides.css": 3
+  }
+}
