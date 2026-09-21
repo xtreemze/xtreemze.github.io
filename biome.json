@@ -28,7 +28,6 @@
       }
     },
     "domains": {
-      "project": "all",
       "test": "all"
     }
   },
