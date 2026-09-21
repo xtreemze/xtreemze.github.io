@@ -34,10 +34,7 @@ function enforceAccessibilityInvariants(html: string) {
   }
 
   if (!output.includes('name="color-scheme"')) {
-    output = output.replace(
-      "</head>",
-      '  <meta name="color-scheme" content="dark">\n</head>',
-    );
+    output = output.replace("</head>", '  <meta name="color-scheme" content="dark">\n</head>');
   }
 
   return output;
@@ -54,10 +51,7 @@ async function includeSharedLayoutLayer(html: string) {
 
   if (html.includes('href="/layout-grid.css"')) return html;
 
-  return html.replace(
-    "</head>",
-    '  <link rel="stylesheet" href="/layout-grid.css">\n</head>',
-  );
+  return html.replace("</head>", '  <link rel="stylesheet" href="/layout-grid.css">\n</head>');
 }
 
 function extractDocument(html: string, locale: SupportedLocale): SourceDocument {
