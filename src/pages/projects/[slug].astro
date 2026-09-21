@@ -1,0 +1,23 @@
+---
+import SourceDocument from "../../components/SourceDocument.astro";
+import {
+  projectSlugs,
+  renderSourceDocument,
+} from "../../lib/source-pages";
+
+export async function getStaticPaths() {
+  return (await projectSlugs()).map((slug) => ({
+    params: { slug },
+    props: { pagePath: "projects/" + slug + ".html" },
+  }));
+}
+
+interface Props {
+  pagePath: string;
+}
+
+const { pagePath } = Astro.props;
+const document = await renderSourceDocument(pagePath, "en");
+---
+
+<SourceDocument {document} />
