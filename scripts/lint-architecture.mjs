@@ -33,7 +33,7 @@ export const rules = [
   {
     id: "responsive/no-root-min-width",
     message: "html/body must not impose a minimum inline viewport width.",
-    pattern: /(?:^|})\s*(?:html|body)\s*\{[^}]*\b(?:min-width|min-inline-size)\s*:/gimsu,
+    pattern: /(?:^|\})\s*(?:html|body)\s*\{[^}]*\b(?:min-width|min-inline-size)\s*:/gimsu,
   },
   {
     id: "a11y/no-px-font-size",
