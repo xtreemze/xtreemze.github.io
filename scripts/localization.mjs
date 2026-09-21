@@ -5,6 +5,7 @@ import es from "../locales/es.mjs";
 import portfolioMethodExtra from "../locales/portfolio-method-extra.mjs";
 import portfolioRefresh from "../locales/portfolio-refresh.mjs";
 import portfolioRefreshExtra from "../locales/portfolio-refresh-extra.mjs";
+import studioRefresh from "../locales/studio-refresh.mjs";
 import sv from "../locales/sv.mjs";
 import toneRefinement from "../locales/tone-refinement.mjs";
 import toneRefinementCases from "../locales/tone-refinement-cases.mjs";
@@ -29,6 +30,7 @@ function extendLocale(locale) {
     toneRefinement,
     toneRefinementExtra,
     toneRefinementCases,
+    studioRefresh,
   ]) {
     const additions = source[locale.code] ?? {};
     locale.meta = { ...(locale.meta ?? {}), ...(additions.meta ?? {}) };
@@ -43,7 +45,12 @@ function extendLocale(locale) {
 extendLocale(es);
 extendLocale(sv);
 
-const retiredSourcePages = ["projects/via.html", "projects/workstation.html"];
+const retiredSourcePages = [
+  "projects/via.html",
+  "projects/workstation.html",
+  "projects/signal-broker.html",
+  "projects/kullaberg.html",
+];
 for (const locale of [es, sv]) {
   for (const page of retiredSourcePages) delete locale.meta[page];
 }
