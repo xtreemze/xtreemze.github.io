@@ -1,0 +1,446 @@
+/*
+ * Portfolio layout composition layer.
+ *
+ * The base styles own component appearance. This file owns macro composition:
+ * one responsive 12-column grid, restrained spacing, and section-specific
+ * asymmetry. It is injected into every source page by Vite so localized output
+ * inherits exactly the same layout system.
+ */
+
+:root {
+  --layout-max: 1280px;
+  --layout-columns: repeat(12, minmax(0, 1fr));
+  --layout-gutter: clamp(0.9rem, 1.8vw, 1.6rem);
+  --layout-section-space: clamp(5rem, 10vw, 10rem);
+  --layout-flow-space: clamp(2rem, 5vw, 4.5rem);
+}
+
+.site-shell {
+  width: min(calc(100% - clamp(1.5rem, 4vw, 4rem)), var(--layout-max));
+}
+
+/* Landing-page hero: dominant statement with a deliberately narrower profile rail. */
+.hero {
+  grid-template-columns: var(--layout-columns);
+  gap: var(--layout-gutter);
+  align-items: start;
+}
+
+.hero > :first-child {
+  grid-column: 1 / span 8;
+  align-self: end;
+}
+
+.hero-aside {
+  grid-column: 10 / -1;
+  align-self: center;
+  min-width: 0;
+}
+
+.portrait-frame {
+  max-width: none;
+  margin-left: 0;
+}
+
+.signal-row {
+  grid-template-columns: 1fr;
+}
+
+/* Every landing-page section shares the same grid but composes content differently. */
+.section {
+  padding-block: var(--layout-section-space);
+}
+
+.section > .site-shell {
+  display: grid;
+  grid-template-columns: var(--layout-columns);
+  column-gap: var(--layout-gutter);
+}
+
+.section-kicker {
+  grid-column: 1 / span 2;
+  align-self: start;
+}
+
+.section-heading {
+  grid-column: 3 / span 9;
+  max-width: none;
+}
+
+.section-intro {
+  grid-column: 5 / span 6;
+  max-width: none;
+}
+
+.portfolio-map,
+.project-grid,
+.about-grid,
+.principles-grid {
+  grid-column: 1 / -1;
+  width: 100%;
+}
+
+.archive-link {
+  grid-column: 3 / -1;
+}
+
+/* Portfolio taxonomy: four unequal fields instead of a uniform four-card strip. */
+.portfolio-map {
+  grid-template-columns: var(--layout-columns);
+  gap: var(--layout-gutter);
+  margin-block: var(--layout-flow-space);
+  overflow: visible;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+.portfolio-map article {
+  min-height: 9rem;
+  padding: 1rem 0 0;
+  border-top: 1px solid var(--line-strong);
+  background: transparent;
+}
+
+.portfolio-map article:nth-child(1) {
+  grid-column: 1 / span 4;
+}
+
+.portfolio-map article:nth-child(2) {
+  grid-column: 6 / span 3;
+}
+
+.portfolio-map article:nth-child(3) {
+  grid-column: 9 / -1;
+}
+
+.portfolio-map article:nth-child(4) {
+  grid-column: 3 / span 5;
+}
+
+/* Project sequence keeps a 12-column rhythm while allowing the rows to breathe. */
+.project-grid {
+  gap: var(--layout-gutter);
+  margin-top: var(--layout-flow-space);
+}
+
+.project-grid > .project-card:nth-child(3n + 2) {
+  align-self: end;
+}
+
+.project-grid > .project-card:nth-child(4n + 2) {
+  margin-top: clamp(1rem, 3vw, 2.75rem);
+}
+
+.project-grid > .project-card:nth-child(4n) {
+  margin-bottom: clamp(1rem, 3vw, 2.75rem);
+}
+
+/* Each narrative section gets its own balance without abandoning the shared grid. */
+#experience .section-heading {
+  grid-column: 2 / span 9;
+}
+
+#experience .about-statement {
+  grid-column: 1 / span 6;
+}
+
+#experience .about-detail {
+  grid-column: 8 / span 5;
+}
+
+#about .section-heading {
+  grid-column: 4 / span 8;
+}
+
+#about .about-statement {
+  grid-column: 2 / span 6;
+}
+
+#about .about-detail {
+  grid-column: 9 / span 4;
+}
+
+#principles .section-heading {
+  grid-column: 2 / span 10;
+}
+
+.principles-grid {
+  gap: var(--layout-gutter);
+}
+
+.principle {
+  min-width: 0;
+}
+
+.principle:nth-child(1) {
+  grid-column: 1 / span 4;
+}
+
+.principle:nth-child(2) {
+  grid-column: 5 / span 5;
+}
+
+.principle:nth-child(3) {
+  grid-column: 10 / -1;
+}
+
+/* Footer uses the same 12-column scaffold instead of an unrelated flex layout. */
+.footer-inner {
+  display: grid;
+  grid-template-columns: var(--layout-columns);
+  gap: var(--layout-gutter);
+  align-items: end;
+}
+
+.footer-title {
+  grid-column: 1 / span 8;
+  max-width: none;
+}
+
+.footer-meta {
+  grid-column: 10 / -1;
+}
+
+/* Case-study hero: editorial title field plus a compact facts rail. */
+.case-hero {
+  grid-template-columns: var(--layout-columns);
+  gap: var(--layout-gutter);
+}
+
+.case-hero > :first-child {
+  grid-column: 1 / span 8;
+}
+
+.case-facts {
+  grid-column: 9 / -1;
+}
+
+.case-facts div {
+  grid-template-columns: var(--layout-columns);
+  gap: var(--layout-gutter);
+}
+
+.case-facts dt {
+  grid-column: 1 / span 4;
+}
+
+.case-facts dd {
+  grid-column: 5 / -1;
+}
+
+/* Visual/system diagrams align their label and content to the same page columns. */
+.case-visual {
+  grid-template-columns: var(--layout-columns);
+  gap: var(--layout-gutter);
+}
+
+.case-visual-label {
+  grid-column: 1 / span 2;
+}
+
+.case-visual-flow {
+  grid-column: 3 / -1;
+}
+
+/* Narrative sections alternate their text position to avoid a repetitive left rail. */
+.case-section-grid {
+  grid-template-columns: var(--layout-columns);
+  gap: var(--layout-gutter);
+}
+
+.case-section h2 {
+  grid-column: 1 / span 2;
+}
+
+.case-copy {
+  grid-column: 4 / span 7;
+  max-width: none;
+}
+
+.case-section:nth-of-type(even) h2 {
+  grid-column: 2 / span 2;
+}
+
+.case-section:nth-of-type(even) .case-copy {
+  grid-column: 5 / span 7;
+}
+
+.case-points {
+  grid-template-columns: var(--layout-columns);
+  gap: var(--layout-gutter);
+}
+
+.case-point:nth-child(odd) {
+  grid-column: 1 / span 7;
+}
+
+.case-point:nth-child(even) {
+  grid-column: 8 / -1;
+}
+
+.case-point:nth-child(3) {
+  grid-column: 2 / span 5;
+}
+
+.case-point:nth-child(4) {
+  grid-column: 7 / -1;
+}
+
+.case-media {
+  grid-template-columns: var(--layout-columns);
+  gap: var(--layout-gutter);
+}
+
+.case-media img {
+  grid-column: 1 / -1;
+}
+
+.case-media figcaption {
+  grid-column: 2 / span 7;
+  max-width: none;
+}
+
+/* QMK Keyboard Atlas follows the same composition grammar. */
+.atlas-preview {
+  grid-template-columns: var(--layout-columns);
+  gap: var(--layout-gutter);
+}
+
+.atlas-preview-copy {
+  grid-column: 1 / span 4;
+}
+
+.atlas-preview iframe {
+  grid-column: 5 / -1;
+}
+
+/* Tablet: preserve 12 columns but reduce offsets that would make copy too narrow. */
+@media (max-width: 1040px) {
+  .hero > :first-child {
+    grid-column: 1 / span 8;
+  }
+
+  .hero-aside {
+    grid-column: 9 / -1;
+  }
+
+  .section-heading,
+  #experience .section-heading,
+  #about .section-heading,
+  #principles .section-heading {
+    grid-column: 2 / -1;
+  }
+
+  .section-intro {
+    grid-column: 4 / span 8;
+  }
+
+  .portfolio-map article:nth-child(1) {
+    grid-column: 1 / span 6;
+  }
+
+  .portfolio-map article:nth-child(2) {
+    grid-column: 7 / -1;
+  }
+
+  .portfolio-map article:nth-child(3) {
+    grid-column: 2 / span 6;
+  }
+
+  .portfolio-map article:nth-child(4) {
+    grid-column: 8 / -1;
+  }
+
+  .case-copy,
+  .case-section:nth-of-type(even) .case-copy {
+    grid-column: 4 / -1;
+  }
+
+  .case-section h2,
+  .case-section:nth-of-type(even) h2 {
+    grid-column: 1 / span 2;
+  }
+}
+
+/* Compact layouts collapse intentionally; reading order remains the DOM order. */
+@media (max-width: 860px) {
+  :root {
+    --layout-gutter: 1rem;
+    --layout-section-space: clamp(4rem, 12vw, 6.5rem);
+  }
+
+  .hero > :first-child,
+  .hero-aside,
+  .section-kicker,
+  .section-heading,
+  .section-intro,
+  #experience .section-heading,
+  #about .section-heading,
+  #principles .section-heading,
+  #experience .about-statement,
+  #experience .about-detail,
+  #about .about-statement,
+  #about .about-detail,
+  .archive-link,
+  .case-hero > :first-child,
+  .case-facts,
+  .case-visual-label,
+  .case-visual-flow,
+  .case-section h2,
+  .case-section:nth-of-type(even) h2,
+  .case-copy,
+  .case-section:nth-of-type(even) .case-copy,
+  .case-media img,
+  .case-media figcaption,
+  .atlas-preview-copy,
+  .atlas-preview iframe {
+    grid-column: 1 / -1;
+  }
+
+  .hero {
+    grid-template-columns: var(--layout-columns);
+  }
+
+  .hero-aside {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .signal-row {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .portfolio-map article:nth-child(n),
+  .principle:nth-child(n),
+  .case-point:nth-child(n) {
+    grid-column: 1 / -1;
+  }
+
+  .project-grid > .project-card:nth-child(n) {
+    margin-block: 0;
+  }
+
+  .footer-title {
+    grid-column: 1 / span 9;
+  }
+
+  .footer-meta {
+    grid-column: 1 / -1;
+    text-align: left;
+  }
+}
+
+@media (max-width: 560px) {
+  .site-shell {
+    width: min(calc(100% - 1.25rem), var(--layout-max));
+  }
+
+  .hero-aside,
+  .signal-row {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-title {
+    grid-column: 1 / -1;
+  }
+}
