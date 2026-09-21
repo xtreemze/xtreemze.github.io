@@ -1,0 +1,8 @@
+---
+import SourceDocument from "../components/SourceDocument.astro";
+import { renderSourceDocument } from "../lib/source-pages";
+
+const document = await renderSourceDocument("index.html", "en");
+---
+
+<SourceDocument {document} />
