@@ -30,6 +30,24 @@ pnpm check
 
 `pnpm test` performs a production build first and then serves `dist/` through `astro preview`, so browser tests exercise the same generated artifact that Pages publishes.
 
+## Lint and architecture policy
+
+`pnpm lint` is deliberately fail-closed. Biome runs every stable lint rule and treats warnings as failures; the only stable-rule exception is `noImportantStyles`, because the reduced-motion accessibility override intentionally requires `!important` to defeat authored animation timing.
+
+Responsive and interaction invariants that are not expressible as Biome rules live in `scripts/lint-architecture.mjs`. The policy rejects:
+
+- desktop-first `max-width` / `width <` breakpoints;
+- pixel-based viewport breakpoints (use `rem`/`em`);
+- `100vw` layout locks;
+- static `100vh` sizing where dynamic viewport units are required;
+- root `html`/`body` minimum widths;
+- `overflow-x: hidden` or `clip` used to mask layout defects;
+- pixel font sizes, removed focus outlines, and `transition: all`.
+
+The current desktop-first breakpoint debt is recorded in `config/responsive-lint-baseline.json`. It is a ratchet, not an exemption mechanism: CI fails if a count increases, and it also fails if a count decreases until the baseline is lowered in the same change. New rule/file pairs have a zero-tolerance baseline.
+
+Any suppression or policy exception must be narrower than the rule it bypasses, documented beside the exception, and justified by a platform/accessibility requirement rather than implementation convenience. Prefer changing the implementation or the rule design over adding exceptions.
+
 ## Astro migration architecture
 
 The existing English HTML documents remain the authored content source during the first migration stage. Astro owns all public routes under `src/pages/`; `src/lib/source-pages.ts` loads the source document, applies the existing locale data, enforces shared accessibility invariants and renders the result through `SourceDocument.astro`.
