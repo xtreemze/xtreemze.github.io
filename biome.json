@@ -2,9 +2,10 @@
   "$schema": "https://biomejs.dev/schemas/2.5.13/schema.json",
   "files": {
     "includes": [
-      "vite.config.mjs",
+      "astro.config.mjs",
       "playwright.config.mjs",
       "scripts/**/*.mjs",
+      "src/**/*.ts",
       "tests/**/*.mjs",
       "package.json"
     ]

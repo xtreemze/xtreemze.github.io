@@ -1,0 +1,24 @@
+---
+import SourceDocument from "../../components/SourceDocument.astro";
+import {
+  renderSourceDocument,
+  translatedLocales,
+  type SupportedLocale,
+} from "../../lib/source-pages";
+
+export function getStaticPaths() {
+  return translatedLocales.map((locale) => ({
+    params: { locale },
+    props: { locale },
+  }));
+}
+
+interface Props {
+  locale: SupportedLocale;
+}
+
+const { locale } = Astro.props;
+const document = await renderSourceDocument("index.html", locale);
+---
+
+<SourceDocument {document} />

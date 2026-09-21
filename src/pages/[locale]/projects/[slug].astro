@@ -1,0 +1,33 @@
+---
+import SourceDocument from "../../../components/SourceDocument.astro";
+import {
+  projectSlugs,
+  renderSourceDocument,
+  translatedLocales,
+  type SupportedLocale,
+} from "../../../lib/source-pages";
+
+export async function getStaticPaths() {
+  const slugs = await projectSlugs();
+
+  return translatedLocales.flatMap((locale) =>
+    slugs.map((slug) => ({
+      params: { locale, slug },
+      props: {
+        locale,
+        pagePath: "projects/" + slug + ".html",
+      },
+    })),
+  );
+}
+
+interface Props {
+  locale: SupportedLocale;
+  pagePath: string;
+}
+
+const { locale, pagePath } = Astro.props;
+const document = await renderSourceDocument(pagePath, locale);
+---
+
+<SourceDocument {document} />

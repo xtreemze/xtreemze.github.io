@@ -1,0 +1,19 @@
+---
+import type { SourceDocument } from "../lib/source-pages";
+
+interface Props {
+  document: SourceDocument;
+}
+
+const { document } = Astro.props;
+---
+
+<!doctype html>
+<html lang={document.lang}>
+  <head>
+    <Fragment set:html={document.head} />
+  </head>
+  <body class={document.bodyClass}>
+    <Fragment set:html={document.body} />
+  </body>
+</html>

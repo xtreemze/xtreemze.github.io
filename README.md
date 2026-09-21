@@ -14,7 +14,7 @@ A multilingual portfolio and engineering case-study site for work spanning produ
 
 ## What this repository is
 
-This repository is the source of the current personal portfolio and its project case studies. The site is deliberately static and multi-page: HTML remains the product surface, while the build system adds localization, shared publication metadata, accessibility invariants and a verified GitHub Pages artifact.
+This repository is the source of the current personal portfolio and its project case studies. The site is deliberately static and multi-page: Astro generates the HTML publication surface while preserving zero-JavaScript pages by default, and the build adds localization, shared publication metadata, accessibility invariants and a verified GitHub Pages artifact.
 
 The portfolio is organized around the problems each product is trying to solve, what makes the product or interaction model unusual, and the engineering methods used to preserve those ideas in implementation. It is not a generated résumé or a framework showcase.
 
@@ -37,11 +37,11 @@ The result is intentionally cross-disciplinary: interaction design and architect
 
 ## Languages and publishing
 
-English source documents are the authored structural source. Vite generates complete Spanish and Swedish static variants under `/es/` and `/sv/`; visitors do not depend on client-side translation JavaScript. Every generated page receives locale-specific canonical metadata, `hreflang` alternatives and accessibility labels, and all public routes are included in the sitemap.
+English source documents remain the authored structural source during the Astro migration. Astro generates complete Spanish and Swedish static variants under `/es/` and `/sv/`; visitors do not depend on client-side translation JavaScript. Every generated page receives locale-specific canonical metadata, `hreflang` alternatives and accessibility labels, and all public routes are included in the generated sitemap.
 
 ## Verification
 
-The Pages artifact is gated by the repository's certification workflow. It uses Node 24 LTS, pnpm, Vite/Rolldown, Biome, Playwright and axe-core. The browser matrix exercises Chromium, Firefox and WebKit across all localized routes, including semantic navigation, automated WCAG A/AA scans, locale-preserving keyboard journeys, reduced-motion behavior, forced-colors behavior and responsive overflow checks at representative viewport sizes.
+The Pages artifact is gated by the repository's certification workflow. It uses Node 24 LTS, pnpm, Astro 7 on Vite 8, strict TypeScript, Biome, Playwright and axe-core. The browser matrix exercises Chromium, Firefox and WebKit across all localized routes, including semantic navigation, automated WCAG A/AA scans, locale-preserving keyboard journeys, reduced-motion behavior, forced-colors behavior and responsive overflow checks at representative viewport sizes.
 
 Automated browser evidence is not presented as a substitute for manual assistive-technology review. The current audit record is in [`SITE_AUDIT.md`](./SITE_AUDIT.md), and development/build details are in [`README_DEV.md`](./README_DEV.md).
 
@@ -55,7 +55,7 @@ pnpm dev
 pnpm check
 ```
 
-`pnpm check` is the local release gate: lint, production build, and the browser/accessibility suite. GitHub Pages deploys only the verified `dist/` artifact produced by the same workflow.
+`pnpm check` is the local release gate: lint, Astro/TypeScript diagnostics, production build, and the browser/accessibility suite. GitHub Pages deploys only the verified `dist/` artifact produced by the same workflow.
 
 ## Identity
 
