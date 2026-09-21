@@ -17,7 +17,7 @@ const english = {
   languageNavLabel: "Language",
   skipLabel: "Skip to content",
   primaryNavLabel: "Primary navigation",
-  homeHeading: "I design and engineer systems that make complex behavior understandable.",
+  homeHeading: "Boutique product design for systems that need to be understood, felt and trusted.",
   ogLocale: "en_US",
 };
 
