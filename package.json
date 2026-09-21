@@ -12,11 +12,13 @@
     "build": "astro build",
     "preview": "astro preview --host 127.0.0.1 --port 4173",
     "typecheck": "astro check",
-    "lint": "biome check astro.config.mjs playwright.config.mjs tests scripts src package.json biome.json",
-    "lint:fix": "biome check --write astro.config.mjs playwright.config.mjs tests scripts src package.json biome.json",
+    "lint": "pnpm lint:biome && pnpm lint:policy",
+    "lint:fix": "biome check --write --error-on-warnings astro.config.mjs playwright.config.mjs tests scripts src public package.json biome.json && pnpm lint:policy",
     "test": "pnpm build && playwright test",
     "test:chromium": "pnpm build && playwright test --project=chromium",
-    "check": "pnpm lint && pnpm typecheck && pnpm test"
+    "check": "pnpm lint && pnpm typecheck && pnpm test",
+    "lint:biome": "biome check --error-on-warnings astro.config.mjs playwright.config.mjs tests scripts src public package.json biome.json",
+    "lint:policy": "node --test tests/lint-architecture.test.mjs && node scripts/lint-architecture.mjs"
   },
   "devDependencies": {
     "@astrojs/check": "0.9.10",
