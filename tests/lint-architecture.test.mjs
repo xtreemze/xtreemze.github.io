@@ -18,8 +18,12 @@ test("rejects layout concealment and static viewport assumptions", () => {
   const source = `
     body { min-width: 320px; }
     .shell { width: 100vw; overflow-x: hidden; min-height: 100vh; }
-    .text { font-size: 14px; }
+    .text { font-size: 14px; text-size-adjust: none; }
+    .scroll { scrollbar-width: none; }
     .control { outline: none; transition: all 160ms ease; }
+    @media (orientation: landscape) { .x { display: grid; } }
+    @media (device-width: 390px) { .x { display: block; } }
+    <meta name="viewport" content="width=device-width, maximum-scale=1">
   `;
   const rules = new Set(inspectText("fixture.css", source).map(({ rule }) => rule));
   for (const expected of [
@@ -28,7 +32,12 @@ test("rejects layout concealment and static viewport assumptions", () => {
     "responsive/no-horizontal-overflow-mask",
     "responsive/no-static-viewport-height",
     "a11y/no-px-font-size",
+    "a11y/no-zoom-lock",
+    "a11y/no-text-size-adjust-lock",
+    "a11y/no-hidden-scrollbar",
     "a11y/no-outline-removal",
+    "responsive/no-device-breakpoint",
+    "responsive/no-orientation-breakpoint",
     "motion/no-transition-all",
   ]) {
     assert.ok(rules.has(expected), `missing ${expected}`);
