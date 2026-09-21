@@ -1,9 +1,6 @@
 import { access, readFile } from "node:fs/promises";
 import { basename, resolve } from "node:path";
-import {
-  localizeHtml,
-  sourcePagePaths,
-} from "../../scripts/localization.mjs";
+import { localizeHtml, sourcePagePaths } from "../../scripts/localization.mjs";
 
 export const supportedLocales = ["en", "es", "sv"] as const;
 export const translatedLocales = ["es", "sv"] as const;
