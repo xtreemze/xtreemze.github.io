@@ -91,8 +91,8 @@ for (const localeCode of ["es", "sv"]) {
     await expect(page.locator('[data-i18n="home.flagships"]')).toHaveText(
       locale.keyed["home.flagships"],
     );
-    await expect(page.locator('[data-i18n="home.bookingSummary"]')).toHaveText(
-      locale.keyed["home.bookingSummary"],
+    await expect(page.locator('[data-i18n="home.bookingArchitectureSummary"]')).toHaveText(
+      locale.keyed["home.bookingArchitectureSummary"],
     );
 
     await page.goto(routeForPage("projects/booking.html", localeCode));
