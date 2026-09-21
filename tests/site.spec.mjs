@@ -88,8 +88,8 @@ for (const localeCode of ["es", "sv"]) {
     const locale = localeDefinitions[localeCode];
 
     await page.goto(routeForPage("index.html", localeCode));
-    await expect(page.locator('[data-i18n="home.flagships"]')).toHaveText(
-      locale.keyed["home.flagships"],
+    await expect(page.locator('[data-i18n="home.studioEyebrow"]')).toHaveText(
+      locale.keyed["home.studioEyebrow"],
     );
     await expect(page.locator('[data-i18n="home.bookingArchitectureSummary"]')).toHaveText(
       locale.keyed["home.bookingArchitectureSummary"],
@@ -107,11 +107,22 @@ for (const localeCode of ["es", "sv"]) {
   });
 }
 
+
+test("homepage curates current work and omits stale project surfaces", async ({ page }) => {
+  await page.goto("/");
+  await expect(page.getByRole("heading", { level: 3, name: "Timeline", exact: true })).toBeVisible();
+  await expect(page.getByRole("heading", { level: 3, name: "Slipmat", exact: true })).toBeVisible();
+  await expect(page.getByRole("heading", { level: 3, name: "Signal Broker", exact: true })).toHaveCount(0);
+  await expect(page.getByRole("heading", { level: 3, name: /Kullaberg/i })).toHaveCount(0);
+  await expect(page.locator('a[href="/projects/signal-broker.html"]')).toHaveCount(0);
+  await expect(page.locator('a[href="/projects/kullaberg.html"]')).toHaveCount(0);
+});
+
 test("compact navigation keeps every primary destination reachable", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto("/");
 
-  for (const name of ["Work", "Experience", "About", "Principles", "GitHub ↗"]) {
+  for (const name of ["Work", "Capabilities", "Approach", "Experience", "GitHub ↗"]) {
     const link = page.getByRole("navigation", { name: "Primary navigation" }).getByRole("link", {
       name,
       exact: true,
