@@ -1,13 +1,15 @@
 # Portfolio development
 
-The production site is a static multi-page application. It deliberately has no client framework or router; build tooling exists to enforce accessibility, validate the full navigation surface, optimize the HTML build, and deploy one verified artifact.
+The production site is a static multi-page application built with Astro. It deliberately has no client UI framework or application router; Astro provides typed page composition, static routing, publication tooling and a path away from bespoke build transforms without adding client-side JavaScript to ordinary pages.
 
 ## Toolchain
 
 - Node.js 24.21.0 LTS (`.node-version`)
 - pnpm 12.3.4 (`packageManager`)
-- Vite 8.2.2, using Rolldown, for local development and multi-page production builds
-- Biome 2.5.x for JavaScript/config formatting and linting
+- Astro 7.3.3 on Vite 8 for static page generation
+- TypeScript 6 through the compatibility package required by Astro language tooling while TypeScript 7 lacks the programmatic API Astro needs
+- `@astrojs/sitemap` for generated publication sitemaps
+- Biome 2.5.x for JavaScript/TypeScript/config formatting and linting
 - Playwright 1.63 for Chromium, Firefox and WebKit certification
 - axe-core through `@axe-core/playwright` for automated WCAG A/AA checks
 
@@ -21,23 +23,34 @@ pnpm install --frozen-lockfile
 pnpm exec playwright install
 pnpm dev
 pnpm lint
+pnpm typecheck
 pnpm test
 pnpm check
 ```
 
-`pnpm test` performs a production build first and then serves `dist/` through `vite preview`, so browser tests exercise the same generated artifact that Pages publishes.
+`pnpm test` performs a production build first and then serves `dist/` through `astro preview`, so browser tests exercise the same generated artifact that Pages publishes.
+
+## Astro migration architecture
+
+The existing English HTML documents remain the authored content source during the first migration stage. Astro owns all public routes under `src/pages/`; `src/lib/source-pages.ts` loads the source document, applies the existing locale data, enforces shared accessibility invariants and renders the result through `SourceDocument.astro`.
+
+This bridge is intentionally narrow. It allows the project to replace the custom Vite multi-page build immediately while keeping visual and multilingual output stable. It also creates a typed Astro boundary for the next migration stage: move repeated page chrome and case-study structures into Astro components and move project/localized content into schema-validated content collections.
+
+Do not add new cross-page behavior to the legacy HTML transformation layer. New reusable presentation behavior belongs in Astro components or shared CSS so the compatibility bridge can continue shrinking.
 
 ## Build invariants
 
-`vite.config.mjs` owns cross-page publication invariants. Every generated page receives:
+The Astro source-page bridge preserves these cross-page publication invariants:
 
 - a first-tab `Skip to content` link;
 - a stable `main#main` target;
-- a `color-scheme` declaration.
+- a `color-scheme` declaration;
+- locale-specific canonical and `hreflang` metadata;
+- language navigation generated from the existing translation data.
 
-Canonical hand-authored CSS and identity assets live in `public/`. They are intentionally copied byte-for-byte rather than bundled so cascade order and published branding remain explicit properties of the static artifact. The build also emits `.nojekyll`, `robots.txt`, and `sitemap.xml`.
+Canonical hand-authored CSS and identity assets remain in `public/` and are copied byte-for-byte. Astro generates the sitemap, while `public/.nojekyll` and `public/robots.txt` define the GitHub Pages publication surface.
 
-Do not add page-specific scripts to work around a shared layout/accessibility issue; change the shared build invariant or shared CSS instead.
+If `public/layout-grid.css` exists, the bridge loads it on every generated page. This keeps the responsive-grid design lane independent from the tooling migration.
 
 ## Portfolio identity
 
@@ -48,6 +61,8 @@ When changing identity assets, keep the favicon, README presentation and publish
 ## Certification
 
 The Playwright suite checks every route for bypass navigation and axe WCAG A/AA violations, compact navigation reachability/touch sizing, representative 320/390/768/1024/1440 layouts, keyboard-only navigation, reduced motion and forced-colors behavior. Chromium certification runs also capture full-page screenshots into the Playwright report.
+
+`astro check` runs before browser certification so route/component/type errors fail earlier than the end-to-end suite.
 
 Automated results are necessary but not sufficient for an unconditional accessibility-conformance claim. Manual screen-reader, true 200% browser-zoom and final visual/focus-obscuration review remain release-level evidence steps.
 
