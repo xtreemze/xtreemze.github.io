@@ -6,7 +6,10 @@
       "playwright.config.mjs",
       "scripts/**/*.mjs",
       "src/**/*.ts",
+      "src/**/*.json",
       "tests/**/*.mjs",
+      "public/**/*.css",
+      "config/**/*.json",
       "package.json"
     ]
   },
