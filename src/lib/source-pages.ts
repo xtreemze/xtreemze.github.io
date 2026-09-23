@@ -1,6 +1,6 @@
 import { access, readFile } from "node:fs/promises";
-import { basename, resolve } from "node:path";
-import { localeDefinitions, localizeHtml, sourcePagePaths } from "../../scripts/localization.mjs";
+import { resolve } from "node:path";
+import { localeDefinitions, localizeHtml } from "../../scripts/localization.mjs";
 
 export const supportedLocales = ["en", "es", "sv"] as const;
 export const translatedLocales = ["es", "sv"] as const;
@@ -81,12 +81,4 @@ export async function renderSourceDocument(
   const withSharedLayout = await includeSharedLayoutLayer(accessible);
 
   return extractDocument(withSharedLayout, locale);
-}
-
-export async function projectSlugs() {
-  const pages = await sourcePagePaths(root);
-
-  return pages
-    .filter((pagePath: string) => pagePath.startsWith("projects/"))
-    .map((pagePath: string) => basename(pagePath, ".html"));
 }
