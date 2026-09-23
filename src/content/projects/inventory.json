@@ -5,10 +5,6 @@
   "summary": "Inventory case study — a local-first inventory PWA for accountable offline operations and portable data.",
   "tier": "supporting",
   "visibility": "public",
-  "stack": [
-    "Native web",
-    "PWA",
-    "Local storage"
-  ],
+  "stack": ["Native web", "PWA", "Local storage"],
   "sortOrder": 90
 }

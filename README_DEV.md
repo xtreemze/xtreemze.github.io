@@ -30,6 +30,18 @@ pnpm check
 
 `pnpm test` performs a production build first and then serves `dist/` through `astro preview`, so browser tests exercise the same generated artifact that Pages publishes.
 
+## Lint and architecture policy
+
+`pnpm lint` is fail-closed across three complementary layers:
+
+- Biome checks JavaScript, TypeScript, content JSON and configuration with warnings treated as failures;
+- Biome lints the complete public CSS surface without coupling policy adoption to a mass formatting rewrite;
+- `scripts/lint-architecture.mjs` enforces project invariants that are not expressible as general-purpose lint rules.
+
+The architecture policy rejects new desktop-first or pixel viewport breakpoints, device/orientation-specific layout rules, root minimum widths, `100vw` layout locks, static `100vh` application sizing, horizontal-overflow masking, zoom/text-scaling locks, hidden scrollbars, pixel font sizes, removed focus outlines and `transition: all`.
+
+Legacy desktop-first breakpoint debt is recorded in `config/responsive-lint-baseline.json`. The baseline is a ratchet rather than an exemption list: increases fail CI, and reductions also fail until the baseline is lowered in the same change. New files start at zero tolerance.
+
 ## Astro migration architecture
 
 The existing English HTML documents remain the authored body source during the migration stage, but project publication is now explicit and schema-validated. `src/content.config.ts` defines the Astro project collection and `src/content/projects/*.json` records the published slug, source document, portfolio tier, visibility and stack. Both English and localized project routes are generated from that typed collection rather than from whatever files happen to exist in `projects/`.

@@ -665,6 +665,7 @@
   ::view-transition-group(*),
   ::view-transition-old(root),
   ::view-transition-new(root) {
+    /* biome-ignore lint/complexity/noImportantStyles: reduced-motion must override View Transition UA/author animation timing */
     animation-duration: 0.001ms !important;
   }
 }

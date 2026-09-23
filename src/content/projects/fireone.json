@@ -5,10 +5,6 @@
   "summary": "FireOne case study — deterministic submarine tactics simulation built around incomplete information.",
   "tier": "lab",
   "visibility": "private",
-  "stack": [
-    "Rust",
-    "Bevy ECS",
-    "Ratatui"
-  ],
+  "stack": ["Rust", "Bevy ECS", "Ratatui"],
   "sortOrder": 60
 }

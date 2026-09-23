@@ -5,12 +5,6 @@
   "summary": "Slipmat case study — product thinking and engineering behind a playback-first multimedia client.",
   "tier": "primary",
   "visibility": "private",
-  "stack": [
-    "React 19",
-    "TypeScript",
-    "Rust",
-    "Tauri v2",
-    "WASM"
-  ],
+  "stack": ["React 19", "TypeScript", "Rust", "Tauri v2", "WASM"],
   "sortOrder": 20
 }

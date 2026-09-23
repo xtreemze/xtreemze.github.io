@@ -5,10 +5,6 @@
   "summary": "Booking case study — a configurable multi-vertical reservation platform with explicit domain models and auditable engineering controls.",
   "tier": "lab",
   "visibility": "public",
-  "stack": [
-    "TypeScript",
-    "Web applications",
-    "Verifiable CI"
-  ],
+  "stack": ["TypeScript", "Web applications", "Verifiable CI"],
   "sortOrder": 70
 }

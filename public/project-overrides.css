@@ -213,12 +213,8 @@ html {
     gap: 0.15rem;
     overflow-x: auto;
     overscroll-behavior-inline: contain;
-    scrollbar-width: none;
   }
 
-  .nav::-webkit-scrollbar {
-    display: none;
-  }
 
   .nav a:not(.nav-github),
   .nav .nav-github {
@@ -262,6 +258,7 @@ html {
 
 @media (prefers-reduced-motion: reduce) {
   ::view-transition-group(*) {
+    /* biome-ignore lint/complexity/noImportantStyles: reduced-motion must override View Transition UA/author animation timing */
     animation-duration: 0.001ms !important;
   }
 }
