@@ -25,7 +25,6 @@ html {
 
 body {
   margin: 0;
-  min-width: 320px;
   background:
     radial-gradient(circle at 12% 0%, rgba(200, 255, 90, 0.08), transparent 28rem),
     radial-gradient(circle at 90% 16%, rgba(98, 131, 255, 0.08), transparent 34rem),
@@ -128,7 +127,7 @@ button:focus-visible {
   grid-template-columns: minmax(0, 1.35fr) minmax(240px, 0.65fr);
   gap: clamp(2rem, 6vw, 6rem);
   align-items: end;
-  min-height: calc(100vh - 72px);
+  min-height: calc(100dvh - 72px);
   padding: clamp(5rem, 10vw, 9rem) 0 5rem;
 }
 
