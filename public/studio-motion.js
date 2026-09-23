@@ -20,38 +20,6 @@ function prepareProjectTransition(link) {
 
 for (const link of document.querySelectorAll('a[data-project][href^="/projects/"]')) {
   link.addEventListener("click", () => prepareProjectTransition(link));
-
-  if (!reducedMotion.matches) {
-    link.addEventListener("pointerenter", () => {
-      const visual = link.querySelector(".showcase-visual .project-mark, :scope > .project-mark");
-      visual?.animate(
-        [
-          { transform: "translateY(0) scale(1)" },
-          { transform: "translateY(-0.3rem) scale(1.025)" },
-        ],
-        {
-          duration: 280,
-          easing: "cubic-bezier(0.16, 1, 0.3, 1)",
-          fill: "forwards",
-        },
-      );
-    });
-
-    link.addEventListener("pointerleave", () => {
-      const visual = link.querySelector(".showcase-visual .project-mark, :scope > .project-mark");
-      visual?.animate(
-        [
-          { transform: "translateY(-0.3rem) scale(1.025)" },
-          { transform: "translateY(0) scale(1)" },
-        ],
-        {
-          duration: 220,
-          easing: "cubic-bezier(0.4, 0, 0.2, 1)",
-          fill: "forwards",
-        },
-      );
-    });
-  }
 }
 
 if (!reducedMotion.matches && "IntersectionObserver" in window) {
