@@ -1,0 +1,14 @@
+{
+  "title": "Defend",
+  "slug": "defend",
+  "sourcePath": "projects/defend.html",
+  "summary": "Defend case study — physics-driven strategy, closed energy economy and evidence-led modernization.",
+  "tier": "primary",
+  "visibility": "public",
+  "stack": [
+    "TypeScript",
+    "Babylon.js",
+    "Rust/WASM"
+  ],
+  "sortOrder": 30
+}
