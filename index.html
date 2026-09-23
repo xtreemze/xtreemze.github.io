@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0a0b0d">
   <meta name="color-scheme" content="dark">
-  <meta name="description" content="Carlos Velasco — software engineer and designer working across product systems, media, simulation, public-service software and programmable input.">
-  <meta property="og:title" content="Carlos Velasco — Product, systems, interaction">
-  <meta property="og:description" content="Software engineering and design across complex product interfaces, media systems, simulation, public-service software and programmable input.">
+  <meta name="description" content="Carlos Velasco — independent interactive systems studio for product architecture, interaction design, native web experiences and software engineering.">
+  <meta property="og:title" content="Carlos Velasco — Interactive systems studio">
+  <meta property="og:description" content="Boutique product, interaction and systems engineering for software where complex behavior needs to become clear, tactile and trustworthy.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://xtreemze.github.io/">
   <meta property="og:image" content="https://avatars.githubusercontent.com/u/8251335?v=4">
@@ -16,10 +16,13 @@
   <link rel="stylesheet" href="/styles.css">
   <link rel="stylesheet" href="/project-overrides.css">
   <link rel="stylesheet" href="/architecture-portfolio.css">
-  <title>Carlos Velasco — Product, systems, interaction</title>
+  <link rel="stylesheet" href="/studio.css">
+  <script type="module" src="/studio-motion.js"></script>
+  <title>Carlos Velasco — Interactive systems studio</title>
 </head>
-<body>
+<body class="studio-home">
   <a class="skip-link" href="#main">Skip to content</a>
+  <div class="studio-progress" aria-hidden="true"></div>
 
   <header class="site-header">
     <div class="site-shell header-inner">
@@ -28,233 +31,204 @@
         <span>Carlos Velasco</span>
       </a>
       <nav class="nav" aria-label="Primary navigation">
-        <a href="#work">Work</a>
-        <a href="#experience">Experience</a>
-        <a href="#about">About</a>
-        <a href="#principles">Principles</a>
-        <a class="nav-github" href="https://github.com/xtreemze" target="_blank" rel="noreferrer">GitHub ↗</a>
+        <a href="#work"><span data-i18n="nav.work">Work</span></a>
+        <a href="#capabilities"><span data-i18n="nav.capabilities">Capabilities</span></a>
+        <a href="#approach"><span data-i18n="nav.approach">Approach</span></a>
+        <a href="#experience"><span data-i18n="nav.experience">Experience</span></a>
+        <a class="nav-github" href="https://github.com/xtreemze" target="_blank" rel="noreferrer"><span data-i18n="nav.github">GitHub ↗</span></a>
       </nav>
     </div>
   </header>
 
   <main id="main">
-    <section class="site-shell hero" id="top">
-      <div>
-        <p class="eyebrow">Software engineer · product systems · interaction</p>
-        <h1 data-i18n="home.heroTitle">I design and engineer systems that make complex behavior understandable.</h1>
+    <section class="site-shell hero studio-hero" id="top">
+      <div class="studio-hero-copy" data-reveal>
+        <p class="eyebrow" data-i18n="home.studioEyebrow">Independent interactive systems studio · product engineering</p>
+        <h1 data-i18n="home.heroTitle">Boutique product design for systems that need to be understood, felt and trusted.</h1>
         <p class="hero-copy" data-i18n="home.heroCopy">
-          My practice moves between product design and software engineering. Projects begin with observation, questions, sketches and working experiments. Promising ideas develop through explicit models, accessibility, performance measurement and repeatable verification, so exploration and implementation remain part of the same process.
+          I combine systems architecture, interaction design, prototyping and implementation for products where behavior matters as much as appearance. The work moves from domain models and experiments to polished interfaces, strict engineering boundaries and browser-level verification.
         </p>
         <div class="hero-actions">
-          <a class="button primary" href="#work">Explore selected work</a>
-          <a class="button" href="/experience.html">Professional experience</a>
-          <a class="button" href="https://github.com/xtreemze?tab=repositories" target="_blank" rel="noreferrer">Browse public repositories</a>
+          <a class="button primary" href="#work"><span data-i18n="home.exploreWork">Explore selected work</span></a>
+          <a class="button" href="#capabilities"><span data-i18n="home.exploreCapabilities">Studio capabilities</span></a>
+          <a class="button" href="/experience.html"><span data-i18n="home.professionalExperience">Professional experience</span></a>
         </div>
       </div>
 
-      <aside class="hero-aside" aria-label="Profile">
-        <div class="portrait-frame">
-          <img src="https://avatars.githubusercontent.com/u/8251335?v=4" alt="Portrait of Carlos Velasco" width="460" height="460">
-          <div class="portrait-caption">
-            <span>@xtreemze</span>
-            <span>Product + systems engineering</span>
-          </div>
-        </div>
-        <div class="signal-row" aria-label="Areas of practice">
-          <span>Product</span>
-          <span>Systems</span>
-          <span>Interaction</span>
-        </div>
+      <aside class="hero-aside studio-index" aria-label="Areas of practice" data-reveal>
+        <ol>
+          <li><span class="studio-index-number">01</span><div><strong data-i18n="home.practice1Title">System architecture</strong><p data-i18n="home.practice1Body">Domain models, authority, boundaries and migration strategy.</p></div></li>
+          <li><span class="studio-index-number">02</span><div><strong data-i18n="home.practice2Title">Interaction prototypes</strong><p data-i18n="home.practice2Body">Playable, spatial and media-rich experiments that expose behavior early.</p></div></li>
+          <li><span class="studio-index-number">03</span><div><strong data-i18n="home.practice3Title">Native web craft</strong><p data-i18n="home.practice3Body">Progressive interfaces using modern platform capabilities before extra abstraction.</p></div></li>
+          <li><span class="studio-index-number">04</span><div><strong data-i18n="home.practice4Title">Engineering evidence</strong><p data-i18n="home.practice4Body">Types, deterministic tests, accessibility, performance and browser certification.</p></div></li>
+        </ol>
       </aside>
     </section>
 
-    <section class="section" id="work">
+    <section class="section studio-work" id="work">
       <div class="site-shell">
-        <p class="section-kicker">Selected work</p>
-        <h2 class="section-heading" data-i18n="home.workTitle">Selected projects and working methods.</h2>
-        <p class="section-intro" data-i18n="home.workIntro">
-          Each case study describes the problem, the design process, the experiments and the engineering decisions that shaped the result. The emphasis is on how observation becomes a model, how a prototype becomes evidence and how proven behavior becomes part of a durable system.
-        </p>
-
-        <div class="portfolio-map" aria-label="Portfolio categories">
-          <article><span data-i18n="home.portfolioMap">Portfolio map</span><strong data-i18n="home.flagships">Primary studies</strong><p>Slipmat · FireOne · Lemonade</p></article>
-          <article><span aria-hidden="true">02</span><strong data-i18n="home.technical">Technical systems</strong><p>Signal Broker · Defend · QMK / Vial / Halcyon</p></article>
-          <article><span aria-hidden="true">03</span><strong data-i18n="home.operational">Operational systems</strong><p>Booking · Inventory · Timeline</p></article>
-          <article><span aria-hidden="true">04</span><strong data-i18n="home.publicKnowledge">Public and knowledge systems</strong><p>Kullaberg · Investigation Workbench</p></article>
+        <div class="section-intro-grid" data-reveal>
+          <div>
+            <p class="section-kicker" data-i18n="home.selectedKicker">Selected work</p>
+            <h2 class="section-heading" data-i18n="home.workTitle">A small set of active systems, shown in depth.</h2>
+          </div>
+          <p class="section-intro" data-i18n="home.workIntro">
+            The portfolio is deliberately selective. Each flagship study shows a different kind of systems problem and the path from product intent through interaction design to architecture, verification and deployment.
+          </p>
         </div>
 
-        <div class="project-grid">
-          <a class="project-card featured private-project" href="/projects/slipmat.html">
-            <div><span class="project-number">01 / Media systems</span></div>
-            <div>
-              <img class="project-mark" src="/project-assets/slipmat-mark.svg" alt="" width="72" height="72">
-              <h3>Slipmat</h3>
-              <p data-i18n="home.slipmatArchitectureSummary">A playback-first media system organized as domain contracts, deterministic planners and state machines, adapters and services, presentation models, then platform projections. Playback authority stays explicit across Jellyfin, local media, native processing and the interface.</p>
-              <div class="project-meta" aria-label="Slipmat technologies"><span>React 19</span><span>Rust 2024</span><span>Tauri v2</span><span>Jellyfin</span><span>WASM analysis</span></div>
-              <span class="project-status">Private · active product development</span>
-              <span class="project-link">Read case study</span>
-            </div>
-          </a>
-
-          <a class="project-card standard private-project" href="/projects/fireone.html">
-            <div><span class="project-number">02 / Deterministic simulation</span></div>
-            <div>
-              <h3>FireOne</h3>
-              <p>A submarine tactics game about uncertainty, geometry and commitment. Its Rust simulation separates world state from player and AI knowledge, using deterministic ECS behavior and sonar-driven incomplete information to make perception part of the simulation.</p>
-              <div class="project-meta" aria-label="FireOne technologies"><span>Rust</span><span>Bevy ECS</span><span>Ratatui</span><span>Determinism</span><span>Simulation AI</span></div>
-              <span class="project-status">Private · playable pre-release</span>
-              <span class="project-link">Read case study</span>
-            </div>
-          </a>
-
-          <a class="project-card wide" href="/projects/signal-broker.html">
-            <div><span class="project-number">03 / Vehicle telemetry</span></div>
-            <div>
-              <h3>Signal Broker</h3>
-              <p>A vehicle-network development stack that exposes CAN, LIN and related buses through gRPC. Its browser client adds gRPC-Web and WebSocket access so live frames and decoded signals can be selected, inspected and charted interactively.</p>
-              <div class="project-meta" aria-label="Signal Broker technologies"><span>Elixir</span><span>gRPC</span><span>gRPC-Web</span><span>CAN / LIN</span><span>Vue</span></div>
-              <span class="project-link">Read case study</span>
-            </div>
-          </a>
-
-          <a class="project-card featured" href="/projects/defend.html">
-            <div><span class="project-number">04 / Procedural systems</span></div>
-            <div>
-              <img class="project-mark" src="/project-assets/defend-architecture.svg" alt="" width="72" height="72">
-              <h3>Defend</h3>
-              <p data-i18n="home.defendArchitectureSummary">A behavioral-parity modernization of a physics-driven strategy game. The historical Webpack/Babylon/Cannon build remains an executable reference while the active modernization lane isolates deterministic domain logic, worker and audio ownership, and renderer-independent contracts.</p>
-              <div class="project-meta" aria-label="Defend technologies"><span>Babylon.js</span><span>TypeScript</span><span>Physics</span><span>AI</span><span>Procedural audio</span></div>
-              <span class="project-link">Read case study</span>
-            </div>
-          </a>
-
-          <a class="project-card standard" href="/projects/qmk.html">
-            <div><span class="project-number">05 / Human input</span></div>
-            <div>
-              <img class="project-mark" src="/project-assets/qmk-architecture.svg" alt="" width="72" height="72">
-              <h3 data-i18n="home.qmkTitle">QMK / Vial / Halcyon</h3>
-              <p data-i18n="home.qmkArchitectureSummary">An embedded input stack where firmware owns runtime semantics and persistence while typed Raw HID exposes capability-aware host configuration. Exact-target builds, resource reports, strict QMK lint and embedded anti-pattern checks make hardware constraints executable.</p>
-              <div class="project-meta" aria-label="QMK, Vial and Halcyon technologies"><span>C</span><span>QMK / Vial</span><span>Raw HID</span><span>WebHID</span><span>Ferris Sweep</span></div>
-              <span class="project-status" data-i18n="home.publicActive">Public · active development</span>
-              <span class="project-link">Read case study</span>
-            </div>
-          </a>
-
-          <a class="project-card wide" href="/projects/lemonade.html">
-            <div><span class="project-number">06 / Economic simulation</span></div>
-            <div>
-              <img class="project-mark" src="/project-assets/lemonade-architecture.svg" alt="" width="72" height="72">
-              <h3>Lemonade</h3>
-              <p data-i18n="home.lemonadeArchitectureSummary">A deterministic economic simulation whose core is prohibited from depending on ambient time, randomness, browser state or rendering libraries. Three.js, Web Audio, storage and UI remain adapters, while fixed-seed certification makes balance and accounting reviewable.</p>
-              <div class="project-meta" aria-label="Lemonade technologies"><span>TypeScript 6</span><span>Vite 8</span><span>Three.js</span><span>Web Audio</span></div>
-              <span class="project-status" data-i18n="home.lemonadeStatus">Public · active development</span>
-              <span class="project-link">Read case study</span>
-            </div>
-          </a>
-
-          <a class="project-card featured" href="/projects/booking.html">
-            <div><span class="project-number" data-i18n="home.bookingCategory">07 / Configurable platforms</span></div>
-            <div>
-              <img class="project-mark" src="/project-assets/booking-architecture.svg" alt="" width="72" height="72">
-              <h3>Booking</h3>
-              <p data-i18n="home.bookingArchitectureSummary">A configurable reservation platform built around a pure scheduling engine, replaceable persistence and explicit production transaction boundaries. Governance registries, SBOMs and provenance evidence are treated as part of the system architecture rather than release paperwork.</p>
-              <div class="project-meta"><span>TypeScript</span><span>Domain modeling</span><span>CodeQL</span><span>CycloneDX</span></div>
-              <span class="project-status" data-i18n="home.publicActive">Public · active development</span>
-              <span class="project-link">Read case study</span>
-            </div>
-          </a>
-
-          <a class="project-card standard" href="/projects/inventory.html">
-            <div><span class="project-number" data-i18n="home.inventoryCategory">08 / Local-first operations</span></div>
-            <div>
-              <h3>Inventory</h3>
-              <p data-i18n="home.inventorySummary">A local-first inventory PWA for check-out, overdue accountability, offline work, backup and export, with a clear history of items and responsible entities.</p>
-              <div class="project-meta"><span>PWA</span><span>Local-first</span><span>Offline</span><span>Backup</span></div>
-              <span class="project-status" data-i18n="home.publicActive">Public · active development</span>
-              <span class="project-link">Read case study</span>
-            </div>
-          </a>
-
-          <a class="project-card wide" href="/projects/timeline.html">
-            <div><span class="project-number" data-i18n="home.timelineCategory">09 / Information modeling</span></div>
-            <div>
+        <div class="showcase-stack" aria-label="Primary case studies">
+          <a class="showcase-card" href="/projects/timeline.html" data-project="timeline" data-reveal>
+            <div class="showcase-visual" aria-hidden="true">
               <img class="project-mark" src="/project-assets/timeline-architecture.svg" alt="" width="72" height="72">
+              <span class="showcase-signal">01</span>
+            </div>
+            <div class="showcase-copy">
+              <span class="project-number" data-i18n="home.timelineCategory">Information modeling</span>
               <h3>Timeline</h3>
               <p data-i18n="home.timelineArchitectureSummary">A local-first chronology and relationship workspace with a renderer-independent temporal projection layer and retained keyed scene. Overscan, interaction retention and commit-time reconciliation preserve identity and performance while timeline, graph and map views evolve toward a coordinated model.</p>
-              <div class="project-meta"><span>Events</span><span>Ranges</span><span>Categories</span><span>Stories</span></div>
-              <span class="project-status" data-i18n="home.publicActive">Public · active development</span>
-              <span class="project-link">Read case study</span>
+              <div class="project-meta"><span>Temporal projection</span><span>Graph + map</span><span>Retained scene</span><span>Vite 8</span></div>
+              <span class="project-link" data-i18n="home.readCaseStudy">Read case study</span>
+            </div>
+          </a>
+
+          <a class="showcase-card" href="/projects/slipmat.html" data-project="slipmat" data-reveal>
+            <div class="showcase-visual" aria-hidden="true">
+              <img class="project-mark" src="/project-assets/slipmat-mark.svg" alt="" width="72" height="72">
+              <span class="showcase-signal">02</span>
+            </div>
+            <div class="showcase-copy">
+              <span class="project-number" data-i18n="home.categoryMedia">Media systems</span>
+              <h3>Slipmat</h3>
+              <p data-i18n="home.slipmatArchitectureSummary">A playback-first media system organized as domain contracts, deterministic planners and state machines, adapters and services, presentation models, then platform projections. Playback authority stays explicit across Jellyfin, local media, native processing and the interface.</p>
+              <div class="project-meta"><span>React 19</span><span>Rust 2024</span><span>Tauri v2</span><span>Media state</span></div>
+              <span class="project-status">Private · active product development</span>
+              <span class="project-link" data-i18n="home.readCaseStudy">Read case study</span>
+            </div>
+          </a>
+
+          <a class="showcase-card" href="/projects/defend.html" data-project="defend" data-reveal>
+            <div class="showcase-visual" aria-hidden="true">
+              <img class="project-mark" src="/project-assets/defend-architecture.svg" alt="" width="72" height="72">
+              <span class="showcase-signal">03</span>
+            </div>
+            <div class="showcase-copy">
+              <span class="project-number" data-i18n="home.categoryProcedural">Procedural systems</span>
+              <h3>Defend</h3>
+              <p data-i18n="home.defendArchitectureSummary">A behavioral-parity modernization of a physics-driven strategy game. The historical Webpack/Babylon/Cannon build remains an executable reference while the active modernization lane isolates deterministic domain logic, worker and audio ownership, and renderer-independent contracts.</p>
+              <div class="project-meta"><span>Babylon.js</span><span>Physics</span><span>WebAssembly</span><span>Procedural audio</span></div>
+              <span class="project-link" data-i18n="home.readCaseStudy">Read case study</span>
+            </div>
+          </a>
+
+          <a class="showcase-card" href="/projects/lemonade.html" data-project="lemonade" data-reveal>
+            <div class="showcase-visual" aria-hidden="true">
+              <img class="project-mark" src="/project-assets/lemonade-architecture.svg" alt="" width="72" height="72">
+              <span class="showcase-signal">04</span>
+            </div>
+            <div class="showcase-copy">
+              <span class="project-number" data-i18n="home.categoryEconomic">Economic simulation</span>
+              <h3>Lemonade</h3>
+              <p data-i18n="home.lemonadeArchitectureSummary">A deterministic economic simulation whose core is prohibited from depending on ambient time, randomness, browser state or rendering libraries. Three.js, Web Audio, storage and UI remain adapters, while fixed-seed certification makes balance and accounting reviewable.</p>
+              <div class="project-meta"><span>TypeScript 6</span><span>Lit</span><span>Three.js</span><span>Determinism</span></div>
+              <span class="project-status" data-i18n="home.lemonadeStatus">Public · active development</span>
+              <span class="project-link" data-i18n="home.readCaseStudy">Read case study</span>
             </div>
           </a>
         </div>
 
-        <p class="section-kicker" style="margin-top:4rem">Additional studies</p>
-        <div class="project-grid" style="margin-top:1.5rem">
-          <a class="project-card wide" href="/projects/kullaberg.html">
-            <div><span class="project-number">Public service · historical professional work</span></div>
-            <div>
-              <h3>Kullaberg digital ecosystem</h3>
-              <p>Offline-capable, bilingual visitor software for a Swedish nature reserve, spanning mobile trail guidance, information-desk presentation and citizen-science participation.</p>
-              <div class="project-meta"><span>PWA</span><span>Offline-first</span><span>Location</span><span>Public service</span></div>
-              <span class="project-link">Read case study</span>
-            </div>
+        <div class="lab-heading" data-reveal>
+          <div>
+            <p class="section-kicker" data-i18n="home.labKicker">Active lab</p>
+            <h3 data-i18n="home.labTitle">Smaller systems that test a specific idea hard.</h3>
+          </div>
+          <p data-i18n="home.labIntro">These projects stay visible because their current architecture or interaction problem is distinctive, not because every active repository belongs on the front page.</p>
+        </div>
+
+        <div class="lab-grid">
+          <a class="lab-card" href="/projects/qmk.html" data-project="qmk" data-reveal>
+            <img class="project-mark" src="/project-assets/qmk-architecture.svg" alt="" width="72" height="72">
+            <span class="project-number" data-i18n="home.categoryEmbedded">Embedded input</span>
+            <h3 data-i18n="home.qmkTitle">QMK / Vial / Halcyon</h3>
+            <p data-i18n="home.qmkArchitectureSummary">An embedded input stack where firmware owns runtime semantics and persistence while typed Raw HID exposes capability-aware host configuration. Exact-target builds, resource reports, strict QMK lint and embedded anti-pattern checks make hardware constraints executable.</p>
           </a>
-          <a class="project-card wide private-project" href="/projects/investigation-workbench.html">
-            <div><span class="project-number">Knowledge systems · current exploration</span></div>
-            <div>
-              <h3>Investigation Workbench</h3>
-              <p>A local-first graph and knowledge-review workspace that separates source evidence, machine-proposed candidates, reviewed canonical knowledge and deterministic graph and timeline projections.</p>
-              <div class="project-meta"><span>Memgraph</span><span>Python</span><span>Obsidian</span><span>MCP</span></div>
-              <span class="project-status">Private · architecture case study</span>
-              <span class="project-link">Read case study</span>
-            </div>
+
+          <a class="lab-card private-project" href="/projects/fireone.html" data-project="fireone" data-reveal>
+            <span class="project-number" data-i18n="home.categorySimulation">Simulation architecture</span>
+            <h3>FireOne</h3>
+            <p data-i18n="home.fireoneStudioSummary">A deterministic submarine tactics simulation where the authoritative world, observations and AI knowledge remain separate. The product turns uncertainty itself into the main interaction model.</p>
+          </a>
+
+          <a class="lab-card" href="/projects/booking.html" data-project="booking" data-reveal>
+            <img class="project-mark" src="/project-assets/booking-architecture.svg" alt="" width="72" height="72">
+            <span class="project-number" data-i18n="home.bookingCategory">Configurable platforms</span>
+            <h3>Booking</h3>
+            <p data-i18n="home.bookingArchitectureSummary">A configurable reservation platform built around a pure scheduling engine, replaceable persistence and explicit production transaction boundaries. Governance registries, SBOMs and provenance evidence are treated as part of the system architecture rather than release paperwork.</p>
+          </a>
+
+          <a class="lab-card private-project" href="/projects/investigation-workbench.html" data-project="investigation" data-reveal>
+            <span class="project-number" data-i18n="home.categoryKnowledge">Knowledge systems</span>
+            <h3>Investigation Workbench</h3>
+            <p data-i18n="home.investigationStudioSummary">A provenance-aware local knowledge workspace that keeps source evidence, machine proposals, reviewed canonical knowledge and deterministic graph projections as distinct states.</p>
           </a>
         </div>
 
-        <a class="archive-link" href="https://github.com/xtreemze?tab=repositories" target="_blank" rel="noreferrer">
-          <span>More applications, experiments and earlier work on GitHub</span>
+        <a class="archive-link" href="https://github.com/xtreemze?tab=repositories" target="_blank" rel="noreferrer" data-reveal>
+          <span data-i18n="home.archiveLabel">Browse the wider repository archive</span>
           <span aria-hidden="true">↗</span>
         </a>
       </div>
     </section>
 
+    <section class="section studio-capabilities" id="capabilities">
+      <div class="site-shell">
+        <div class="section-intro-grid" data-reveal>
+          <div>
+            <p class="section-kicker" data-i18n="home.capabilitiesKicker">Capabilities</p>
+            <h2 class="section-heading" data-i18n="home.capabilitiesTitle">A design studio with an engineering core.</h2>
+          </div>
+          <p class="section-intro" data-i18n="home.capabilitiesIntro">The strongest engagements are systems with unusual state, timing, media, simulation, hardware or information-model constraints—places where interaction design and architecture cannot be separated.</p>
+        </div>
+
+        <div class="capability-grid">
+          <article class="capability-card" data-reveal><span>01</span><h3 data-i18n="home.capability1Title">Product and system architecture</h3><p data-i18n="home.capability1Body">Clarify the domain, ownership, authority and lifecycle before UI complexity hardens around accidental implementation details.</p></article>
+          <article class="capability-card" data-reveal><span>02</span><h3 data-i18n="home.capability2Title">Interaction and prototyping</h3><p data-i18n="home.capability2Body">Build working experiments early enough to test spatial behavior, timing, transitions, feedback and physical or media interaction.</p></article>
+          <article class="capability-card" data-reveal><span>03</span><h3 data-i18n="home.capability3Title">Native web experiences</h3><p data-i18n="home.capability3Body">Use semantic HTML, modern CSS, View Transitions, Web Animations and progressive enhancement before adding runtime abstraction that the platform already provides.</p></article>
+          <article class="capability-card" data-reveal><span>04</span><h3 data-i18n="home.capability4Title">Engineering and verification</h3><p data-i18n="home.capability4Body">Turn successful experiments into durable systems with strict types, deterministic tests, performance evidence, accessibility checks and CI-backed browser certification.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section studio-approach" id="approach">
+      <div class="site-shell">
+        <div class="section-intro-grid" data-reveal>
+          <div>
+            <p class="section-kicker" data-i18n="home.approachKicker">Approach</p>
+            <h2 class="section-heading" data-i18n="home.approachTitle">Explore freely. Promote evidence. Encode the result.</h2>
+          </div>
+          <p class="section-intro" data-i18n="home.approachIntro">The studio process deliberately separates discovery from commitment. A fast experiment can stay cheap; a behavior only becomes architectural once there is enough evidence to protect it.</p>
+        </div>
+
+        <div class="approach-rail">
+          <article data-reveal><strong>01</strong><h3 data-i18n="home.approach1Title">Model the problem</h3><p data-i18n="home.approach1Body">Map actors, constraints, states and failure modes. Make ownership explicit before selecting a presentation architecture.</p></article>
+          <article data-reveal><strong>02</strong><h3 data-i18n="home.approach2Title">Prototype the behavior</h3><p data-i18n="home.approach2Body">Use playable software, real media, real hardware and representative data to test the interaction rather than only describing it.</p></article>
+          <article data-reveal><strong>03</strong><h3 data-i18n="home.approach3Title">Harden what survives</h3><p data-i18n="home.approach3Body">Move proven behavior into types, tests, contracts, CI and documentation so later iteration can remain fast without losing the model.</p></article>
+        </div>
+      </div>
+    </section>
+
     <section class="section" id="experience">
       <div class="site-shell">
-        <p class="section-kicker">Professional thread</p>
-        <h2 class="section-heading" data-i18n="home.experienceTitle">Design practice informs the way I engineer software.</h2>
-        <div class="about-grid">
-          <p class="about-statement" data-i18n="home.experienceStatement">My background connects graphic design, multimedia production and teaching with public-service software, large planning interfaces and systems engineering. I approach code as a design material: a medium for clarifying relationships, testing assumptions and shaping interaction.</p>
-          <div class="about-detail">
-            <p>Historical public material documents frontend application work for Länsstyrelsen Skåne and earlier leadership in design, multimedia and university teaching. Public LinkedIn material also documents close collaboration around the rebuilding of IKEA Kitchen Planner and IKEA Planner tooling using React, TypeScript and accessibility-focused frontend engineering.</p>
-            <p data-i18n="home.experienceDetail">Each stage added another instrument for inquiry: visual composition, interaction, user observation, state modeling, performance analysis, deterministic simulation and automated verification. Together they support a practice where intuition proposes directions and evidence develops them.</p>
+        <div class="section-intro-grid" data-reveal>
+          <div>
+            <p class="section-kicker" data-i18n="home.experienceKicker">Professional thread</p>
+            <h2 class="section-heading" data-i18n="home.experienceTitle">Design practice informs the way I engineer software.</h2>
           </div>
+          <p class="section-intro" data-i18n="home.experienceStatement">My background connects graphic design, multimedia production and teaching with public-service software, large planning interfaces and systems engineering. Code is a design material: a way to clarify relationships, test assumptions and shape interaction.</p>
         </div>
-        <a class="archive-link" href="/experience.html"><span>Read the professional experience narrative</span><span aria-hidden="true">→</span></a>
-      </div>
-    </section>
-
-    <section class="section" id="about">
-      <div class="site-shell">
-        <p class="section-kicker">About</p>
-        <h2 class="section-heading" data-i18n="home.aboutTitle">I am interested in systems where structure and discovery reinforce each other.</h2>
-        <div class="about-grid">
-          <p class="about-statement" data-i18n="home.aboutStatement">A small interaction can reveal a physical model, a simulation can expose an unexpected relationship, and a well-structured tool can make complex information easier to examine and act upon.</p>
-          <div class="about-detail">
-            <p data-i18n="home.aboutDetail1">I work across product thinking, visual and interaction design, and implementation. Minimal surfaces, careful hierarchy and working prototypes help make complex capability approachable.</p>
-            <p data-i18n="home.aboutDetail2">Across media playback, games, vehicle telemetry, public-service software, knowledge graphs and programmable input, the method stays consistent: curiosity opens a direction, disciplined modeling gives it coherence and automation preserves time for further study.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="principles">
-      <div class="site-shell">
-        <p class="section-kicker">Working principles</p>
-        <h2 class="section-heading" data-i18n="home.principlesTitle">Discipline gives experimentation a durable form.</h2>
-        <div class="principles-grid">
-          <article class="principle"><strong>01</strong><h3 data-i18n="home.principle1Title">Begin with observation and a useful question.</h3><p data-i18n="home.principle1Body">Sketch, prototype, simulate and test on real hardware when the medium calls for it. Early experiments make relationships visible and allow a surprising result to guide the next question.</p></article>
-          <article class="principle"><strong>02</strong><h3 data-i18n="home.principle2Title">Turn experiments into evidence.</h3><p data-i18n="home.principle2Body">Instrument behavior with deterministic seeds, visual laboratories, accessibility checks, performance traces and explicit domain models. Comparable evidence gives creative decisions a shared basis.</p></article>
-          <article class="principle"><strong>03</strong><h3 data-i18n="home.principle3Title">Give proven ideas a stable form.</h3><p data-i18n="home.principle3Body">Types, tests, CI and documentation preserve established behavior. Automation carries routine verification so attention can return to observation, interpretation and new experiments.</p></article>
+        <div class="experience-note" data-reveal>
+          <p data-i18n="home.experienceDetail">The through-line is not a particular framework. It is the ability to move between visual composition, user observation, state modeling, implementation, performance analysis and verification without treating those disciplines as separate handoffs.</p>
+          <a class="archive-link" href="/experience.html"><span data-i18n="home.readExperience">Read the professional experience narrative</span><span aria-hidden="true">→</span></a>
         </div>
       </div>
     </section>
@@ -262,7 +236,7 @@
 
   <footer class="footer">
     <div class="site-shell footer-inner">
-      <p class="footer-title">Make structure visible.</p>
+      <p class="footer-title" data-i18n="home.footerTitle">Make complex behavior visible.</p>
       <div class="footer-meta"><p>© 2026 Carlos Velasco</p><p><a href="https://www.linkedin.com/in/carlosevelasco/" target="_blank" rel="noreferrer">LinkedIn ↗</a> · <a href="https://github.com/xtreemze" target="_blank" rel="noreferrer">GitHub ↗</a></p></div>
     </div>
   </footer>

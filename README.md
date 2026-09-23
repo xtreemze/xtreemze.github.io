@@ -3,9 +3,9 @@
 
 # Carlos Velasco — Portfolio
 
-**Product · Systems · Interaction**
+**Interactive systems studio · Product · Engineering**
 
-A multilingual portfolio and engineering case-study site for work spanning product engineering, media systems, deterministic simulation, developer tooling, public-service software, local-first applications and programmable input.
+A multilingual boutique-studio portfolio for product architecture, interaction design and systems engineering, with active case studies across media, simulation, local-first information systems and programmable input.
 
 [Live portfolio](https://xtreemze.github.io/) · [Español](https://xtreemze.github.io/es/) · [Svenska](https://xtreemze.github.io/sv/)
 
@@ -14,7 +14,7 @@ A multilingual portfolio and engineering case-study site for work spanning produ
 
 ## What this repository is
 
-This repository is the source of the current personal portfolio and its project case studies. The site is deliberately static and multi-page: Astro generates the HTML publication surface while preserving zero-JavaScript pages by default, and the build adds localization, shared publication metadata, accessibility invariants and a verified GitHub Pages artifact.
+This repository is the source of the current studio portfolio and its project case studies. The site is deliberately static and multi-page: Astro generates the HTML publication surface, while native browser capabilities provide progressive interaction. Cross-document View Transitions, the Web Animations API and scroll-driven accents enhance navigation without making core content depend on JavaScript.
 
 The portfolio is organized around the problems each product is trying to solve, what makes the product or interaction model unusual, and the engineering methods used to preserve those ideas in implementation. It is not a generated résumé or a framework showcase.
 
@@ -22,10 +22,11 @@ The portfolio is organized around the problems each product is trying to solve, 
 
 | Area | Projects | Focus |
 | --- | --- | --- |
-| Flagship systems | [Slipmat](https://xtreemze.github.io/projects/slipmat.html), [FireOne](https://xtreemze.github.io/projects/fireone.html), [Lemonade](https://xtreemze.github.io/projects/lemonade.html) | media authority, uncertainty-driven simulation, deterministic economic simulation |
-| Distinct technical products | [Signal Broker](https://xtreemze.github.io/projects/signal-broker.html), [Defend](https://xtreemze.github.io/projects/defend.html), [QMK userspace](https://xtreemze.github.io/projects/qmk.html), [Vial / Halcyon Control Center](https://xtreemze.github.io/projects/via.html) | vehicle telemetry, physical strategy, embedded input, firmware/host configuration |
-| Operational product systems | [Booking](https://xtreemze.github.io/projects/booking.html), [Inventory](https://xtreemze.github.io/projects/inventory.html), [Timeline](https://xtreemze.github.io/projects/timeline.html) | configurable domain models, local-first operations, narrative information modeling |
-| Public service & knowledge | [Kullaberg](https://xtreemze.github.io/projects/kullaberg.html), [Investigation Workbench](https://xtreemze.github.io/projects/investigation-workbench.html), [Workstation system](https://xtreemze.github.io/projects/workstation.html) | offline public-service UX, provenance-aware knowledge work, reproducible developer environments |
+| Primary studies | [Timeline](https://xtreemze.github.io/projects/timeline.html), [Slipmat](https://xtreemze.github.io/projects/slipmat.html), [Defend](https://xtreemze.github.io/projects/defend.html), [Lemonade](https://xtreemze.github.io/projects/lemonade.html) | information modeling, media authority, behavioral-parity modernization, deterministic economic simulation |
+| Active lab | [QMK / Vial / Halcyon](https://xtreemze.github.io/projects/qmk.html), [FireOne](https://xtreemze.github.io/projects/fireone.html), [Booking](https://xtreemze.github.io/projects/booking.html), [Investigation Workbench](https://xtreemze.github.io/projects/investigation-workbench.html) | embedded input, uncertainty-driven simulation, configurable domain modeling, provenance-aware knowledge systems |
+| Supporting active work | [Inventory](https://xtreemze.github.io/projects/inventory.html) | local-first operational software and offline accountability |
+
+Older Signal Broker work and the Kullaberg application family are no longer presented as current portfolio projects. Kullaberg remains documented in the professional-experience narrative where its historical context is accurate.
 
 The [Experience](https://xtreemze.github.io/experience.html) page connects the project work to professional history across interactive design, public-service frontend development, planning tools and current product/systems engineering.
 
