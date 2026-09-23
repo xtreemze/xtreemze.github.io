@@ -213,12 +213,8 @@ html {
     gap: 0.15rem;
     overflow-x: auto;
     overscroll-behavior-inline: contain;
-    scrollbar-width: none;
   }
 
-  .nav::-webkit-scrollbar {
-    display: none;
-  }
 
   .nav a:not(.nav-github),
   .nav .nav-github {
