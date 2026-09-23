@@ -32,9 +32,11 @@ pnpm check
 
 ## Astro migration architecture
 
-The existing English HTML documents remain the authored content source during the first migration stage. Astro owns all public routes under `src/pages/`; `src/lib/source-pages.ts` loads the source document, applies the existing locale data, enforces shared accessibility invariants and renders the result through `SourceDocument.astro`.
+The existing English HTML documents remain the authored body source during the migration stage, but project publication is now explicit and schema-validated. `src/content.config.ts` defines the Astro project collection and `src/content/projects/*.json` records the published slug, source document, portfolio tier, visibility and stack. Both English and localized project routes are generated from that typed collection rather than from whatever files happen to exist in `projects/`.
 
-This bridge is intentionally narrow. It allows the project to replace the custom Vite multi-page build immediately while keeping visual and multilingual output stable. It also creates a typed Astro boundary for the next migration stage: move repeated page chrome and case-study structures into Astro components and move project/localized content into schema-validated content collections.
+`src/lib/source-pages.ts` is therefore limited to the remaining compatibility responsibility: loading a registered source document, applying the existing locale data, enforcing shared accessibility invariants and rendering the result through `SourceDocument.astro`. `scripts/verify-source.mjs` rejects drift between the typed registry and legacy project documents.
+
+This bridge is intentionally shrinking. The next migration stage is to move repeated page chrome and case-study structures into Astro components, then move localized project body content into the schema-validated content model until the legacy HTML transformation layer can be removed.
 
 Do not add new cross-page behavior to the legacy HTML transformation layer. New reusable presentation behavior belongs in Astro components or shared CSS so the compatibility bridge can continue shrinking.
 

@@ -1,4 +1,4 @@
-import { readFile } from "node:fs/promises";
+import { readdir, readFile } from "node:fs/promises";
 import { resolve } from "node:path";
 import { localeDefinitions, sourcePagePaths } from "./localization.mjs";
 
@@ -7,6 +7,52 @@ const htmlFiles = await sourcePagePaths(root);
 const failures = [];
 const es = localeDefinitions.es;
 const sv = localeDefinitions.sv;
+
+const projectContentDirectory = resolve(root, "src/content/projects");
+const projectContentFiles = (await readdir(projectContentDirectory))
+  .filter((file) => file.endsWith(".json"))
+  .sort();
+const projectRecords = await Promise.all(
+  projectContentFiles.map(async (file) =>
+    JSON.parse(await readFile(resolve(projectContentDirectory, file), "utf8")),
+  ),
+);
+
+const sourceProjectFiles = htmlFiles.filter((file) => file.startsWith("projects/")).sort();
+const registeredProjectFiles = projectRecords.map((record) => record.sourcePath).sort();
+
+if (JSON.stringify(sourceProjectFiles) !== JSON.stringify(registeredProjectFiles)) {
+  failures.push(
+    "typed project content must register exactly the published project source documents",
+  );
+}
+
+const projectSlugs = new Set();
+const projectSourcePaths = new Set();
+const projectSortOrders = new Set();
+for (const record of projectRecords) {
+  const expectedSourcePath = `projects/${record.slug}.html`;
+  if (record.sourcePath !== expectedSourcePath) {
+    failures.push(
+      `project ${record.slug}: sourcePath must be ${expectedSourcePath}, received ${record.sourcePath}`,
+    );
+  }
+  if (!record.title?.trim()) failures.push(`project ${record.slug}: missing title`);
+  if (!record.summary?.trim()) failures.push(`project ${record.slug}: missing summary`);
+  if (!Array.isArray(record.stack) || record.stack.length === 0) {
+    failures.push(`project ${record.slug}: stack must contain at least one entry`);
+  }
+  if (projectSlugs.has(record.slug)) failures.push(`duplicate project slug: ${record.slug}`);
+  if (projectSourcePaths.has(record.sourcePath)) {
+    failures.push(`duplicate project sourcePath: ${record.sourcePath}`);
+  }
+  if (projectSortOrders.has(record.sortOrder)) {
+    failures.push(`duplicate project sortOrder: ${record.sortOrder}`);
+  }
+  projectSlugs.add(record.slug);
+  projectSourcePaths.add(record.sourcePath);
+  projectSortOrders.add(record.sortOrder);
+}
 
 for (const file of htmlFiles) {
   const html = await readFile(resolve(root, file), "utf8");
@@ -68,6 +114,6 @@ if (failures.length > 0) {
   process.exitCode = 1;
 } else {
   console.log(
-    `Verified ${htmlFiles.length} English source documents and ${Object.keys(es.meta).length * 2} localized page definitions.`,
+    `Verified ${htmlFiles.length} English source documents, ${projectRecords.length} typed project records and ${Object.keys(es.meta).length * 2} localized page definitions.`,
   );
 }
