@@ -1,0 +1,14 @@
+{
+  "title": "FireOne",
+  "slug": "fireone",
+  "sourcePath": "projects/fireone.html",
+  "summary": "FireOne case study — deterministic submarine tactics simulation built around incomplete information.",
+  "tier": "lab",
+  "visibility": "private",
+  "stack": [
+    "Rust",
+    "Bevy ECS",
+    "Ratatui"
+  ],
+  "sortOrder": 60
+}
