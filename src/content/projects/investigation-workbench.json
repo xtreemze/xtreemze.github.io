@@ -1,0 +1,16 @@
+{
+  "title": "Investigation Workbench",
+  "slug": "investigation-workbench",
+  "sourcePath": "projects/investigation-workbench.html",
+  "summary": "Investigation Workbench case study — local-first knowledge review, graph compilation and provenance-aware investigation tooling.",
+  "tier": "lab",
+  "visibility": "private",
+  "stack": [
+    "Memgraph",
+    "Python",
+    "Obsidian",
+    "Docker",
+    "MCP"
+  ],
+  "sortOrder": 80
+}

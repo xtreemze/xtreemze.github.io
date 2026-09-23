@@ -1,21 +1,23 @@
 ---
+import { getCollection } from "astro:content";
 import SourceDocument from "../../../components/SourceDocument.astro";
 import {
-  projectSlugs,
   renderSourceDocument,
   translatedLocales,
   type SupportedLocale,
 } from "../../../lib/source-pages";
 
 export async function getStaticPaths() {
-  const slugs = await projectSlugs();
+  const projects = (await getCollection("projects")).sort(
+    (left, right) => left.data.sortOrder - right.data.sortOrder,
+  );
 
   return translatedLocales.flatMap((locale) =>
-    slugs.map((slug) => ({
-      params: { locale, slug },
+    projects.map(({ data }) => ({
+      params: { locale, slug: data.slug },
       props: {
         locale,
-        pagePath: "projects/" + slug + ".html",
+        pagePath: data.sourcePath,
       },
     })),
   );
