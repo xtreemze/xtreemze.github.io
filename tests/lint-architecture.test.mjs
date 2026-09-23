@@ -3,11 +3,14 @@ import test from "node:test";
 import { compareToBaseline, inspectText } from "../scripts/lint-architecture.mjs";
 
 test("rejects desktop-first and pixel breakpoints", () => {
-  const findings = inspectText("fixture.css", "@media (max-width: 800px) { .x { display: block; } }");
-  assert.deepEqual(
-    findings.map(({ rule }) => rule).sort(),
-    ["responsive/no-desktop-first-breakpoint", "responsive/no-px-breakpoint"],
+  const findings = inspectText(
+    "fixture.css",
+    "@media (max-width: 800px) { .x { display: block; } }",
   );
+  assert.deepEqual(findings.map(({ rule }) => rule).sort(), [
+    "responsive/no-desktop-first-breakpoint",
+    "responsive/no-px-breakpoint",
+  ]);
 });
 
 test("accepts a mobile-first scalable breakpoint", () => {
@@ -48,16 +51,16 @@ test("rejects layout concealment and static viewport assumptions", () => {
 });
 
 test("rejects hidden webkit scrollbars", () => {
-  const findings = inspectText(
-    "fixture.css",
-    ".rail::-webkit-scrollbar { display: none; }",
-  );
+  const findings = inspectText("fixture.css", ".rail::-webkit-scrollbar { display: none; }");
   assert.ok(findings.some(({ rule }) => rule === "a11y/no-hidden-scrollbar"));
 });
 
 test("does not treat preference media queries as viewport breakpoints", () => {
   assert.deepEqual(
-    inspectText("fixture.css", "@media (prefers-reduced-motion: reduce) { .x { transition: none; } }"),
+    inspectText(
+      "fixture.css",
+      "@media (prefers-reduced-motion: reduce) { .x { transition: none; } }",
+    ),
     [],
   );
 });
@@ -74,11 +77,15 @@ test("baseline is a ratchet: increases and stale reductions both fail", () => {
     "responsive/no-desktop-first-breakpoint": { "fixture.css": 0 },
     "responsive/no-px-breakpoint": { "fixture.css": 1 },
   };
-  assert.ok(compareToBaseline(findings, tooLow).some((message) => message.includes("debt increased")));
+  assert.ok(
+    compareToBaseline(findings, tooLow).some((message) => message.includes("debt increased")),
+  );
 
   const tooHigh = {
     "responsive/no-desktop-first-breakpoint": { "fixture.css": 2 },
     "responsive/no-px-breakpoint": { "fixture.css": 1 },
   };
-  assert.ok(compareToBaseline(findings, tooHigh).some((message) => message.includes("debt decreased")));
+  assert.ok(
+    compareToBaseline(findings, tooHigh).some((message) => message.includes("debt decreased")),
+  );
 });
