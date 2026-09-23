@@ -1,0 +1,15 @@
+{
+  "title": "Lemonade",
+  "slug": "lemonade",
+  "sourcePath": "projects/lemonade.html",
+  "summary": "Lemonade case study — a deterministic reconstruction of the classic three-variable business simulation with reproducible persistence and balance certification.",
+  "tier": "primary",
+  "visibility": "public",
+  "stack": [
+    "TypeScript",
+    "Lit",
+    "Three.js",
+    "Vite 8"
+  ],
+  "sortOrder": 40
+}
