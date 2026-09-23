@@ -14,8 +14,7 @@ export const rules = [
   {
     id: "responsive/no-px-breakpoint",
     message: "Express breakpoints in rem/em so text scaling participates in responsive decisions.",
-    pattern:
-      /@media\s*\([^)]*(?:min-width|max-width|width\s*(?:<|<=|>|>=))[^)]*\d+(?:\.\d+)?px/giu,
+    pattern: /@media\s*\([^)]*(?:min-width|max-width|width\s*(?:<|<=|>|>=))[^)]*\d+(?:\.\d+)?px/giu,
   },
   {
     id: "responsive/no-device-breakpoint",
@@ -38,8 +37,7 @@ export const rules = [
   },
   {
     id: "responsive/no-static-viewport-height",
-    message:
-      "Do not use static 100vh for application layout; prefer dynamic/small viewport units.",
+    message: "Do not use static 100vh for application layout; prefer dynamic/small viewport units.",
     pattern:
       /\b(?:height|min-height|max-height|block-size|min-block-size|max-block-size)\s*:\s*(?:calc\([^;]*\b100vh\b[^;]*\)|100vh)\s*;/giu,
   },
@@ -52,8 +50,7 @@ export const rules = [
   {
     id: "responsive/no-root-min-width",
     message: "html/body must not impose a minimum inline viewport width.",
-    pattern:
-      /(?:^|\})\s*(?:html|body)\s*\{[^}]*\b(?:min-width|min-inline-size)\s*:/gimsu,
+    pattern: /(?:^|\})\s*(?:html|body)\s*\{[^}]*\b(?:min-width|min-inline-size)\s*:/gimsu,
   },
   {
     id: "a11y/no-zoom-lock",
@@ -67,7 +64,8 @@ export const rules = [
   },
   {
     id: "a11y/no-hidden-scrollbar",
-    message: "Do not hide scrollbars on scrollable regions; scrolling affordances must remain visible.",
+    message:
+      "Do not hide scrollbars on scrollable regions; scrolling affordances must remain visible.",
     pattern:
       /(?:scrollbar-width\s*:\s*none\s*;|::-(?:webkit-)?scrollbar\s*\{[^}]*display\s*:\s*none\s*;[^}]*\})/gimsu,
   },
