@@ -1,7 +1,6 @@
 .studio-home {
   --studio-copy: color-mix(in srgb, var(--text) 72%, var(--muted));
   --studio-ease-out: cubic-bezier(0.16, 1, 0.3, 1);
-  --studio-ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
   background:
     radial-gradient(circle at 12% -8%, rgba(200, 255, 90, 0.11), transparent 32rem),
     radial-gradient(circle at 88% 18%, rgba(98, 131, 255, 0.09), transparent 38rem),
@@ -23,8 +22,7 @@
   scrollbar-gutter: stable;
 }
 
-.studio-home .nav a:not(.nav-github),
-.studio-home .nav .nav-github {
+.studio-home .nav a {
   display: inline-flex;
   min-height: 2.75rem;
   flex: 0 0 auto;
@@ -156,15 +154,7 @@
   border-radius: 50%;
   content: "";
   transform: scale(0.8);
-  transition:
-    transform 280ms var(--studio-ease-out),
-    opacity 280ms var(--studio-ease-standard);
   opacity: 0.55;
-}
-
-.showcase-card:focus-visible::after {
-  transform: scale(1.08);
-  opacity: 1;
 }
 
 .showcase-card:focus-visible {
@@ -477,11 +467,6 @@
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .showcase-card:hover::after {
-    transform: scale(1.08);
-    opacity: 1;
-  }
-
   .showcase-card:hover .project-mark,
   .lab-card:hover .project-mark {
     transform: translateY(-0.3rem) scale(1.025);
@@ -675,7 +660,6 @@
 
   .showcase-card::after {
     animation: none;
-    transition-duration: 0.001ms;
   }
 
   ::view-transition-group(*),
