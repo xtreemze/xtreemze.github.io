@@ -1,14 +1,16 @@
 ---
+import { getCollection } from "astro:content";
 import SourceDocument from "../../components/SourceDocument.astro";
-import {
-  projectSlugs,
-  renderSourceDocument,
-} from "../../lib/source-pages";
+import { renderSourceDocument } from "../../lib/source-pages";
 
 export async function getStaticPaths() {
-  return (await projectSlugs()).map((slug) => ({
-    params: { slug },
-    props: { pagePath: "projects/" + slug + ".html" },
+  const projects = (await getCollection("projects")).sort(
+    (left, right) => left.data.sortOrder - right.data.sortOrder,
+  );
+
+  return projects.map(({ data }) => ({
+    params: { slug: data.slug },
+    props: { pagePath: data.sourcePath },
   }));
 }
 
