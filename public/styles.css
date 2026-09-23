@@ -568,9 +568,13 @@ button:focus-visible {
   *,
   *::before,
   *::after {
+    /* biome-ignore lint/complexity/noImportantStyles: reduced-motion must override author scrolling regardless of cascade order */
     scroll-behavior: auto !important;
+    /* biome-ignore lint/complexity/noImportantStyles: reduced-motion must override component transition durations across stylesheets */
     transition-duration: 0.001ms !important;
+    /* biome-ignore lint/complexity/noImportantStyles: reduced-motion must override component animation durations across stylesheets */
     animation-duration: 0.001ms !important;
+    /* biome-ignore lint/complexity/noImportantStyles: reduced-motion must stop repeated author animations regardless of specificity */
     animation-iteration-count: 1 !important;
   }
 }
