@@ -5,6 +5,6 @@
   "summary": "Timeline case study — a responsive information-modeling workspace for events, ranges, categories and linked stories.",
   "tier": "primary",
   "visibility": "public",
-  "stack": ["TypeScript","Vite 8","Leaflet"],
+  "stack": ["TypeScript", "Vite 8", "Leaflet"],
   "sortOrder": 10
 }
