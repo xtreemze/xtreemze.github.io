@@ -5,6 +5,6 @@
   "summary": "QMK, Vial and Halcyon case study — split-keyboard firmware, physical layout modeling, persistent host configuration and the Ferris Keyboard Atlas.",
   "tier": "lab",
   "visibility": "public",
-  "stack": ["C","QMK","Vial","Raw HID","WebHID"],
+  "stack": ["C", "QMK", "Vial", "Raw HID", "WebHID"],
   "sortOrder": 50
 }
