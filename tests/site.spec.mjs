@@ -109,10 +109,10 @@ for (const localeCode of ["es", "sv"]) {
 
 test("homepage curates current work and omits stale project surfaces", async ({ page }) => {
   await page.goto("/");
-  await expect(
-    page.getByRole("heading", { level: 3, name: "Timeline", exact: true }),
-  ).toBeVisible();
+  await expect(page.getByRole("heading", { level: 3, name: "Lūm", exact: true })).toBeVisible();
   await expect(page.getByRole("heading", { level: 3, name: "Slipmat", exact: true })).toBeVisible();
+  await expect(page.getByRole("heading", { level: 3, name: "Verge", exact: true })).toBeVisible();
+  await expect(page.getByRole("heading", { level: 3, name: "Teldra", exact: true })).toBeVisible();
   await expect(
     page.getByRole("heading", { level: 3, name: "Signal Broker", exact: true }),
   ).toHaveCount(0);
