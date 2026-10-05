@@ -12,9 +12,9 @@ export default {
           "Caso de estudio de Inventory — PWA local-first para operaciones de inventario, trabajo offline, trazabilidad y recuperación de datos.",
       },
       "projects/timeline.html": {
-        title: "Timeline — Carlos Velasco",
+        title: "Lūm — Carlos Velasco",
         description:
-          "Caso de estudio de Timeline — espacio responsivo para modelar eventos, intervalos, categorías e historias como narrativas cronológicas estructuradas.",
+          "Caso de estudio de Lūm — entorno local-first de conocimiento relacional que coordina tiempo, lugar, relaciones, evidencia, procedencia e historias sobre un continuo canónico.",
       },
       "projects/via.html": {
         title: "Vial / Halcyon Control Center — Carlos Velasco",
@@ -169,9 +169,9 @@ export default {
       "inventory.devBody": "La reescritura eliminó artefactos de Webpack antiguos, añadió CI y Pages, documentó seguridad y arquitectura y mantuvo la persistencia local como límite explícito. El código se organiza alrededor de invariantes de inventario antes que alrededor de componentes de un framework.",
       "inventory.next": "Siguiente: Timeline",
 
-      "timeline.caseLabel": "Público · Modelado de información",
-      "timeline.deck": "Un espacio de trabajo para construir cronologías con eventos puntuales, intervalos, categorías e historias enlazadas, de modo que una secuencia temporal pueda convertirse en una explicación estructurada y navegable.",
-      "timeline.niche": "Cronologías que necesitan expresar relaciones y narrativa, no solo fechas",
+      "timeline.caseLabel": "Público · Sistema de conocimiento relacional",
+      "timeline.deck": "Un entorno local-first que mantiene tiempo, lugar, relaciones, evidencia, procedencia e historias conectados en un continuo canónico compartido y los proyecta como línea temporal, mundo, mapa, dossier y narrativa.",
+      "timeline.niche": "Conocimiento relacional con tiempo, lugar, evidencia y procedencia",
       "timeline.stack": "Aplicación web estática · diseño responsive",
       "timeline.model": "Eventos · intervalos · categorías · historias",
       "timeline.focus": "Estructura narrativa · navegación · publicación",
@@ -207,9 +207,9 @@ export default {
           "Fallstudie om Inventory — en local-first PWA för lagerdrift, offlinearbete, spårbarhet och dataåterställning.",
       },
       "projects/timeline.html": {
-        title: "Timeline — Carlos Velasco",
+        title: "Lūm — Carlos Velasco",
         description:
-          "Fallstudie om Timeline — en responsiv arbetsyta för händelser, intervall, kategorier och berättelser som strukturerade tidsnarrativ.",
+          "Fallstudie för Lūm — en local-first-miljö för relationell kunskap som samordnar tid, plats, relationer, evidens, proveniens och berättelser över ett kanoniskt kontinuum.",
       },
       "projects/via.html": {
         title: "Vial / Halcyon Control Center — Carlos Velasco",
@@ -364,9 +364,9 @@ export default {
       "inventory.devBody": "Omskrivningen tog bort äldre Webpack- och editorartefakter, lade till CI och Pages, dokumenterade säkerhet och arkitektur och behöll lokal persistens som en explicit gräns. Koden organiseras kring lagerinvarianter före ramverkskomponenter.",
       "inventory.next": "Nästa: Timeline",
 
-      "timeline.caseLabel": "Publikt · Informationsmodellering",
-      "timeline.deck": "En arbetsyta för att bygga tidslinjer med punkthändelser, intervall, kategorier och länkade berättelser, så att en tidssekvens kan bli en strukturerad och navigerbar förklaring.",
-      "timeline.niche": "Tidslinjer som behöver uttrycka relationer och narrativ, inte bara datum",
+      "timeline.caseLabel": "Publikt · Relationellt kunskapssystem",
+      "timeline.deck": "En local-first-miljö som håller tid, plats, relationer, evidens, proveniens och berättelser samman i ett delat kanoniskt kontinuum och projicerar det som tidslinje, värld, karta, dossier och narrativ.",
+      "timeline.niche": "Relationell kunskap med tid, plats, evidens och proveniens",
       "timeline.stack": "Statisk webbapp · responsiv design",
       "timeline.model": "Händelser · intervall · kategorier · berättelser",
       "timeline.focus": "Narrativ struktur · navigation · publicering",
