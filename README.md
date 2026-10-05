@@ -22,7 +22,7 @@ The portfolio is organized around the problems each product is trying to solve, 
 
 | Area | Projects | Focus |
 | --- | --- | --- |
-| Primary studies | [Timeline](https://xtreemze.github.io/projects/timeline.html), [Slipmat](https://xtreemze.github.io/projects/slipmat.html), [Defend](https://xtreemze.github.io/projects/defend.html), [Lemonade](https://xtreemze.github.io/projects/lemonade.html) | information modeling, media authority, behavioral-parity modernization, deterministic economic simulation |
+| Primary studies | [Lūm](https://xtreemze.github.io/projects/timeline.html), [Slipmat](https://xtreemze.github.io/projects/slipmat.html), [Verge](https://xtreemze.github.io/verge/), [Teldra](https://xtreemze.github.io/teldra/), [Defend](https://xtreemze.github.io/projects/defend.html), [Lemonade](https://xtreemze.github.io/projects/lemonade.html) | relational knowledge and provenance, media authority, real-time conferencing, spatial digital twins, behavioral-parity modernization, deterministic economic simulation |
 | Active lab | [QMK / Vial / Halcyon](https://xtreemze.github.io/projects/qmk.html), [FireOne](https://xtreemze.github.io/projects/fireone.html), [Booking](https://xtreemze.github.io/projects/booking.html), [Investigation Workbench](https://xtreemze.github.io/projects/investigation-workbench.html) | embedded input, uncertainty-driven simulation, configurable domain modeling, provenance-aware knowledge systems |
 | Supporting active work | [Inventory](https://xtreemze.github.io/projects/inventory.html) | local-first operational software and offline accountability |
 
