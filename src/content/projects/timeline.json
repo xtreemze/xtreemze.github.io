@@ -1,14 +1,15 @@
 {
-  "title": "Timeline",
+  "title": "Lūm",
   "slug": "timeline",
   "sourcePath": "projects/timeline.html",
-  "summary": "Timeline case study — a responsive information-modeling workspace for events, ranges, categories and linked stories.",
+  "summary": "Lūm case study — a local-first relational knowledge environment that coordinates time, place, relationships, evidence, provenance and stories over one canonical continuum.",
   "tier": "primary",
   "visibility": "public",
   "stack": [
     "TypeScript",
     "Vite 8",
-    "Leaflet"
+    "Lit",
+    "deck.gl"
   ],
   "sortOrder": 10
 }
