@@ -194,7 +194,6 @@ test("forced colors preserves navigation and focusable controls", async ({ page,
   await expect(page.getByRole("link", { name: "Explore selected work" })).toBeVisible();
 });
 
-
 test("Slipmat case study embeds an operable Package Inspector teaser", async ({ page }) => {
   await page.goto("/projects/slipmat.html");
 
@@ -210,8 +209,9 @@ test("Slipmat case study embeds an operable Package Inspector teaser", async ({ 
   await expect(disc).toHaveAttribute("aria-pressed", "true");
 });
 
-
-test("Slipmat case study presents seven Showcase-derived distinctive surfaces", async ({ page }) => {
+test("Slipmat case study presents seven Showcase-derived distinctive surfaces", async ({
+  page,
+}) => {
   await page.goto("/projects/slipmat.html");
   const gallery = page.locator(".slipmat-showcase-grid");
   await expect(gallery).toBeVisible();
