@@ -209,3 +209,14 @@ test("Slipmat case study embeds an operable Package Inspector teaser", async ({ 
   await disc.press("Enter");
   await expect(disc).toHaveAttribute("aria-pressed", "true");
 });
+
+
+test("Slipmat case study presents seven Showcase-derived distinctive surfaces", async ({ page }) => {
+  await page.goto("/projects/slipmat.html");
+  const gallery = page.locator(".slipmat-showcase-grid");
+  await expect(gallery).toBeVisible();
+  const images = gallery.locator("img");
+  await expect(images).toHaveCount(7);
+  await expect(images.nth(0)).toHaveAttribute("src", "/showcase/slipmat/01-library-browse.webp");
+  await expect(images.nth(6)).toHaveAttribute("src", "/showcase/slipmat/07-package-inspector.webp");
+});
