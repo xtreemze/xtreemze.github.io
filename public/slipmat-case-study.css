@@ -1,0 +1,59 @@
+.slipmat-preview {
+  display: grid;
+  grid-template-columns: minmax(16rem, 0.72fr) minmax(0, 1.28fr);
+  gap: 1.5rem;
+  align-items: stretch;
+  margin-top: 1.5rem;
+  margin-bottom: clamp(4rem, 8vw, 7rem);
+}
+
+.slipmat-preview-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 1rem;
+  padding: clamp(1.25rem, 3vw, 2.5rem);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background:
+    linear-gradient(145deg, rgba(123, 166, 155, 0.05), transparent 48%),
+    rgba(255, 255, 255, 0.018);
+}
+
+.slipmat-preview-copy p {
+  margin: 0;
+  max-width: 44rem;
+}
+
+.slipmat-preview-copy .lead {
+  color: var(--text);
+  font-size: clamp(1.25rem, 2.2vw, 1.8rem);
+  line-height: 1.3;
+  letter-spacing: -0.025em;
+}
+
+.slipmat-preview-frame {
+  width: 100%;
+  min-height: 36rem;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background: #090b0e;
+}
+
+@media (max-width: 800px) {
+  .slipmat-preview {
+    grid-template-columns: 1fr;
+  }
+
+  .slipmat-preview-frame {
+    min-height: 31rem;
+  }
+}
+
+@media (prefers-contrast: more) {
+  .slipmat-preview-copy,
+  .slipmat-preview-frame {
+    border-color: currentColor;
+  }
+}
