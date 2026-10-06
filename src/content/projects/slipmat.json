@@ -2,7 +2,7 @@
   "title": "Slipmat",
   "slug": "slipmat",
   "sourcePath": "projects/slipmat.html",
-  "summary": "Slipmat case study — product thinking and engineering behind a playback-first multimedia client.",
+  "summary": "Slipmat case study — a playback instrument built around a persistent Rail, signal transparency, music intelligence and physical-media inspection.",
   "tier": "primary",
   "visibility": "private",
   "stack": [
