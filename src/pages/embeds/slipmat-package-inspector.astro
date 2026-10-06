@@ -1,0 +1,251 @@
+---
+const views = [
+  ["closed", "Closed"],
+  ["open", "Open case"],
+  ["disc", "Disc"],
+  ["back", "Back"],
+  ["spine", "Spine"],
+] as const;
+---
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="dark" />
+  <title>Slipmat Package Inspector teaser</title>
+  <style>
+    :root {
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      color: #f4f0e8;
+      background: #090b0e;
+      --copper: #c88c5a;
+      --patina: #7ba69b;
+      --panel: rgba(255,255,255,.055);
+      --line: rgba(255,255,255,.16);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100svh;
+      display: grid;
+      grid-template-rows: 1fr auto;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 24% 14%, rgba(123,166,155,.16), transparent 34%),
+        radial-gradient(circle at 76% 82%, rgba(200,140,90,.12), transparent 38%),
+        #090b0e;
+    }
+    .stage {
+      position: relative;
+      display: grid;
+      place-items: center;
+      min-height: 22rem;
+      perspective: 1100px;
+      overflow: hidden;
+    }
+    .stage::before {
+      content: "";
+      position: absolute;
+      inset: 15% 8%;
+      border-radius: 50%;
+      background: radial-gradient(ellipse, rgba(255,255,255,.08), transparent 66%);
+      filter: blur(30px);
+      pointer-events: none;
+    }
+    .package {
+      position: relative;
+      width: min(45vw, 18rem);
+      aspect-ratio: 1;
+      transform-style: preserve-3d;
+      transform: rotateX(58deg) rotateZ(-28deg);
+      transition: transform 600ms cubic-bezier(.16,1,.3,1);
+    }
+    .case, .lid, .disc, .back-card {
+      position: absolute;
+      inset: 0;
+      border-radius: 4%;
+    }
+    .case {
+      border: 1px solid rgba(255,255,255,.38);
+      background:
+        linear-gradient(135deg, rgba(255,255,255,.15), rgba(255,255,255,.025)),
+        rgba(20,24,27,.72);
+      box-shadow: 0 2.2rem 4rem rgba(0,0,0,.45), inset 0 0 0 .45rem rgba(255,255,255,.035);
+      transform: translateZ(0);
+    }
+    .lid {
+      transform-origin: 2% 50%;
+      transform: translateZ(12px);
+      border: 1px solid rgba(255,255,255,.32);
+      background:
+        linear-gradient(145deg, rgba(255,255,255,.17), rgba(255,255,255,.025)),
+        rgba(20,22,25,.28);
+      backdrop-filter: blur(2px);
+      transition: transform 650ms cubic-bezier(.16,1,.3,1);
+    }
+    .cover {
+      position: absolute;
+      inset: 8%;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(255,255,255,.15);
+      background:
+        radial-gradient(circle at 50% 46%, rgba(123,166,155,.42), transparent 31%),
+        radial-gradient(circle at 58% 52%, rgba(200,140,90,.32), transparent 44%),
+        linear-gradient(150deg, #161a1e, #08090c);
+      overflow: hidden;
+    }
+    .cover img { width: 38%; opacity: .88; }
+    .cover span {
+      position: absolute;
+      inset-inline: 8%;
+      bottom: 8%;
+      font-size: clamp(.48rem, 1.4vw, .8rem);
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      text-align: center;
+      color: rgba(244,240,232,.8);
+    }
+    .disc {
+      inset: 16%;
+      border-radius: 50%;
+      transform: translateZ(7px);
+      background:
+        radial-gradient(circle, #0b0e10 0 8%, transparent 8.5%),
+        conic-gradient(from 10deg, #b6c9c2, #70533d, #b8d1c9, #5d6870, #c79a71, #a9bdb8, #b6c9c2);
+      box-shadow: inset 0 0 0 .35rem rgba(255,255,255,.08), 0 .6rem 1.2rem rgba(0,0,0,.26);
+    }
+    .disc::after {
+      content: "SLIPMAT";
+      position: absolute;
+      inset: 31%;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: #111519;
+      color: #d9c8b7;
+      font-size: clamp(.38rem, 1vw, .62rem);
+      letter-spacing: .16em;
+    }
+    .back-card {
+      inset: 8%;
+      display: grid;
+      align-content: end;
+      gap: .35rem;
+      padding: 10%;
+      background: linear-gradient(160deg, #12171b, #18120f);
+      color: rgba(244,240,232,.78);
+      transform: translateZ(3px) rotateY(180deg);
+      backface-visibility: hidden;
+      font-size: clamp(.42rem, 1vw, .65rem);
+    }
+    .back-card i { height: 1px; background: rgba(255,255,255,.2); }
+    .spine {
+      position: absolute;
+      left: -8%;
+      top: 7%;
+      width: 7%;
+      height: 86%;
+      display: grid;
+      place-items: center;
+      padding: .2rem;
+      border: 1px solid rgba(255,255,255,.16);
+      background: #171316;
+      transform: rotateY(90deg) translateZ(1px);
+      transform-origin: right center;
+      color: #d8b28f;
+      font-size: .5rem;
+      letter-spacing: .12em;
+      writing-mode: vertical-rl;
+      text-transform: uppercase;
+    }
+    .caption {
+      position: absolute;
+      left: 1rem;
+      top: 1rem;
+      max-width: 22rem;
+      padding: .7rem .85rem;
+      border: 1px solid var(--line);
+      border-radius: .8rem;
+      background: rgba(8,10,12,.72);
+      color: rgba(244,240,232,.74);
+      font-size: .78rem;
+      line-height: 1.45;
+      backdrop-filter: blur(12px);
+    }
+    .caption strong { display:block; color:#fff; margin-bottom:.2rem; }
+    .controls {
+      display: flex;
+      gap: .5rem;
+      padding: .85rem;
+      overflow-x: auto;
+      border-top: 1px solid var(--line);
+      background: rgba(8,10,12,.9);
+      scrollbar-width: thin;
+    }
+    button {
+      min-height: 44px;
+      flex: 0 0 auto;
+      padding: .65rem .85rem;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--panel);
+      color: inherit;
+      font: inherit;
+      cursor: pointer;
+    }
+    button[aria-pressed="true"] {
+      border-color: color-mix(in srgb, var(--copper) 70%, white);
+      background: color-mix(in srgb, var(--copper) 18%, transparent);
+    }
+    button:focus-visible { outline: 2px solid #d9bd63; outline-offset: 2px; }
+    body[data-view="open"] .lid { transform: translateZ(12px) rotateY(-118deg); }
+    body[data-view="open"] .package { transform: rotateX(60deg) rotateZ(-22deg) translateX(8%); }
+    body[data-view="disc"] .lid { transform: translateZ(12px) rotateY(-140deg); }
+    body[data-view="disc"] .package { transform: rotateX(48deg) rotateZ(-12deg) scale(1.12) translateX(8%); }
+    body[data-view="back"] .package { transform: rotateX(58deg) rotateZ(152deg); }
+    body[data-view="back"] .lid { opacity: .32; }
+    body[data-view="spine"] .package { transform: rotateX(16deg) rotateY(72deg) rotateZ(-8deg) scale(1.08); }
+    body[data-view="spine"] .lid { opacity: .25; }
+    @media (prefers-reduced-motion: reduce) {
+      .package, .lid { transition: none; }
+    }
+    @media (max-width: 560px) {
+      .package { width: min(60vw, 15rem); }
+      .caption { right: 1rem; max-width: none; font-size: .72rem; }
+      .stage { min-height: 20rem; padding-top: 4rem; }
+    }
+    @media (forced-colors: active) {
+      .case,.lid,.cover,.disc,.caption,button { border: 1px solid CanvasText; }
+      button[aria-pressed="true"] { outline: 2px solid Highlight; }
+    }
+  </style>
+</head>
+<body data-view="open">
+  <main class="stage" aria-label="Interactive Slipmat Package Inspector teaser">
+    <p class="caption"><strong>Package Inspector teaser</strong>Physical-media inspection is separate from playback. This public study uses generated presentation only; the production inspector renders available package evidence and labels derived material.</p>
+    <div class="package" aria-hidden="true">
+      <div class="case"></div>
+      <div class="back-card"><span>01 — Source authority</span><i></i><span>02 — Playback Rail</span><i></i><span>03 — Analysis evidence</span></div>
+      <div class="disc"></div>
+      <div class="lid"><div class="cover"><img src="/project-assets/slipmat-mark.svg" alt="" /><span>Playback as an instrument</span></div></div>
+      <div class="spine">Slipmat · derived teaser</div>
+    </div>
+  </main>
+  <nav class="controls" aria-label="Package views">
+    {views.map(([view,label]) => <button type="button" data-view={view} aria-pressed={view === "open" ? "true" : "false"}>{label}</button>)}
+  </nav>
+  <script is:inline>
+    const body = document.body;
+    const buttons = [...document.querySelectorAll("[data-view]")].filter((node) => node instanceof HTMLButtonElement);
+    for (const button of buttons) {
+      button.addEventListener("click", () => {
+        body.dataset.view = button.dataset.view;
+        for (const candidate of buttons) candidate.setAttribute("aria-pressed", String(candidate === button));
+      });
+    }
+  </script>
+</body>
+</html>
