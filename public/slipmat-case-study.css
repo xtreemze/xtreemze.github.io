@@ -1,0 +1,133 @@
+.slipmat-preview {
+  display: grid;
+  grid-template-columns: minmax(16rem, 0.72fr) minmax(0, 1.28fr);
+  gap: 1.5rem;
+  align-items: stretch;
+  margin-top: 1.5rem;
+  margin-bottom: clamp(4rem, 8vw, 7rem);
+}
+
+.slipmat-preview-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 1rem;
+  padding: clamp(1.25rem, 3vw, 2.5rem);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background:
+    linear-gradient(145deg, rgba(123, 166, 155, 0.05), transparent 48%),
+    rgba(255, 255, 255, 0.018);
+}
+
+.slipmat-preview-copy p {
+  margin: 0;
+  max-width: 44rem;
+}
+
+.slipmat-preview-copy .lead {
+  color: var(--text);
+  font-size: clamp(1.25rem, 2.2vw, 1.8rem);
+  line-height: 1.3;
+  letter-spacing: -0.025em;
+}
+
+.slipmat-preview-frame {
+  width: 100%;
+  min-height: 36rem;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background: #090b0e;
+}
+
+@media (max-width: 800px) {
+  .slipmat-preview {
+    grid-template-columns: 1fr;
+  }
+
+  .slipmat-preview-frame {
+    min-height: 31rem;
+  }
+}
+
+@media (prefers-contrast: more) {
+  .slipmat-preview-copy,
+  .slipmat-preview-frame {
+    border-color: currentColor;
+  }
+}
+
+.slipmat-showcase-heading {
+  display: grid;
+  gap: 0.85rem;
+  max-width: 54rem;
+  margin-bottom: 2rem;
+}
+
+.slipmat-showcase-heading h2 {
+  margin: 0;
+  color: var(--text);
+  font-size: clamp(1.6rem, 3vw, 2.6rem);
+  letter-spacing: -0.035em;
+  text-transform: none;
+}
+
+.slipmat-showcase-heading > p:last-child {
+  margin: 0;
+  color: var(--muted);
+}
+
+.slipmat-showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1rem, 2vw, 1.5rem);
+}
+
+.slipmat-showcase-grid figure {
+  min-width: 0;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.018);
+}
+
+.slipmat-showcase-grid img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 8 / 5;
+  object-fit: cover;
+  border-bottom: 1px solid var(--line);
+  background: #090b0e;
+}
+
+.slipmat-showcase-grid figcaption {
+  display: grid;
+  gap: 0.35rem;
+  padding: 1rem 1.1rem 1.2rem;
+}
+
+.slipmat-showcase-grid strong {
+  color: var(--text);
+}
+
+.slipmat-showcase-grid span {
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+@media (max-width: 720px) {
+  .slipmat-showcase-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-contrast: more) {
+  .slipmat-showcase-grid figure,
+  .slipmat-showcase-grid img {
+    border-color: currentColor;
+  }
+}
