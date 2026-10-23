@@ -12,7 +12,9 @@ if (!token) {
     const owner = process.env.GITHUB_OWNER || "xtreemze";
     const records = await collectPortfolio({ owner, token });
     const output = process.env.PORTFOLIO_AUDIT_OUTPUT || "portfolio-private-audit.json";
-    await writeFile(output, JSON.stringify({
+    await writeFile(
+      output,
+      `${JSON.stringify({
       schema_version: "0.3",
       generated_at: new Date().toISOString(),
       owner,
@@ -20,7 +22,9 @@ if (!token) {
       disclaimer: "Structural evidence only. No build, security or workflow execution is certified.",
       count: records.length,
       repositories: records,
-    }, null, 2) + "\n", { mode: 0o600 });
+      }, null, 2)}\n`,
+      { mode: 0o600 },
+    );
     console.log(`Wrote local inventory of ${records.length} repositories; do not publish private contents.`);
   } catch (error) {
     console.error(String(error));
