@@ -16,7 +16,8 @@
     "lint:fix": "biome check --write astro.config.mjs playwright.config.mjs tests scripts src package.json biome.json",
     "test": "pnpm build && playwright test",
     "test:chromium": "pnpm build && playwright test --project=chromium",
-    "check": "pnpm lint && pnpm typecheck && pnpm test"
+    "check": "pnpm lint && pnpm typecheck && pnpm test:portfolio && pnpm test",
+    "test:portfolio": "node --test tests/portfolio-audit.test.mjs"
   },
   "devDependencies": {
     "@astrojs/check": "0.9.10",
