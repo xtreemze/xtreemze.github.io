@@ -55,3 +55,7 @@ Review legacy Webpack/Travis projects as a second cohort; verify whether apparen
 - Per-repository gap report and prioritized remediation issues.
 - Pilot changes in separate repositories with CI/rollback evidence.
 - Shared capability decision records and compatibility matrix.
+
+## Running the inventory
+
+Requires Node 24+ and a GitHub token with read-only repository metadata and contents permissions for all repositories to be inventoried. Execute locally using `GH_TOKEN=... node scripts/portfolio-audit.mjs` (prefer a secret manager/environment injection rather than writing tokens to shell history). The default output is `portfolio-private-audit.json` with restrictive file permissions and is excluded from Git. Never upload this output to a public artifact, issue, or PR. The report inspects structure and workflow configuration only; it does not certify successful CI or security. The first draft's public-only inventory has been superseded by authenticated owned-repository discovery.
