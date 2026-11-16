@@ -5,3 +5,5 @@ test-results/
 .cache/
 .DS_Store
 .astro/
+portfolio-public-audit.json
+portfolio-private-audit.json
