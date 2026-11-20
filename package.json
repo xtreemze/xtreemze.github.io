@@ -20,12 +20,12 @@
   },
   "devDependencies": {
     "@astrojs/check": "0.9.12",
-    "@astrojs/sitemap": "3.7.4",
+    "@astrojs/sitemap": "3.7.5",
     "@axe-core/playwright": "4.14.0",
-    "@biomejs/biome": "2.6.3",
-    "@playwright/test": "1.64.1",
-    "@types/node": "26.6.5",
-    "astro": "7.4.2",
+    "@biomejs/biome": "2.6.8",
+    "@playwright/test": "1.65.1",
+    "@types/node": "26.6.6",
+    "astro": "7.4.12",
     "typescript": "npm:@typescript/typescript6@6.0.2"
   }
 }
